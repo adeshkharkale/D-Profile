@@ -1,0 +1,73 @@
+<div class="content-wrapper">
+    <div class="body_header_row">
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <form autocomplete="off">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card p-4 text-center">
+                            <div>
+                                <img src="../assets/img/Refer_Image-removebg-preview.png"
+                                    style="width: 200px; height: 150px;">
+                            </div>
+                            <div>
+                                <h2>Invite & Earn</h2>
+                                <span class="earn-text">Earn ₹ 20 on Each Active Referal<br>
+                                </span>
+                            </div>
+                            <div class="slider">
+                                <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="10" step="10" min="0"
+                                    max="1000" aria-label="units" [ngModel]="value"></mat-slider>
+                            </div>
+                            <div class="main_share">
+                                <div class="sharing">
+                                    <input type="radio" name="share" disabled value="1" #whatsapp1 [checked]="whatsapp">
+                                    <a (click)="onSelect(whatsapp1.value);" class="whatsapp"><i class="fab fa-whatsapp"
+                                            aria-hidden="true"></i></a>
+                                </div>
+                                <div class="sharing">
+                                    <input type="radio" name="share" disabled value="2" #sms1 [checked]="sms">
+                                    <a (click)="onSelect(sms1.value)" class="yt"><i class="fa fa-commenting"
+                                            aria-hidden="true"></i></a>
+                                </div>
+                                <div class="sharing">
+                                    <input type="radio" name="share" disabled value="3" #mail1 [checked]="mail">
+                                    <a class="mail" (click)="onSelect(mail1.value)"><i class="fa fa-envelope"
+                                            aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <div class="mt-2 d-flex justify-content-center">
+                                <input class="form-control" placeholder="Enter here..." [value]="input"
+                                name="referalDetails" #referalDetails maxlength="35">
+                            </div>
+                            <div class="mt-2 d-flex justify-content-center">
+                                <button class="btn btn-lg" style="width: 350px; 
+                                background-color: #213e81"
+                                (click)="invite(referalDetails.value)">
+                                    Invite
+                                </button>
+                            </div>
+                            <div class="t2">
+                                <h3 style="text-align: left;">My Active Referals :</h3>
+                                <table class="table" style="overflow: auto;">
+                                    <tr *ngFor="let refer of objSReferAndEarnService.arrReferals">
+                                        <td style="text-align: start;">
+                                            {{ refer.regName }} <br> {{ refer.mobileNo }}
+                                        </td>
+                                        <td style="text-align: start; ">
+                                            {{ refer.submitDate | date }}
+                                        </td>
+                                        <td style="text-align: end;color: green;">
+                                            Active
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

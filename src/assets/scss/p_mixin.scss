@@ -1,0 +1,1930 @@
+@import "p_variable";
+
+
+/* Profile Start*/
+@mixin profile_main_block{
+  height: 65rem;
+  background-image: $profile_bg_img_header;
+  background-size: 100% 100%;
+  display: grid;
+  grid-template-rows: 26% 38% 36%;
+}
+
+// Profile Block One Start //
+
+@mixin profile_block1 {
+  display: grid;
+  grid-template-rows: 20% 65% 15%;
+}
+@mixin profile_block1_header{
+  background-color: $profile_navy;
+  color: $profile_white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-family: "Noto Sans JP", sans-serif;
+}
+@mixin profile_block1_header_img{
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 20px;
+  top: 5px;
+  border-radius: 50%;
+}
+@mixin profile_block1_header_login {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 16px;
+  a {
+    text-decoration: none;
+    color: white;
+    i {
+      color: rgb(255, 255, 255) !important;
+      font-size: 16px;
+      margin-right: 5px;
+    }
+    button {
+      background-color: rgb(255, 187, 0);
+      color: rgb(0, 0, 0);
+      height: 25px;
+      width: 50px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+    }
+  } 
+  
+}
+
+
+
+
+@mixin profile_block1_details {
+  display: grid;
+  grid-template-columns: 20% 50% 30%;
+  padding: 0 3rem 0 12rem;
+  background-color: $profile_dim_blue;
+}
+@mixin profile_block1_user_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    background-color: rgba(255, 255, 255, 0.808);
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    padding: 4px;
+  }
+}
+@mixin profile_block1_user_detail {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  line-height: 28px;
+  padding-top: 10px;
+
+  .name {
+    color: $profile_color_yellow;
+    font-size: 19px;
+  }
+  
+  .number,
+  .email {
+    font-size: 15px;
+    color: rgb(191, 197, 224);
+  }
+  .designation{
+    font-size: 15px;
+    color: rgb(219, 188, 188) ;
+  }
+}
+@mixin profile_block1_share_buttons{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+}
+@mixin profile_block1_ds_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    width: 160px;
+    height: 40px;
+    // font-weight: bold;
+    background-color: rgba(173, 0, 0, 0.349);
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $profile_dim_blue;
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.144);
+  }
+  .btn_resume {
+    margin: 0;
+  }
+  .btn_share {
+    margin-top: 1rem;
+  }
+}
+@mixin profile_block1_address {
+  padding: 7px 0 0 25.7rem;
+  font-size: 15px;
+  background-color: rgb(142 180 227 / 10%);
+  color: rgb(148, 154, 177);
+
+}
+
+  // Profile Block One End //
+
+  //profile block two start//
+
+
+
+
+  @mixin profile_block2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 1rem 5rem 1rem 5rem;
+    background-color: rgb(142 180 227 / 10%);
+  }
+  @mixin  profile_block2_section1_profile_block2_section2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @mixin profile_block2_section1_box_profile_block2_section2_box {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.719);
+  }
+  @mixin profile_block2_section1_box {
+    display: grid;
+    grid-template-rows: 15% 10% 45% 30%;
+    background-color: $profile_dim_blue;
+    margin: 1rem 2rem 1rem 5rem;
+  }
+  @mixin profile_block2_section1_box2 {
+    background-color: $profile_bg_line;
+    color: $profile_white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @mixin profile_block2_section2_box {
+    display: grid;
+    grid-template-rows: 15% 10% 75%;
+    background-color: $profile_dim_blue;
+    margin: 1rem 5rem 1rem 2rem;
+  }
+  @mixin profile_block2_section1_box3 {
+    display: grid;
+    grid-template-rows: 50% 50%;
+  }
+  @mixin profile_block2_section1_box3_links1 {
+    padding-top: 2rem;
+  }
+  @mixin  profile_block2_section1_box3_links1_profile_block2_section1_box3_links2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      margin: 0 7px 0 7px;
+      height: 40px;
+      width: 40px;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100%;
+      border-radius: 1px solid grey;
+      color: white;
+      box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.144);
+      i {
+        font-size: 20px;
+      }
+    }
+    .phone {
+      background-color: rgba(79, 79, 255, 0.336);
+    }
+    .mail {
+      background-color: #ea443552;
+    }
+    .sms {
+      background-color: rgba(79, 79, 255, 0.336);
+    }
+    .whatsapp {
+      background-color: #42e86044;
+    }
+    .send {
+      background-color: rgba(79, 79, 255, 0.336);
+    }
+    .fb {
+      background-color: #0e8bf149;
+    }
+    .yt {
+      background-color: #ff00004f;
+    }
+    .twitter {
+      background-color: #1da0f24d;
+    }
+    .linkedin {
+      background-color: #0074b250;
+    }
+    .insta {
+      background-color: rgba(128, 0, 128, 0.295);
+    }
+  }
+  @mixin profile_block2_section1_box4 {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+  @mixin profile_block2_section1_box4_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      width: 160px;
+      height: 40px;
+      // font-weight: bold;
+      background-color: rgba(173, 0, 0, 0.349);
+      color: rgb(255, 255, 255);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $profile_dim_blue;
+      border-radius: 10px;
+      box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.144);
+    }
+    .btn_resume {
+      margin: 0;
+    }
+    .btn_share {
+      margin-top: 1rem;
+    }
+  }
+  @mixin profile_block2_section2_box2 {
+    background-color: $profile_bg_line;
+    color: $profile_white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @mixin profile_block2_section2_box3 {
+    display: grid;
+    grid-template-rows: 50% 50%;
+  }
+  @mixin profile_block2_section2_box3_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 90px;
+      height: 90px;
+    }
+  }
+  @mixin profile_block2_section2_box3_info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 25px;
+    padding-bottom: 20px;
+    p {
+      color: $profile_white;
+      text-align: center;
+      margin: 0 20px 0 20px;
+    }
+  }
+
+  // profile block two end //
+
+  // profile block three start
+  
+  
+  @mixin profile_block3_section1 {
+    margin-top: 20px;
+    height: 20rem;
+    display: grid;
+    grid-template-rows: 55% 45%;
+    padding: 20px 10rem 0 10rem;
+    background-color: $profile_dim_blue;
+  }
+  @mixin profile_block3_section1_img {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -2rem;
+    // font-size: 18px;
+    color: white;
+    p {
+      text-align: center;
+      
+  
+    }
+    .about_detail {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  }
+  .p_head{
+    color: $profile_color_yellow !important;
+    i{
+      font-size: 12px;
+      color:gray;
+    }
+  }
+  @mixin profile_block3_section1_detail {
+    // font-size: 20px;
+    color: white;
+  
+    p {
+      text-align: center;
+      margin-bottom: 5px;
+      color: $profile_color_yellow !important;
+    }
+  }
+  .marque_head{
+    margin-bottom: 20px;
+  }
+  @mixin profile_block3_section1_marquee {
+    display: inline-block;
+    height: 5rem;
+    width: 22rem;
+    margin-right: 2rem;
+    .marquee {
+      display: grid;
+      grid-template-columns: 22% 78%;
+  
+      .marquee_one {
+        display: grid;
+        grid-template-rows: 55% 45%;
+        justify-content: center;
+        align-items: center;
+        // border: 1px solid #110a0e;
+        background-color: #68014680;
+        .date {
+          padding-top: 10px;
+          font-size: 28px;
+          text-align: center;
+          color: $profile_color_yellow;
+          font-weight: bold;
+        }
+        .month {
+          font-size: 16px;
+          text-align: center;
+        }
+      }
+      .marquee_two {
+        padding:10px;
+        display: grid;
+        // border: 1px solid grey;
+        background-color: #ff8bd871;
+        color: white;
+        grid-template-rows: 75% 25%;
+        div {
+          text-align: justify;
+        }
+        .subject {
+          font-size: 14px;
+          padding: 5px;
+          padding-top: 0;
+          line-height: 20px;
+        }
+        .time {
+          font-size: 12px;
+          padding-left: 3px;
+        }
+      }
+    }
+  }
+
+  // profile block three end
+
+
+//Profile end
+/*************************************************************************************************************
+
+**************************************************************************************************************/
+//Expertise Start
+
+@mixin experience_main_block {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  height: 35rem;
+  background-image: $profile_bg_img_body;
+  background-size: 100% 100%;
+  padding: 3rem 7rem;
+  grid-gap: 30px;
+
+  .experience {
+    background-color: rgba(49, 156, 170, 0);
+    border-radius: 5px;
+    height: 30rem;
+    color: whitesmoke;
+    box-shadow: 0px 0px 3px 3px rgba(180, 180, 180, 0.164);
+  }
+
+  .experience_heading {
+    margin: 10px 20px 10px 20px;
+    padding-bottom: 8px;
+    font-size: 15px;
+    text-transform: capitalize;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.575);
+
+  }
+  .head{
+    width: max-content;
+    height: max-content;
+    border-radius: 5px;
+    text-align: center;
+    padding:5px;
+    color: $profile_color_yellow;
+    background-image: linear-gradient(to right,#88035eb0, #470031b6);
+
+  }
+  .experience_detail {
+    margin: 20px;
+    height: 10rem;
+    display: grid;
+    grid-template-columns: 2% 98%;
+  }
+  .experience_layout {
+    color: rgb(255, 255, 255);
+  }
+  .side_border {
+    // height: 100%;
+    grid-template-rows: 10% 90%;
+  }
+  .line {
+    margin-left: 5px;
+    height: 86%;
+    border-left: 1px solid rgb(255, 255, 255);
+  }
+}
+
+@mixin experience_about {
+  padding: 0 10px;
+  display: grid;
+  grid-template-rows: 20% 16% 8% 56%;
+  .designation {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(252, 155, 155);
+  }
+  .college {
+    font-size: 14px;
+  }
+  .peroid {
+    font-size: 10px;
+  }
+  .details {
+    font-size: 12px;
+    padding-top: 10px;
+  }
+}
+@mixin expertise_block_detail {
+  padding: 10px;
+  .expertise {
+    font-size: 14px;
+    // text-align: justify;
+    line-height: 20px;
+    font-weight: bold;
+    color: rgb(252, 155, 155);
+  }
+  .details {
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: justify;
+    line-height: 20px;
+  }
+  .hr_bottom {
+    margin-top: 20px;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0)
+    );
+  }
+}
+
+
+
+
+
+//Expertise End
+
+/*************************************************************************************************************
+
+**************************************************************************************************************/
+//Achievement Start
+
+@mixin achievement_main_block {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 28rem;
+  background-image: $profile_bg_img_body;
+  background-size: 100% 100%;
+  padding: 3rem 9rem;
+  grid-gap: 30px;
+
+  .experience {
+    background-color: rgba(49, 156, 170, 0);
+    border-radius: 5px;
+    padding: 10px;
+    height: 22rem;
+    color: whitesmoke;
+    box-shadow: 0px 0px 3px 3px rgba(180, 180, 180, 0.164);
+  }
+
+  .experience_heading {
+    margin: 10px 20px 10px 20px;
+    padding-bottom: 8px;
+    font-size: 15px;
+    text-transform: capitalize;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.575);
+  }
+  .head{
+    width: max-content;
+    height: max-content;
+    border-radius: 5px;
+    text-align: center;
+    color: $profile_color_yellow;
+    padding:5px;
+    background-image: linear-gradient(to right,#88035eb0, #470031b6);
+  }
+}
+
+
+
+
+//Achievement End 
+/*************************************************************************************************************
+
+**************************************************************************************************************/
+
+//Research Start 
+
+@mixin research_main_block {
+  height: 20rem;
+  background-image: $profile_bg_img_body;
+  background-size: 100% 100%;
+  padding: 1.5rem 0;
+  // div{
+  //   border: 1px solid grey;
+  // }
+  .research_heading {
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    // text-transform: uppercase;
+  }
+}
+.research_head{
+  background-image: linear-gradient(to right,#88035eb0, #470031b6);
+  padding:5px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+@mixin research_main_block_box {
+  display: inline-block;
+  position: relative;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+@mixin research_box1 {
+  padding-top: 40px;
+  color: white;
+  background-color: $profile_dim_blue;
+  box-shadow: 0px 0px 2px 2px rgba(1, 5, 44, 0.082);
+  height: 11rem;
+  width: 22rem;
+  margin-top: 30px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  line-height: 20px;
+  padding-left: 25px;
+  .sub_box {
+    width: 85%;
+    height: 100%;
+  }
+  .child_box {
+    padding-top: 5px;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    .child_box_text {
+      text-align: left;
+      white-space: pre-wrap;
+      font-size: 12px;
+    }
+    .child_box_number {
+      font-size: 15px;
+      font-weight: bold;
+      color: rgba(255, 248, 189, 0.808);
+    }
+  }
+}
+@mixin research_box2 {
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  top: 8px;
+  left: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.849);
+  font-weight: bold;
+  background-color: #68014680;
+  z-index: 1;
+  border-radius: 8px;
+}
+@mixin research_box3 {
+  display: flex;
+  align-items: center;
+  // justify-content: left;
+  // padding-left: 10px;
+  color: whitesmoke;
+  text-align: center;
+  white-space: pre-wrap;
+  font-size: 12px;
+  width: 225px;
+  height: 48px;
+  position: absolute;
+  top: 17px;
+  left: 100px;
+  border-radius: 3px;
+  background: linear-gradient(
+    to left,
+    #ff8bd825,
+    #ff8bd871
+  );
+}
+
+
+//Research End 
+
+/*************************************************************************************************************
+
+**************************************************************************************************************/
+//Gallery Start 
+
+@mixin profile_gallery_main_block {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  height: 35rem;
+  background-image: $profile_bg_img_body;
+  background-size: 100% 100%;
+  padding: 3rem 7rem;
+  grid-gap: 30px;
+
+  .experience {
+    background-color: rgba(49, 156, 170, 0);
+    border-radius: 5px;
+    height: 30rem;
+    color: whitesmoke;
+    box-shadow: 0px 0px 3px 3px rgba(180, 180, 180, 0.164);
+  }
+
+  .experience_heading {
+    margin: 10px 20px 10px 20px;
+    padding-bottom: 8px;
+    font-size: 15px;
+    text-transform: capitalize;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.575);
+
+  }
+  .head{
+    width: max-content;
+    height: max-content;
+    border-radius: 5px;
+    text-align: center;
+    padding:5px;
+    color: $profile_color_yellow;
+    background-image: linear-gradient(to right,#88035eb0, #470031b6);
+
+  }
+  .experience_detail {
+    margin: 20px;
+    height: 10rem;
+    display: grid;
+    grid-template-columns: 2% 98%;
+  }
+  .experience_layout {
+    color: rgb(255, 255, 255);
+  }
+  .side_border {
+    // height: 100%;
+    grid-template-rows: 10% 90%;
+  }
+  .line {
+    margin-left: 5px;
+    height: 86%;
+    border-left: 1px solid rgb(255, 255, 255);
+  }
+}
+
+@mixin profile_gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+  grid-auto-rows: 200px;
+  grid-template-rows: repeat(2, 200px);
+  padding: 1rem;
+}
+@mixin profile_gallery_photo_bg {
+  background-color: white;
+  padding: 7px;
+  border-radius: 8px;
+}
+@mixin profile_gallery_gallery_img {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+@mixin profile_certificate {
+  padding: 1rem 1.5rem;
+}
+@mixin profile_prestigous_cert {
+  margin-left: 10px;
+  width: 260px;
+  min-height: 200px;
+  max-height: 350px;
+  box-shadow: 0px 6px 5px rgb(0 0 0 / 40%);
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+//Gallery End 
+
+/*************************************************************************************************************
+
+**************************************************************************************************************/
+//Footer Start 
+
+@mixin profile_footer_block {
+  height: 60px;
+  background-color: rgba(0, 14, 41, 0.432);
+  font-size: 13px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+@mixin profile_footer_block_section1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white ;
+}
+@mixin profile_footer_block_section2 {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white ;
+  font-size: 12px;
+}
+
+
+//Footer End 
+
+/*************************************************************************************************************
+
+**************************************************************************************************************/
+/*************************************************************************************************************/
+
+
+@mixin profile_watermark {
+  height: 2.4rem;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255 255 255 / 50%);
+  background-color: rgb(41 0 4 / 87%);
+}
+
+
+
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/************ STUDENT PROFILE START *******************************/
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+//Student Profile Watermark Start
+
+@mixin student_profile_watermark {
+  height: 3rem;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $stud_pro_watermark_color ;
+  background-color: $stud_pro_watermark_bg;
+}
+
+//Student Profile Watermark Start
+
+
+
+//Student Profile Block Start
+
+@mixin student_profile_main_block {
+  height: 55rem;
+  background-image: $stud_pro_bg_img_header;
+  background-size: 100% 100%;
+  display: grid;
+  grid-template-rows: 35% 25% 40%;
+}
+
+@mixin student_profile_block1 {
+  display: grid;
+  grid-template-rows: 20% 50% 30%;
+}
+
+@mixin student_profile_block1_header {
+  position: relative;
+  background-color: $stud_pro_navy;
+  color:$stud_pro_white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-family: "Noto Sans JP", sans-serif;
+}
+.student_profile_block1_img {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 20px;
+  top: 5px;
+}
+.student_profile_block1_login {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 16px;
+  a {
+    text-decoration: none;
+    color: white;
+    i {
+      color: rgb(255, 255, 255) !important;
+      font-size: 16px;
+      margin-right: 5px;
+    }
+    button {
+      background-color: rgb(255, 187, 0);
+      color: rgb(0, 0, 0);
+      height: 25px;
+      width: 50px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+    }
+  }
+}
+@mixin student_profile_block1_info {
+  display: grid;
+  grid-template-columns: 20% 50% 30%;
+  padding: 0 4rem 0 12rem;
+  background-color:$stud_pro_dim_blue;
+}
+@mixin student_profile_block1_info_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+  }
+}
+@mixin student_profile_block1_info_detail {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  line-height: 28px;
+  padding-top: 5px;
+
+  .name {
+    color: rgb(255, 187, 0);
+    font-size: 19px;
+  }
+
+  .number,
+  .email {
+    font-size: 15px;
+    color: rgb(191, 197, 224);
+  }
+  .designation {
+    font-size: 14px;
+    color: $stud_pro_heading;
+  }
+}
+
+@mixin student_profile_block1_address {
+  padding: 7px 0 0 24rem;
+  font-size: 15px;
+  background-color: rgb(142 180 227 / 10%);
+  color: rgb(205, 214, 255);
+}
+@mixin student_profile_block2 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 1rem 5rem 1rem 5rem;
+  background-color: rgb(142 180 227 / 10%);
+}
+// @mixin child_two_sub1_box {
+//   display: grid;
+//   grid-template-rows: 15% 10% 45% 30%;
+//   background-color:$stud_pro_dim_blue;
+//   margin: 1rem;
+// }
+@mixin student_profile_block2_section1_box {
+  // background-color: $stud_pro_bg_line;
+  color: rgb(205, 214, 255);
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+@mixin student_profile_block2_section1 {
+  height: 19rem;
+  border-radius: 20px;
+  display: grid;
+  grid-template-rows: 10% 10% 80%;
+  background-color:$stud_pro_dim_blue;
+  margin: 1rem 3rem;
+}
+@mixin student_profile_block2_section3 {
+  // display: grid;
+  // grid-template-rows: 50% 50%;
+}
+@mixin student_profile_block2_section3_ref2 {
+  margin-top: 1rem;
+}
+@mixin student_profile_block2_section3_ref1_student_profile_block2_section3_ref2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    margin: 0 7px 0 7px;
+    height: 35px;
+    width: 35px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border-radius: groove;
+    color: white;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.144);
+    i {
+      font-size: 16px;
+    }
+  }
+  .phone {
+    background-color: rgb(79, 79, 255);
+  }
+  .mail {
+    background-color: #ea4335;
+  }
+  .sms {
+    background-color: rgb(79, 79, 255);
+  }
+  .whatsapp {
+    background-color: #42e861;
+  }
+  .send {
+    background-color: rgb(79, 79, 255);
+  }
+  .fb {
+    background-color: #0e8cf1;
+  }
+  .yt {
+    background-color: #ff0000;
+  }
+  .twitter {
+    background-color: #1da1f2;
+  }
+  .linkedin {
+    background-color: #0073b2;
+  }
+  .insta {
+    background-color: purple;
+  }
+}
+@mixin student_profile_block2_section4 {
+  width: 40%;
+  display: grid;
+  margin: 0 0 0 6rem;
+  grid-template-columns: 50% 50%;
+}
+@mixin student_profile_block2_section4_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    width: 160px;
+    height: 40px;
+    // background-color: $stud_pro_btn_bg;
+    background-color: rgb(255, 187, 0);
+    color: rgb(3, 8, 34);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $stud_pro_dim_blue;
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px 1px rgba(155, 144, 144, 0.247);
+  }
+  .btn_resume_sp {
+    margin-top: 0;
+  }
+  .btn_share {
+    margin-top: 0;
+  }
+}
+@mixin student_profile_block2_section2 {
+  background-color: $stud_pro_bg_line;
+  color: rgb(255, 187, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin student_profile_block3_section1 {
+  // margin-top: 20px;
+  height: 15rem;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  background-color:$stud_pro_dim_blue;
+}
+@mixin student_profile_block3_section1_img {
+  display: grid;
+  grid-template-rows: 10% 90%;
+  font-size: 18px;
+  color: rgb(205, 214, 255);
+  padding-top: 15px;
+}
+.border {
+  border-right: 1px solid gray;
+}
+.student_profile_block3_career_head {
+  p {
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    color: rgb(255, 187, 0);
+    background-color: $stud_pro_bg_line;
+  }
+}
+.student_profile_block3_career_detail {
+  padding: 2rem;
+  .about_detail {
+    color: rgb(205, 214, 255);
+    font-size: 14px;
+    text-align: justify;
+  }
+}
+.student_profile_block3_career_detail_divs {
+  font-size: 14px;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: repeat(5, 20%);
+}
+.student_profile_block3_career_detail_div_grid {
+  grid-gap: 10px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+@mixin student_profile_block2_skill_detail {
+  color:$stud_pro_white;
+  padding: 10px;
+  .skills {
+    font-size: 14px;
+    text-align: justify;
+    line-height: 20px;
+    font-weight: bold;
+    color: $stud_pro_heading;
+  }
+  .details {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: left;
+    line-height: 20px;
+  }
+  .hr_bottom {
+    margin-top: 20px;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0)
+    );
+  }
+}
+
+
+
+//Student Profile Block End
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+//Student Expertise Block Start
+
+@mixin student_expertise_main_block {
+  display: grid;
+  grid-template-columns: 33% 34% 33%;
+  height: 35rem;
+  background-image: $stud_pro_bg_img_body;
+  background-size: 100% 100%;
+  padding: 3rem 7rem 3rem 4rem;
+  grid-gap: 30px;
+
+  .sp_experience {
+    background-color:$stud_pro_dim_blue;
+    border-radius: 5px;
+    height: 30rem;
+    color: whitesmoke;
+    box-shadow: 0px 0px 3px 3px rgba(180, 180, 180, 0.164);
+  }
+
+  .sp_experience_heading {
+    margin: 20px 20px 10px 20px;
+    padding-bottom: 8px;
+    // font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.575);
+  }
+  .sp_experience_detail {
+    margin: 20px 20px 50px 20px;
+    height: 15rem;
+    display: grid;
+    grid-template-columns: 2% 98%;
+  }
+  .sp_experience_layout {
+    color: rgba(251, 255, 0, 0.795);
+  }
+  .sp_side_border {
+    // height: 100%;
+    grid-template-rows: 10% 90%;
+  }
+  .sp_line {
+    margin-left: 5px;
+    height: 86%;
+    border-left: 1px solid rgba(233, 247, 192, 0.87);
+  }
+}
+
+@mixin stud_pro_about_expirience {
+  padding: 0 10px;
+  display: grid;
+  grid-template-rows: 15% 15% 15% 55%;
+  .sp_designation {
+    font-size: 15px;
+    font-weight: bold;
+    color: $stud_pro_heading !important;
+  }
+  .sp_college {
+    font-size: 14px;
+    text-align: justify;
+  }
+  .sp_peroid {
+    margin-top: 10px;
+    font-size: 10px;
+  }
+  .sp_details {
+    font-size: 14px;
+    padding-top: 10px;
+    text-align: justify;
+  }
+}
+@mixin stud_pro_expertise_detail {
+  padding: 10px;
+  .sp_expertise {
+    font-size: 14px;
+    text-align: justify;
+    line-height: 20px;
+    font-weight: bold;
+    color: $stud_pro_heading;
+  }
+  .sp_details {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: left;
+    line-height: 20px;
+  }
+  .sp_hr_bottom {
+    margin-top: 20px;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0)
+    );
+  }
+}
+
+
+
+
+
+//Student Expertise Block End
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+//Gallery Block Start
+
+@mixin student_profile_gallery_main_block {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  height: 35rem;
+  background-image: $stud_pro_bg_img_body;
+  background-size: 100% 100%;
+  padding: 3rem 6rem;
+  grid-gap: 30px;
+  display: flex;
+  justify-content: center;
+
+  .experience {
+    background-color:$stud_pro_dim_blue;
+    border-radius: 5px;
+    height: 30rem;
+    color: whitesmoke;
+    box-shadow: 0px 0px 3px 3px rgba(180, 180, 180, 0.164);
+  }
+
+  .experience_heading {
+    margin: 20px 20px 10px 20px;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.575);
+  }
+}
+@mixin sp_gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+  grid-auto-rows: 200px;
+  grid-template-rows: repeat(2, 200px);
+  padding: 1rem;
+}
+@mixin sp_photo_bg {
+  background-color: white;
+  padding: 7px;
+  border-radius: 8px;
+}
+@mixin sp_certificate {
+  padding: 1rem 1.5rem;
+}
+@mixin sp_gallery_img {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+
+@mixin sp_prestigous_cert {
+  margin-left: 10px;
+  width: 260px;
+  min-height: 200px;
+  max-height: 350px;
+  box-shadow: 0px 6px 5px rgb(0 0 0 / 40%);
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+//Gallery Block End
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+
+//Student Footer Block Start
+
+
+@mixin footer_main_block {
+  height: 60px;
+  background-color: rgba(44, 83, 138, 0.164);
+  font-size: 13px;
+  width: 100%;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+@mixin footer_main_block_section1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+@mixin footer_main_block_section2 {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+}
+.book_img{
+  position: fixed;bottom: 5rem;right: 3rem;width: 100px;height: 100px;border-radius: 100%;z-index: 99;
+  background-color: #ffffffd3;
+}
+
+
+
+//Student Footer Block End
+
+
+
+
+/* *********************************************************************************************************** */
+/************ STUDENT PROFILE END *******************************/
+/* *********************************************************************************************************** */
+
+
+
+/* *********************************************************************************************************** */
+/************ BUSINESS PROFILE START *******************************/
+/* *********************************************************************************************************** */
+//Business Profile Watermark Start
+
+@mixin business_profile_watermark {
+  height: 3rem;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $stud_pro_watermark_color ;
+  background-color: $stud_pro_watermark_bg;
+}
+
+
+//Business Profile Watermark End
+
+/*************************************************************************************************************/
+
+//Business Profile Start 
+
+@mixin business_profile_main_block {
+  height: 30rem;
+  // background-image: $stud_pro_bg_img_header;
+  // background-size: 100% 100%;
+  color: black;
+  display: grid;
+  grid-template-rows: 35% 25% 40%;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.205);
+}
+
+
+@mixin business_profile_block1 {
+  height: 20rem;
+  display: grid;
+  grid-template-rows: 20% 50% 30%;
+}
+
+
+@mixin business_profile_block1_header {
+  position: relative;
+  // background-color: $stud_pro_navy;
+  // color:$stud_pro_white;
+  background-color: white;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.233);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-family: "Noto Sans JP", sans-serif;
+}
+.business_profile_block1_img {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 20px;
+  top: 5px;
+}
+.business_profile_block1_login {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 16px;
+  a {
+    text-decoration: none;
+    // color: white;
+    i {
+      // color: rgb(255, 255, 255) !important;
+      font-size: 16px;
+      margin-right: 5px;
+    }
+    button {
+      background-color: rgb(255, 187, 0);
+      color: rgb(0, 0, 0);
+      height: 25px;
+      width: 50px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+    }
+  }
+}
+@mixin business_profile_block1_info {
+  background-color: white;
+  margin-top: 5rem;
+  display: grid;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.473);
+  grid-template-columns: 20% 50% 30%;
+  padding: 0 4rem 0 12rem;
+  // background-color:$stud_pro_dim_blue;
+}
+@mixin business_profile_block1_info_img {
+  background-color: white;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 2px solid rgba(0, 0, 0, 0.192);
+  // border-right: 2px solid rgba(0, 0, 0, 0.192);
+  img {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.24);
+  }
+}
+@mixin business_profile_block1_info_detail {
+  background-color: white;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  line-height: 28px;
+  padding-top: 5px;
+
+  .name {
+    // color: rgb(255, 187, 0);
+    font-size: 19px;
+  }
+
+  .number,
+  .email {
+    font-size: 15px;
+    // color: rgb(191, 197, 224);
+  }
+  .designation {
+    font-size: 14px;
+    // color: $stud_pro_heading;
+  }
+}
+
+@mixin business_profile_block1_address {
+  margin-top: 5rem;
+  padding: 7px 0 0 24rem;
+  font-size: 15px;
+  // background-color: rgb(142 180 227 / 10%);
+  // color: rgb(205, 214, 255);
+}
+@mixin business_profile_block2 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 1rem 5rem 1rem 5rem;
+  background-color: rgb(142 180 227 / 10%);
+}
+// @mixin child_two_sub1_box {
+//   display: grid;
+//   grid-template-rows: 15% 10% 45% 30%;
+//   background-color:$stud_pro_dim_blue;
+//   margin: 1rem;
+// }
+@mixin business_profile_block2_section1_box {
+  // background-color: $stud_pro_bg_line;
+  // color: rgb(205, 214, 255);
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+@mixin business_profile_block2_section1 {
+  height: 19rem;
+  border-radius: 20px;
+  display: grid;
+  grid-template-rows: 10% 10% 80%;
+  // background-color:$stud_pro_dim_blue;
+  margin: 1rem 3rem;
+}
+@mixin business_profile_block2_section3 {
+  background-color: white;
+  z-index: 9;
+  // border-left: 1px solid rgba(128, 128, 128, 0.534);
+  height: 10rem;
+  // margin: .5rem 0;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.233);
+  // display: grid;
+  // grid-template-rows: 50% 50%;
+}
+@mixin business_profile_block2_section3_ref2 {
+  margin-top: 1rem;
+}
+@mixin business_profile_block2_section3_ref1_business_profile_block2_section3_ref2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    margin: 0 7px 0 7px;
+    height: 35px;
+    width: 35px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border-radius: groove;
+    color: white;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.144);
+    i {
+      font-size: 16px;
+    }
+  }
+  .phone {
+    background-color: rgb(79, 79, 255);
+  }
+  .mail {
+    background-color: #ea4335;
+  }
+  .sms {
+    background-color: rgb(79, 79, 255);
+  }
+  .whatsapp {
+    background-color: #42e861;
+  }
+  .send {
+    background-color: rgb(79, 79, 255);
+  }
+  .fb {
+    background-color: #0e8cf1;
+  }
+  .yt {
+    background-color: #ff0000;
+  }
+  .twitter {
+    background-color: #1da1f2;
+  }
+  .linkedin {
+    background-color: #0073b2;
+  }
+  .insta {
+    background-color: purple;
+  }
+}
+
+@mixin business_profile_block2_section2 {
+  background-color: $stud_pro_bg_line;
+  color: rgb(255, 187, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin business_profile_block3_section1 {
+  // margin-top: 20px;
+  height: 15rem;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  background-color:$stud_pro_dim_blue;
+}
+@mixin business_profile_block3_section1_img {
+  display: grid;
+  grid-template-rows: 10% 90%;
+  font-size: 18px;
+  color: rgb(205, 214, 255);
+  padding-top: 15px;
+}
+.business_profile_block3_career_head {
+  p {
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    color: rgb(255, 187, 0);
+    background-color: $stud_pro_bg_line;
+  }
+}
+.business_profile_block3_career_detail {
+  padding: 2rem;
+  .about_detail {
+    color: rgb(205, 214, 255);
+    font-size: 14px;
+    text-align: justify;
+  }
+}
+.business_profile_block3_career_detail_divs {
+  font-size: 14px;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: repeat(5, 20%);
+}
+.business_profile_block3_career_detail_div_grid {
+  grid-gap: 10px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+
+
+//Business Profile End
+//Business About Start
+
+@mixin business_about_main_section{
+  min-height: 20rem;
+  max-height: fit-content;
+  display: grid;
+  grid-template-columns: 45% 55%;
+
+}
+@mixin business_about_img_section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .business_about_img{
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.288);
+    border-radius: 20px;
+    width: 250px;
+    height: 250px;
+  }
+}
+.business_about_hr{
+  display: none;
+}
+@mixin business_about_info{
+  display: grid;
+  grid-template-rows: 20% 10% 10% 40% 20%;
+  .business_about_us{
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+  }
+  .business_com_name{
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+  }
+  .business_slogan{
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+  }
+  .business_text{
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+  }
+  .business_readme{
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+  }
+}
+//Business About End
+
+//Business Offer Start
+
+@mixin business_offer_main_block {
+  min-height: 20rem;
+  max-height: fit-content;
+  display: grid;
+  grid-template-rows: 20% 80%;
+
+}
+@mixin business_offer_heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+@mixin business_offer_products{
+  // display: inline-block;
+  padding: 1rem 2rem;
+}
+@mixin business_offer_products_list_section {
+  display: flex;flex-direction: row;width: max-content;
+}
+@mixin business_offer_product_list{
+  min-height: 10rem;
+  width: 20rem;
+  max-height: fit-content;
+  display: grid;
+  grid-template-rows: 40% 25% 35%;
+  margin-right: 2rem;
+  border-radius: 10px;
+  border: 3px solid rgba(128, 128, 128, 0.473);
+  
+}
+@mixin business_product_name{
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+font-size: 23px;
+border-bottom: 2px solid rgba(128, 128, 128, 0.473);
+}
+@mixin business_product_quantity {
+  display: flex;
+justify-content: center;
+align-items: center;
+font-size: 22px;
+text-transform: uppercase;
+border-bottom: 2px solid rgba(128, 128, 128, 0.473);
+
+}
+@mixin business_product_pricing{
+  display: grid;
+  grid-template-columns: 55% 45%;
+  .business_product_offer_price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-right: 2px solid rgba(128, 128, 128, 0.473);
+
+  }
+  .business_product_mrp{
+    display: flex;
+    justify-content: center;
+align-items: center;
+font-size: 16px;
+text-decoration: line-through;
+  }
+}
+
+//Business Offer End
+
+//Business Product Start
+@mixin business_product_main_block{
+  min-height: 20rem;
+  max-height: fit-content;
+  // display: grid;
+  // grid-template-rows: 20% 80%;
+}
+@mixin business_product_heading{
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+@mixin business_product_range_section{
+  max-height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 40px;
+  grid-auto-rows: 150px;
+  grid-template-rows: repeat(2, 150px);
+ padding: 2rem 4rem;
+}
+@mixin business_product_range{
+  min-height: 10rem;
+  max-height: fit-content;
+  width: 20rem;
+  transform: skew(3deg);
+  display: grid;
+  grid-template-columns: 30% 70%;
+  border: 5px solid rgba(128, 128, 128, 0.233);
+}
+@mixin business_product_range_img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid rgba(128, 128, 128, 0.473);
+  img{
+    width: 70px;
+    height: 70px;
+  }
+}
+@mixin business_product_range_info {
+  display: grid;
+  grid-template-rows: 40% 25% 35%;
+}
+@mixin bpri_name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 23px;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.473);
+}
+@mixin bpri_quantity{
+  display: flex;
+justify-content: center;
+align-items: center;
+font-size: 22px;
+text-transform: uppercase;
+border-bottom: 2px solid rgba(128, 128, 128, 0.473);
+}
+@mixin bpri_pricing {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  .bpri_pricing_offer_price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-right: 2px solid rgba(128, 128, 128, 0.473);
+  }
+  .bpri_pricing_mrp{
+    display: flex;
+    justify-content: center;
+align-items: center;
+font-size: 16px;
+text-decoration: line-through;
+  }
+}
+
+//Business Product End
+
+//Business Footer Start
+
+@mixin business_footer_main_block {
+  height: 60px;
+  background-color: rgba(44, 83, 138, 0.164);
+  font-size: 13px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin business_footer_main_block_section1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+@mixin business_footer_main_block_section2 {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+}
+
+
+//Business Footer End
+
+
+
+
+/* *********************************************************************************************************** */
+/************ BUSINESS PROFILE END *******************************/
+/* *********************************************************************************************************** */
+
+

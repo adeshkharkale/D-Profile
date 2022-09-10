@@ -1,0 +1,57 @@
+<div class="content-wrapper">
+    <div class="body_header_row">
+        <label class="body_header" style="color: #30476d85;">Create Event
+        </label>
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <form autocomplete="off">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" id="card_top_border">
+                            <div class="card-header border-transparent">
+                                <div class="row">
+                                    <!-- <label class="h_label">My Events</label> -->
+                                    <div class="row button_help ">
+                                        <button mat-raised-button color="primary" style="width: 100%;"
+                                        (click)="openCreateEventPopup()"  class="next_button">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Create New Event
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12" style="overflow-y: auto;">
+                                        <table class="table" id="event_table">
+                                            <thead>
+                                                <tr >
+                                                    <th class="table_row_head" style="text-align:center;width: 5%;">No</th>
+                                                    <th class="table_row_head" style="width: 35%;">Event Name</th>
+                                                    <th class="table_row_head" style="width: 15%;">Date</th>
+                                                    <th class="table_row_head" style="width: 30%;">Event Link</th>
+                                                    <th class="table_row_head" style="width: 5%;"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let e of objSEventService.arrEvent; let i = index;">
+                                                    <td class="table_row" style="text-align:center;width: 5%;">{{ i+1 }}</td>
+                                                    <td class="table_row" style="width: 35%;">{{ e.event }}</td>
+                                                    <td class="table_row" style="width: 15%;">{{ e.date | date }} - {{ e.date | date:'shortTime' }}</td>
+                                                    <td class="table_row" style="width: 30%;">{{ e.eventLink }}</td>
+                                                    <td class="table_row" style="width: 5%;"><a style="cursor: pointer;"
+                                                    (click)="removeEvent(e.eventId)">
+                                                        <i class="fa fa-times" style="color: red; cursor: pointer;"></i>
+                                                     </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,105 @@
+<style>
+    .style-two {
+        border: 0;
+        height: 1px;
+        width: 97%;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+
+    @media (max-width: 768px) {
+        .style-two {
+            border: 0;
+            height: 1px;
+            width: 80%;
+            margin-left: 1rem;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        }
+    }
+</style>
+<div class="content-wrapper">
+    <div class="body_header_row">
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <form autocomplete="off">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" id="card_top_border" style="height: 100%;display: grid; align-items: center;">
+                            <div class="card-header border-transparent" style="display: flex;justify-content: center;">
+                                <div class="row form_layout_help">
+                                    <form autocomplete="off" #form="ngForm">
+                                        <label class="h_label">Your Feedback Is Valuable For Us.</label>
+                                        <div class="row" style="margin-top: 10px;">
+                                            <div class="col-md-7">
+                                                <div class="form-group">
+                                                    <input type="text" readonly class="form-input" placeholder="Your Name"
+                                                        [value]="regName">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <input type="text" readonly class="form-input" placeholder="Contact"
+                                                        [value]="mobile">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="style-two" />
+                                        <div class="row" style="margin-top: 20px;">
+                                            <div class="col-md-8">
+                                                <p>How would you rate our product?</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <select type="text" class="form-input" name="productRateId"
+                                                        #productRateId required>
+                                                        <option *ngFor="let ft of objSFeedbackService.arrFeedback"
+                                                            [value]="ft.productRateId">{{ft.productFeedback}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <p>How would rate our services?</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <select type="text" class="form-input" name="productRateId"
+                                                        #serviceRateId required>
+                                                        <option *ngFor="let ft of objSFeedbackService.arrFeedback"
+                                                            [value]="ft.productRateId">{{ft.productFeedback}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="style-two" style="margin-top: 20px;" />
+                                        <div class="row row_margin">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <div style="padding-bottom: 10px;">
+                                                    </div>
+                                                    <label class="introduction" style="font-weight: normal;">(only 250 characters allowed)</label>
+                                                    <textarea name="feedback" placeholder="Enter your valuable feedback..."
+                                                        class="form-input textarea_help" name="remark" required maxlength="250"
+                                                        [(ngModel)]="objSFeedbackService.pDtlFeedback.remark">
+                                                    </textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row button_help row_margin">
+                                            <button mat-raised-button color="primary" style="width: 100px;"
+                                            [disabled]="form.form.invalid"
+                                            (click)="saveFeedback(productRateId.value,serviceRateId.value)">
+                                                Submit
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

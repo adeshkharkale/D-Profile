@@ -1,0 +1,44 @@
+<div class="content-wrapper">
+    <div class="body_header_row">
+        <label class="body_header" style="color: #30476d85;">Subscriber Payments
+        </label>
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <form autocomplete="off">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" id="card_top_border">
+                            <div class="card-header border-transparent" style="overflow-y: auto;">
+                                <table class="table" id="exp_table">
+                                    <thead>
+                                        <tr>
+                                            <th class="table_row_head" style="width: 5%;">Sr</th>
+                                            <th class="table_row_head" style="width: 20%;">Name</th>
+                                            <th class="table_row_head" style="width: 10%;">Email</th>
+                                            <th class="table_row_head" style="width: 10%;">Mobile</th>
+                                            <th class="table_row_head" style="width: 10%;">Payment Id</th>
+                                            <th class="table_row_head" style="width: 25%;">Package</th>
+                                            <th class="table_row_head" style="width: 10%;">Purchase Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let sp of objSPaymentDetailsService.arrPaymentDetails; let i = index">
+                                            <td class="table_row" style="width: 5%;">{{ i+1 }}</td>
+                                            <td class="table_row" style="width: 20%;">{{ sp.regName }}</td>
+                                            <td class="table_row" style="width: 10%;">{{ sp.emailId }}</td>
+                                            <td class="table_row" style="width: 10%;">{{ sp.mobileNo }}</td>
+                                            <td class="table_row" style="width: 10%;">{{ sp.razorPaymentId }}</td>
+                                            <td class="table_row" style="width: 25%;">{{ sp.package }}</td>
+                                            <td class="table_row" style="width: 10%;">{{ sp.paymentDate | date }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

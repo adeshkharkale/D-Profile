@@ -1,0 +1,54 @@
+<div class="experience_main_block">
+    <div class="experience">
+        <div class="experience_heading">
+            <p class="head"> My Experience </p>
+        </div>
+        <marquee direction="up" onmouseover="this.stop();" style="height: 75%;" onmouseout="this.start();">
+           <div *ngFor="let experience of objSProfileService.arrExperience">
+            <div class="experience_detail">
+                <div class="side_border">
+                    <div class="experience_layout">
+                        <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="line">
+
+                    </div>
+                </div>
+                <div class="experience_about">
+                    <div class="designation">
+                        {{experience.designation}}
+                    </div>
+                    <div class="college">
+                        {{experience.college}}
+                    </div>
+                    <div class="peroid">
+                        {{experience.from | date}} - {{experience.to | date}}
+                    </div>
+                    <div class="details">
+                        {{experience.description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        </marquee>
+    </div>
+    <div class="experience">
+        <div class="experience_heading">
+            <p class="head"> My Expertise</p>
+        </div>
+        <marquee direction="up" onmouseover="this.stop();" style="height: 75%;" onmouseout="this.start();">
+            <div *ngFor="let expertise of objSProfileService.arrExpertise">
+                <div class="expertise_block_detail">
+                    <p class="expertise">
+                        <i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;
+                        {{expertise.expertise}}
+                    </p>
+                    <p class="details">
+                        {{expertise.description}}</p>
+                    <hr id="hr_bottom">
+                </div>
+            </div>
+        </marquee>
+    </div>
+
+</div>

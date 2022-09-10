@@ -1,0 +1,44 @@
+<form autocomplete="off" #form="ngForm">
+    <label class="h_label">Youtube Video Tutorials</label>
+    <div class="row" style="margin-top: 10px;">
+        <div class="col-md-12">
+            <div class="form-group">
+                <div class="col-md-14">
+                    <div class="form-group">
+                        <mat-label class="e_label">Tutorial Name</mat-label>
+                        <mat-select matInput type="text" class="form-input"
+                        name="tutorialTypeId" [(ngModel)]="objSTutorialService.pTutorial.tutorialTypeId">
+                          <mat-option [value]="0">None</mat-option>
+                          <mat-option *ngFor="let t of objSTutorialService.arrTutorialType"
+                          [value]="t.tutorialTypeId">
+                              {{t.tutorialType}}
+                          </mat-option>
+                        </mat-select>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <mat-label class="e_label">Video Title</mat-label>
+                <input matInput type="text" class="form-input" placeholder="ex:Tutorial Part - 1"
+                name="videoTitle" [(ngModel)]="objSTutorialService.pTutorial.videoTitle">
+            </div>
+        </div>
+    </div>
+    <div class="row row_margin">
+        <div class="col-md-12">
+            <div class="form-group">
+                <mat-label class="e_label">Youtube Video Code</mat-label>
+                <input matInput type="text" class="form-input" placeholder="ex:ah-_TTEzDVA"
+                name="youtubeVideoCode" [(ngModel)]="objSTutorialService.pTutorial.youtubeVideoCode">
+            </div>
+        </div>
+    </div>
+    <div class="row button_help row_margin">
+        <button mat-raised-button mat-dialog-close color="primary" style="width: 100px;"
+        [disabled]="form.form.invalid" (click)="onSubmit()">
+            Submit
+        </button>
+    </div>
+</form>

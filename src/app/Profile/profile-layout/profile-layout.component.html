@@ -1,0 +1,42 @@
+<div style="position: relative;height: 100%;width: 100%;">
+    <a href="http://despa.co.in" target="_blank"><img class="book_img" 
+            src="assets/img/book.png" alt=""></a>
+    <div *ngIf="somecondition" class="overlay_bool">
+        <div class="popup_bool">
+            <button class="close_bool" (click)="closeModalDialog()">&times;</button>
+        </div>
+
+    </div>
+    <div>
+        <app-profile></app-profile>
+    </div>
+    <div class="profile_watermark">
+        - DESPA TECHNOLOGIES PVT LTD -
+    </div>
+    <div>
+        <app-expertise></app-expertise>
+    </div>
+    <div class="profile_watermark">
+        - DESPA TECHNOLOGIES PVT LTD -
+    </div>
+    <div>
+        <app-achievement></app-achievement>
+    </div>
+    <div class="profile_watermark">
+        - DESPA TECHNOLOGIES PVT LTD -
+    </div>
+    <div>
+        <app-research></app-research>
+    </div>
+    <div class="profile_watermark">
+        - DESPA TECHNOLOGIES PVT LTD -
+    </div>
+    <div>
+        <app-gallery></app-gallery>
+    </div>
+
+    <div style="position: sticky;bottom: 0; background-color: rgb(41 0 4 / 87%);width: 100%;">
+        <app-profile-footer></app-profile-footer>
+    </div>
+</div>
+<!-- <router-outlet></router-outlet> -->

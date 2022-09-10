@@ -1,0 +1,198 @@
+
+.main{
+    margin-top: 18px;
+}
+.main_qr{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height:74vh;background-color:#012060;
+
+}
+.main_qr_section1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.qr_logo{
+    width: 80%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .despa_logo{
+        border-radius: 20px;
+        width: 140px;
+        height: 140px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+            img{
+                width: 100px;
+                height: 100px;
+            }
+        }
+    .slogan{
+        margin-top: 20px;
+        text-transform: capitalize;
+        color: rgba(212, 165, 9, 0.911);
+        font-size: 16px;
+        font-style: italic;
+    }
+
+}
+.despa_url{
+    position: absolute;
+    font-size: 16px;
+    color: rgba(129, 167, 248, 0.801);
+    bottom: 8%;
+    // right: 35%;
+    align-items: center;
+}
+
+.main_qr_section2{
+    display: grid;
+    grid-template-rows: 10% 50% 8% 8% 8% 10%;
+}
+.qr_heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(129, 167, 248, 0.801);
+    font-size: 20px;
+    // font-weight: bold;
+    
+}
+.qr_canvas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.qr_number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(212, 165, 9, 0.911);
+    font-size: 18px;
+}
+.qr_name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 22px;
+}
+.qr_product_name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(129, 167, 248, 0.801);
+    font-size: 20px;
+}
+.qr_hint{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(212, 165, 9, 0.911);
+    font-size: 14px;
+}
+.qr_watermark{
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .main{
+        margin-top: 10px;
+    }
+    .main_qr{
+       display: flex;
+       flex-direction: column;
+        height:100%;
+        padding: 1rem 0;
+    
+    }
+
+    .qr_logo{
+        width: 80%;
+        border-radius: 20px;
+        .despa_logo{
+            border-radius: 20px;
+            width: 75px;
+            height: 75px;
+                img{
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+        .slogan{
+            margin-top: 5px;
+            font-size: 12px;
+        }
+    
+    }
+    .despa_url{
+    display: none;
+    }
+
+    .main_qr_section2{
+        position: relative;
+        display: grid;
+        height: 56vh;
+        grid-template-rows: 8% 50% 12% 10% 10% 10%;
+ 
+    }
+    .qr_heading{
+        align-items: flex-start;
+        color: rgba(129, 167, 248, 0.801);
+        font-size: 18px;
+        // font-weight: bold;
+        
+    }
+    .qr_number{
+        font-size: 17px;
+    }
+    .qr_name{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 19px;
+    }
+    .qr_product_name{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(129, 167, 248, 0.801);
+        font-size: 22px;
+    }
+    .qr_hint{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(212, 165, 9, 0.911);
+        font-size: 13px;
+    }
+    .qr_watermark{
+        height: 3rem;
+        position: absolute;
+        background-color: rgba(129, 167, 248, 0.801) ;
+        width: 100%;
+        top: 27%;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 22% 56% 22%;
+
+        .p_left{
+            text-align: center;
+        }
+        .p_right{
+            text-align: center;
+        }
+    }
+
+
+}

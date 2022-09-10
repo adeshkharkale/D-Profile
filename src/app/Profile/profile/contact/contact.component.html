@@ -1,0 +1,24 @@
+<div class="contact_me_parent">
+    <button class="contact_popup_close" mat-dialog-close> <i class="fa fa-times"></i> </button>
+<div class="contact_me_head">
+    Contact Me
+</div>
+<div class="contact_me_details">
+    <form action="">
+        <input class="contactMe_name" type="text" placeholder="Name" maxlength="40"
+        name="contactName" [(ngModel)]="objSContactDetailsService.pContactDetail.contactName">
+
+        <input class="contactMe_mail" type="email" placeholder="Email" maxlength="35"
+        name="contactEmail" [(ngModel)]="objSContactDetailsService.pContactDetail.contactEmail">
+
+        <input class="contactMe_contact" type="text" placeholder="Contact" maxlength="10"
+        name="contactMobile" [(ngModel)]="objSContactDetailsService.pContactDetail.contactMobile">
+
+        <textarea class="contactMe_message" placeholder="Meassage" maxlength="100"
+        name="contactMessage" [(ngModel)]="objSContactDetailsService.pContactDetail.contactMessage">
+        </textarea>
+
+        <button class="contactMe_btn" type="button" (click)="onSubmit()"> Submit </button>
+    </form>
+</div>
+</div>

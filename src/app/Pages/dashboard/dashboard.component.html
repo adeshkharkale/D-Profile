@@ -1,0 +1,250 @@
+<div class="content-wrapper">
+    <div class="body_header_row">
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <form autocomplete="off">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" id="card_top_border">
+                            <div class="card-header border-transparent" style="padding-top: 1.5rem;">
+                                <p class="welcome_heading">Welcome, {{ regName }}</p>
+                                <form id="Form1" runat="server">
+                                    <div class="main_parent">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="block1">
+                                                    <div class="block_child_one">
+                                                        <div class="block_sub_child_one">
+                                                            {{ total }}
+                                                        </div>
+                                                        <div class="block_sub_child_two">
+                                                            My Referals
+                                                        </div>
+                                                        <div class="block_sub_child_three">
+                                                            Share with your friends
+                                                        </div>
+                                                    </div>
+                                                    <div class="block_child_two">
+                                                        <div class="block_child_two_img">
+                                                            <img src="assets/img/share_logo.png"
+                                                                style="width: 70%; height: 60%" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="block2">
+                                                    <div class="block_child_one">
+                                                        <div class="block_sub_child_one">
+                                                            {{ active }}
+                                                        </div>
+                                                        <div class="block_sub_child_two">
+                                                            Active Referals
+                                                        </div>
+                                                        <div class="block_sub_child_three">
+                                                            These referals are active
+                                                        </div>
+                                                    </div>
+                                                    <div class="block_child_two">
+                                                        <div class="block_child_two_img">
+                                                            <img src="assets/img/active_user_logo.png"
+                                                                style="width: 100%; height: 55%" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="block3">
+                                                    <div class="block_child_one">
+                                                        <div class="block_sub_child_one">
+                                                            {{ earning }}
+                                                        </div>
+                                                        <div class="block_sub_child_two">
+                                                            My Earnings
+                                                        </div>
+                                                        <div class="block_sub_child_three">
+                                                            My Earning Points
+                                                        </div>
+                                                    </div>
+                                                    <div class="block_child_two">
+                                                        <div class="block_child_two_img">
+                                                            <img src="assets/img/rupees_logo.png"
+                                                                style="width: 70%; height: 60%" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-top:1rem;display: flex;justify-content: center;text-align: center;">
+                                            <div class="row row_height">
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_left_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a routerLink="/create_profile">
+                                                                Create / Edit D'Profile
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_right_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fas fa-user-tie"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a (click)="show()">
+                                                                Show My D'Profile
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row row_height">
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_left_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fas fa-calendar-alt"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a routerLink="/event">
+                                                                My Events
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_right_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fa fa-users" aria-hidden="true"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a routerLink="/share">
+                                                                Share D'Profile
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row row_height">
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_left_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fa fa-money" aria-hidden="true"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a routerLink="/refer">
+                                                                Refer & Earn
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_right_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a routerLink="/enquiry_list">
+                                                                Received Enquiry
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row row_height">
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_left_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fa fa-comments" aria-hidden="true"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a routerLink="/feedback">
+                                                                Feedback
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_right_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fa fa-tasks" aria-hidden="true"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a routerLink="/suggestion">
+                                                                Suggestions
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row row_height">
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_left_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fa fa-question" aria-hidden="true"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a routerLink="/help">
+                                                                Help Desk
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_right_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fa fa-key" aria-hidden="true"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a routerLink="/changepass">
+                                                                Change Password
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

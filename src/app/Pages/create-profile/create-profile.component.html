@@ -1,0 +1,1001 @@
+<div class="content-wrapper">
+    <div class="body_header_row">
+        <label class="body_header" style="color: #30476d85;">Create / Edit Profile
+        </label>
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <form autocomplete="off">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" id="card_top_border">
+                            <div class="card-header border-transparent">
+                                <div class="row">
+                                    <mat-horizontal-stepper class="col-md-12 " labelPosition="bottom" #stepper>
+                                        <mat-step errorMessage="Is required!" [completed]="false">
+                                            <form autocomplete="off" #form="ngForm">
+                                                <ng-template matStepLabel>About You</ng-template>
+
+                                                <!-- First Step Start Here -->
+                                                <div class="form_layout" id="form_layout_mobile">
+                                                    <p class="section_heading">Personal Details</p>
+                                                    <p class="introduction">( Please provide personal information here )</p>
+                                                </div>
+                                                <div class="form_layout">
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">I am _
+                                                                </mat-label>
+                                                                <mat-select matNativeControl class="form-input"
+                                                                name="ProfileTypeId" 
+                                                                [(ngModel)]="objSCreateProfileService.pCreateProfile.profileTypeId">
+                                                                <mat-option [value]="0">Select</mat-option>
+                                                                    <mat-option
+                                                                        *ngFor="let c of objSCreateProfileService.arrmstProfileType"
+                                                                        [value]="c.profileTypeId">
+                                                                        {{ c.profileType }}
+                                                                    </mat-option>
+                                                                </mat-select>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Your Name
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="40"
+                                                                    name="name" required
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.name"
+                                                                    [value]="objSCreateProfileService.pCreateProfile.name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-7" id="row_top_mobile">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Qualification
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="40"
+                                                                    name="qualification" required
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.qualification"
+                                                                    [value]="objSCreateProfileService.pCreateProfile.qualification">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Designation
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="40"
+                                                                    name="designation" required
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.designation"
+                                                                    [value]="objSCreateProfileService.pCreateProfile.designation">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-7">
+                                                            <div class="form-group" id="row_top_mobile">
+                                                                <mat-label class="form_input_header_text">School |
+                                                                    College | Institute | Organization
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="70"
+                                                                    name="college" required
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.college"
+                                                                    [value]="objSCreateProfileService.pCreateProfile.college">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group clg_name_textbox" >
+                                                                <mat-label class="form_input_header_text" onfocus="this.select();"
+                                                                    style="margin-left: 7px;">Address
+                                                                </mat-label>
+                                                                <input type="text" 
+                                                                    maxlength="80" class="form-input"  name="address" required
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.address"
+                                                                    [value]="objSCreateProfileService.pCreateProfile.address">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group" id="row_top_dob">
+                                                                <mat-label class="form_input_header_text">Country
+                                                                </mat-label>
+                                                                <mat-select matNativeControl class="form-input"
+                                                                name="countryId" #countryId
+                                                                [(ngModel)]="objSCreateProfileService.pCreateProfile.countryId"
+                                                                (selectionChange)="getStatesByCountryId(countryId.value)">
+                                                                    <mat-option [value]="0">Other</mat-option>
+                                                                    <mat-option
+                                                                        *ngFor="let c of objSCreateProfileService.arrCountry"
+                                                                        [value]="c.countryId">
+                                                                        {{ c.country }}
+                                                                    </mat-option>
+                                                                </mat-select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group" id="row_top_dob">
+                                                                <mat-label class="form_input_header_text">State
+                                                                </mat-label>
+                                                                <mat-select matNativeControl class="form-input"
+                                                                name="stateId" #stateId
+                                                                [(ngModel)]="objSCreateProfileService.pCreateProfile.stateId"
+                                                                (selectionChange)="getDistrictsByStateId(stateId.value)">
+                                                                    <mat-option [value]="0">Other</mat-option>
+                                                                    <mat-option
+                                                                        *ngFor="let s of objSCreateProfileService.arrState"
+                                                                        [value]="s.stateId">
+                                                                        {{ s.state }}
+                                                                    </mat-option>
+                                                                </mat-select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group" id="row_top_mobile">
+                                                                <mat-label class="form_input_header_text">District
+                                                                </mat-label>
+                                                                <mat-select matNativeControl class="form-input"
+                                                                    name="districtId"
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.districtId">
+                                                                    <mat-option [value]="0">Other</mat-option>
+                                                                    <mat-option
+                                                                        *ngFor="let district of objSCreateProfileService.arrDistrict"
+                                                                        [value]="district.districtId">
+                                                                        {{ district.district }}
+                                                                    </mat-option>
+                                                                </mat-select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="form-group" id="row_top_mobile">
+                                                                <mat-label class="form_input_header_text">Pin Code
+                                                                </mat-label>
+                                                                <input type="number" class="form-input" name="pincode"
+                                                                    required
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.pincode"
+                                                                    [value]="objSCreateProfileService.pCreateProfile.pincode">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group" id="row_top_dob">
+                                                                <mat-label class="form_input_header_text">Date Of Birth
+                                                                </mat-label>
+                                                                <input type="date" class="form-input" maxlength="10"
+                                                                    required
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.dob"
+                                                                    [value]="objSCreateProfileService.pCreateProfile.dob">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3" >
+                                                            <div class="form-group" id="row_top_mobile">
+                                                                <mat-label class="form_input_header_text">Mobile
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="10"
+                                                                    name="mobileNo" required readonly
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.mobileNo">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group" id="row_top_mobile">
+                                                                <mat-label class="form_input_header_text">WhatsApp
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="10"
+                                                                    name="whatsapp"
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.whatsapp"
+                                                                    [value]="objSCreateProfileService.pCreateProfile.whatsapp">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group" id="row_top_mobile">
+                                                                <mat-label class="form_input_header_text">Email Id
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="30"
+                                                                    name="emailId" required readonly
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.emailId">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br />
+                                                <div class="form_layout" id="form_layout_mobile_2">
+                                                    <p class="section_heading">
+                                                        Social Connectivity 
+                                                        <label class="how_to_use">(How to upload social media account url watch video-&nbsp; 
+                                                        <a target="_blank" href="https://www.youtube.com/playlist?list=PLbw_srbqLG3aLD-OFH-UaGTiRKqzixqGK">हिंदी</a> &nbsp;/&nbsp;<span>
+                                                            <a target="_blank" href="https://youtube.com/playlist?list=PLbw_srbqLG3YWHoQWoSp8us9bZvOr-Ue6">मराठी </a>
+                                                        </span> )
+                                                    </label>
+                                                    </p>
+                                                </div>
+                                                <div class="form_layout">
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Facebook
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="60"
+                                                                    name="facebook" placeholder="Paste URL Here..."
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.facebook"
+                                                                    [value]="objSCreateProfileService.pCreateProfile.facebook">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4" id="row_top_mobile">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Twitter
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="60"
+                                                                    name="twitter" placeholder="Paste URL Here..."
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.twitter"
+                                                                    [value]="objSCreateProfileService.pCreateProfile.twitter">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4" id="row_top_mobile">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Instagram
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="60"
+                                                                    name="instagram" placeholder="Paste URL Here..."
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.instagram"
+                                                                    [value]="objSCreateProfileService.pCreateProfile.instagram">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">LinkedIn
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="60"
+                                                                    name="linkedin" placeholder="Paste URL Here..."
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.linkedin"
+                                                                    [value]="objSCreateProfileService.pCreateProfile.linkedin">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4" id="row_top_mobile">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">YouTube
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="60"
+                                                                    name="youtube" placeholder="Paste URL Here..."
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.youtube"
+                                                                    [value]="objSCreateProfileService.pCreateProfile.youtube">
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4" id="row_top_mobile">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Telegram
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="60"
+                                                                    name="telegram" placeholder="Paste URL Here..."
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.telegram"
+                                                                    [value]="objSCreateProfileService.pCreateProfile.telegram">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br />
+                                                <div class="form_layout" id="form_layout_mobile_2">
+                                                    <p class="section_heading">Career Profile
+                                                        <span class="introduction">(only 300 characters allowed)</span>
+                                                    </p>
+                                                </div>
+                                                <div class="form_layout" style="border: none;">
+                                                    <div class="row" style="margin-bottom: -18px;">
+                                                        <div class="col-md-12" style="margin-top: -15px;">
+                                                            <div class="form-group">
+                                                                <textarea class="career_profile_textarea" onfocus="this.select();"
+                                                                    maxlength="300" name="careerProfile"
+                                                                    [(ngModel)]="objSCreateProfileService.pCreateProfile.careerProfile"
+                                                                    [value]="objSCreateProfileService.pCreateProfile.careerProfile">
+                                                                </textarea>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12"
+                                                        style="display: grid; justify-content: right;">
+                                                        <button mat-raised-button color="primary" matStepperNext
+                                                            [disabled]="form.form.invalid" class="next_button"
+                                                            (click)="onAboutYouNext()">
+                                                            Save & Next
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </mat-step>
+                                        <!-- First Step End Here -->
+
+                                        <!-- Second Step Start Here -->
+
+                                        <mat-step errorMessage="Is required!" [completed]="false">
+                                            <form autocomplete="off">
+                                                <ng-template matStepLabel>Experience</ng-template>
+                                                <div class="form_layout" id="form_layout_mobile">
+                                                    <p class="section_heading">My Experience</p>
+                                                    <p class="introduction">( Please provide information about your
+                                                        total experience in the given fields. )</p>
+                                                </div>
+                                                <div class="form_layout">
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group clg_name_textbox">
+                                                                <mat-label class="form_input_header_text">School |
+                                                                    College | Institute | Organization 
+                                                                   
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="70"
+                                                                    #college>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Designation
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="40"
+                                                                    #designation>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3" id="row_top_mobile">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">From
+                                                                </mat-label>
+                                                                <input type="date" class="form-input" #from>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3" id="row_top_mobile">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">To
+                                                                </mat-label>
+                                                                <input type="date" class="form-input" #to>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group clg_name_textbox">
+                                                                <mat-label class="form_input_header_text"
+                                                                    style="margin-left: 7px;">Description
+                                                                    <span class="introduction">(only 150 characters allowed)</span>
+                                                                </mat-label>
+                                                                <textarea  style="height: 50px;" onfocus="this.select();"
+                                                                    maxlength="150" class="form-input" 
+                                                                    id="textarea_mobile" #description>
+                                                                </textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile"
+                                                        style="display: grid;justify-content: right;margin-right: 1px;">
+                                                        <button mat-raised-button color="primary" class="next_button"
+                                                            (click)="pushExperienceArray(college.value,designation.value,from.value,to.value,description.value);
+                                                            college.value='';designation.value='';from.value='';to.value='';description.value=''">
+                                                            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-md-12" style="margin-top: 25px;overflow-x: scroll;">
+                                                        <table class="table " id="exp_table" >
+                                                            <thead>
+                                                                <tr>
+                                                                    <th width="4%" scope="col" class="table_row_head"
+                                                                        >Sr.</th>
+                                                                    <th width="25%" scope="col" class="table_row_head"
+                                                                        >Organization</th>
+                                                                    <th width="18%" scope="col" class="table_row_head"
+                                                                        >Designation</th>
+                                                                    <th width="10%" scope="col" class="table_row_head"
+                                                                        >From</th>
+                                                                    <th width="10%" scope="col" class="table_row_head"
+                                                                        >To</th>
+                                                                    <th width="30%" scope="col" class="table_row_head"
+                                                                        >Details</th>
+                                                                    <th width="3%" class="table_row_head"
+                                                                        style="color: red;"
+                                                                        ></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr
+                                                                    *ngFor="let exp of objSCreateProfileService.arrExperience; let i = index">
+                                                                    <td class="table_row"
+                                                                        style="width: 4%;text-align: center;">
+                                                                        {{ i+1 }}
+                                                                    </td>
+                                                                    <td class="table_row" style="width: 25%;">{{ exp.college
+                                                                        }}</td>
+                                                                    <td class="table_row" style="width: 18%;">{{
+                                                                        exp.designation }}</td>
+                                                                    <td class="table_row" style="width: 10%;">{{ exp.from |
+                                                                        date }}</td>
+                                                                    <td class="table_row" style="width: 10%;">{{ exp.to |
+                                                                        date }}</td>
+                                                                    <td class="table_row" style="width: 30%;">{{
+                                                                        exp.description }}</td>
+                                                                    <td class="table_row"
+                                                                        style="width: 3%;text-align: center;">
+                                                                        <a style="cursor: pointer;"
+                                                                            (click)="removeExperience(i)">
+                                                                            <i class="fa fa-times"
+                                                                                style="color: red; cursor: pointer;">
+                                                                            </i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <p class="how_to_use" style="font-weight: bold;">Scroll Right >></p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" id="btn_div">
+                                                        <div></div>
+                                                        <div style="margin-right: 10px;">
+                                                            <button mat-raised-button color="primary"
+                                                                matStepperPrevious class="next_button_1">
+                                                                Back
+                                                            </button>
+                                                        </div>
+                                                        <div style="margin-left: 10px;">
+                                                            <button mat-raised-button color="primary" matStepperNext
+                                                                class="next_button" (click)="onExperienceNext()">
+                                                                Next
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </mat-step>
+
+                                        <!-- Second Step End Here -->
+
+                                        <!-- Third Step Start Here -->
+                                        <mat-step errorMessage="Is required!" [completed]="false">
+                                            <form autocomplete="off">
+                                                <ng-template matStepLabel>Expertise</ng-template>
+                                                <div class="form_layout" id="form_layout_mobile">
+                                                    <p class="section_heading">My Expertise</p>
+                                                    <p class="introduction">( Please provide information about your area
+                                                        of expertise / mastery / potential in the given fields. )</p>
+                                                </div>
+                                                <div class="form_layout">
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">
+                                                                    Expertise  <span class="introduction">(only title)</span>
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="40"
+                                                                    #expertise>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text"
+                                                                    style="margin-left: 7px;">Description
+                                                                </mat-label>
+                                                                <span class="introduction">(only 150 characters allowed)</span>
+                                                                <textarea type="text" style="height: 50px;"
+                                                                maxlength="150" class="form-input" onfocus="this.select();"
+                                                                id="textarea_mobile" #expertiseDescription>
+                                                                </textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile"
+                                                        style="display: grid;justify-content: right;margin-right: 1px;">
+                                                        <button mat-raised-button color="primary" class="next_button"
+                                                            (click)="pushExpertiseArray(expertise.value,expertiseDescription.value);
+                                                            expertise.value='';expertiseDescription.value='';">
+                                                            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-md-12" style="margin-top: 25px;overflow-x: scroll;">
+                                                        <table class="table" id="expertise_table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th  width="5%" scope="col" class="table_row_head">Sr.</th>
+                                                                    <th  width="40%" scope="col" class="table_row_head">Expertise</th>
+                                                                    <th width="50%" scope="col" class="table_row_head">Details</th>
+                                                                    <th  width="5%" scope="col" class="table_row_head"></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr
+                                                                    *ngFor="let expert of objSCreateProfileService.arrExpertise; let i = index">
+                                                                    <td class="table_row"
+                                                                    style="width: 5%;text-align: center;"> {{ i+1 }}</td>
+                                                                    <td class="table_row" style="width: 40%;">{{ expert.expertise }}</td>
+                                                                    <td class="table_row" style="width: 50%;">{{ expert.description }}</td>
+                                                                    <td class="table_row"
+                                                                    style="width: 10%;text-align: center;">
+                                                                        <a style="cursor: pointer;"
+                                                                            (click)="removeExpertise(i)">
+                                                                            <i class="fa fa-times"
+                                                                                style="color: red; cursor: pointer;"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <p class="how_to_use" style="font-weight: bold;">Scroll Right >></p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" id="btn_div">
+                                                        <div></div>
+                                                        <div style="margin-right: 10px;">
+                                                            <button mat-raised-button color="primary"
+                                                                matStepperPrevious class="next_button_1">Back</button>
+                                                        </div>
+                                                        <div style="margin-left: 10px;"> 
+                                                            <button mat-raised-button color="primary" matStepperNext
+                                                                class="next_button" (click)="onExpertiseNext()">
+                                                                Next
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </mat-step>
+
+                                        <!-- Third Step End Here -->
+
+                                        <!-- Fourth Step Start Here -->
+
+                                        <mat-step errorMessage="Is required!" [completed]="false">
+                                            <form autocomplete="off">
+                                                <ng-template matStepLabel>Memberships</ng-template>
+                                                <div class="form_layout" id="form_layout_mobile">
+                                                    <p class="section_heading">My Prestigious Memberships</p>
+                                                    <p class="introduction">( Please provide information about
+                                                        memberships of various organizations in the given fields. )</p>
+                                                </div>
+                                                <div class="form_layout">
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">
+                                                                    Membership <span class="introduction">(only title)</span>
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="40"
+                                                                    #membership>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text"
+                                                                    style="margin-left: 7px;">
+                                                                    Description
+                                                                </mat-label>
+                                                                <span class="introduction">(only 150 characters allowed)</span>
+                                                                <textarea type="text" style="height: 50px;"
+                                                                    maxlength="150" class="form-input" onfocus="this.select();"
+                                                                    id="textarea_mobile" #membershipDescription>
+                                                                </textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile"
+                                                        style="display: grid;justify-content: right;margin-right: 1px;">
+                                                        <button mat-raised-button color="primary" class="next_button"
+                                                            (click)="pushMembershipArray(membership.value,membershipDescription.value);
+                                                            membership.value='';membershipDescription.value='';">
+                                                            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-md-12" style="margin-top: 25px;overflow-x: scroll;">
+                                                        <table class="table " id="member_table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th width="5%" scope="col" class="table_row_head"
+                                                                        >Sr.</th>
+                                                                    <th width="35%" scope="col" class="table_row_head"
+                                                                        >Memberships</th>
+                                                                    <th width="55%" scope="col" class="table_row_head"
+                                                                        >Details</th>
+                                                                    <th width="5%" class="table_row_head"
+                                                                        ></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr
+                                                                    *ngFor="let member of objSCreateProfileService.arrMembership; let i = index">
+                                                                    <td class="table_row" 
+                                                                        style="text-align: center;">
+                                                                        {{ i+1 }}
+                                                                    </td>
+                                                                    <td class="table_row"  style="width: 35%;">{{
+                                                                        member.membership }}</td>
+                                                                    <td class="table_row" style="width: 45%;">{{
+                                                                        member.description }}</td>
+                                                                    <td class="table_row"
+                                                                        style="text-align: center;">
+                                                                        <a style="cursor: pointer;"
+                                                                            (click)="removeMembership(i)">
+                                                                            <i class="fa fa-times"
+                                                                                style="color: red; cursor: pointer;"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <p class="how_to_use" style="font-weight: bold;">Scroll Right >></p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" id="btn_div">
+                                                        <div></div>
+                                                        <div style="margin-right: 10px;">
+                                                            <button mat-raised-button color="primary"
+                                                                matStepperPrevious class="next_button_1">Back</button>
+                                                        </div>
+                                                        <div style="margin-left: 10px;">
+                                                            <button mat-raised-button color="primary" matStepperNext
+                                                                class="next_button" (click)="onMembershipNext()">
+                                                                Next
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </mat-step>
+
+                                        <!-- Fourth Step End Here -->
+
+                                        <!-- Fifth Step Start Here -->
+
+                                        <mat-step errorMessage="Is required!" [completed]="false">
+                                            <form autocomplete="off">
+                                                <ng-template matStepLabel>Awards</ng-template>
+                                                <div class="form_layout" id="form_layout_mobile">
+                                                    <p class="section_heading">My Awards</p>
+                                                    <p class="introduction">( Please provide information about your
+                                                        individual achievements / awards / rewards / appreciations in
+                                                        the given fields. )</p>
+                                                </div>
+                                                <div class="form_layout">
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">
+                                                                    Award <span class="introduction">(only title)</span>
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="40"
+                                                                    #award>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text"
+                                                                    style="margin-left: 7px;">
+                                                                    Description
+                                                                    <span class="introduction">(only 150 characters allowed)</span>
+                                                                </mat-label>
+                                                                <textarea type="text" style="height: 50px;"
+                                                                    maxlength="150" class="form-input" onfocus="this.select();"
+                                                                    id="textarea_mobile" #awardDescription>
+                                                                </textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile"
+                                                        style="display: grid;justify-content: right;margin-right: 1px;">
+                                                        <button mat-raised-button color="primary" class="next_button"
+                                                            (click)="pushAwardArray(award.value,awardDescription.value);
+                                                            award.value='';awardDescription.value='';">
+                                                            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-md-12" style="margin-top: 25px;overflow-x: scroll;">
+                                                        <table class="table " id="exp_table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th width="5%" scope="col" class="table_row_head"
+                                                                        >Sr.</th>
+                                                                    <th width="35%" scope="col" class="table_row_head"
+                                                                        >Award</th>
+                                                                    <th width="55%" scope="col" class="table_row_head"
+                                                                        >Details</th>
+                                                                    <th width="5%" class="table_row_head"
+                                                                        ></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr
+                                                                    *ngFor="let award of objSCreateProfileService.arrAwards; let i = index">
+                                                                    <td class="table_row"
+                                                                        style="text-align: center;">
+                                                                        {{ i+1 }}
+                                                                    </td>
+                                                                    <td class="table_row" style="width: 35%;">{{ award.award
+                                                                        }}</td>
+                                                                    <td class="table_row" style="width: 45%;">{{
+                                                                        award.description }}</td>
+                                                                    <td class="table_row"
+                                                                        style="text-align: center;">
+                                                                        <a style="cursor: pointer;"
+                                                                            (click)="removeAward(i)">
+                                                                            <i class="fa fa-times"
+                                                                                style="color: red; cursor: pointer;"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <p class="how_to_use" style="font-weight: bold;">Scroll Right >></p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" id="btn_div">
+                                                        <div></div>
+                                                        <div style="margin-right: 10px;">
+                                                            <button mat-raised-button color="primary"
+                                                                matStepperPrevious class="next_button_1">
+                                                                Back
+                                                            </button>
+                                                        </div>
+                                                        <div style="margin-left: 10px;">
+                                                            <button mat-raised-button color="primary" matStepperNext
+                                                                class="next_button" (click)="onAwardsNext()">
+                                                                Next
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </mat-step>
+                                        <!-- Fifth Step End Here -->
+
+                                        <!-- Sixth Step Start Here -->
+
+                                        <mat-step errorMessage="Is required!" [completed]="false">
+                                            <form autocomplete="off">
+                                                <ng-template matStepLabel>Research</ng-template>
+                                                <div class="form_layout" id="form_layout_mobile">
+                                                    <p class="section_heading">My Research Profile</p>
+                                                    <p class="introduction">( Please provide information about your
+                                                        books published / papers / articles / monographs / patents /
+                                                        copyrights in the given fields. )</p>
+                                                </div>
+                                                <div class="form_layout">
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-7">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Research
+                                                                    Profile <span class="introduction">(dropdown menu for selection)</span>
+                                                                </mat-label>
+                                                                <mat-select matNativeControl class="form-input"
+                                                                    name="researchProfile" #researchProfile 
+                                                                    (selectionChange)="profileSelect(researchProfile.value)"
+                                                                    [(ngModel)]="objSCreateProfileService.pResearchProfile.researchProfileId">
+                                                                    <mat-option [value]="0">None</mat-option>
+                                                                    <mat-option
+                                                                        *ngFor="let profile of objSCreateProfileService.arrResearchProfile"
+                                                                        [value]="profile.researchProfileId">
+                                                                        {{ profile.researchProfile }}
+                                                                    </mat-option>
+                                                                </mat-select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12" style="margin-top: 25px;overflow-x: scroll;">
+                                                            <table class="table"  id="research_table">
+                                                                <tbody>
+                                                                    <tr
+                                                                        *ngFor="let subject of objSCreateProfileService.arrResearchProfileSubject">
+                                                                        <td style="width: 10%; text-align: center;"  class="table_row">
+                                                                            <input type="checkbox" disabled="true"
+                                                                                [checked]="subject.isActive">
+                                                                        </td>
+                                                                        <td style="width: 80%; text-align: left;"  class="table_row">
+                                                                            {{ subject.researchProfileSubject }}
+                                                                        </td>
+                                                                        <td style="width: 10%; text-align: center;"  class="table_row">
+                                                                                <input  type="number" class="research_input"
+                                                                                    style="text-align: right;"
+                                                                                    [value]="subject.totalCount"
+                                                                                    (keyup)="checkCheckbox($event, subject.researchProfileSubjectId)">
+                                                                       
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <!-- <p class="how_to_use" style="font-weight: bold;">Scroll Right >></p> -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile"
+                                                        style="display: grid;justify-content: right;">
+                                                        <button mat-raised-button color="primary" class="next_button"
+                                                            (click)="addResearch()">
+                                                            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" id="btn_div">
+                                                        <div></div>
+                                                        <div style="margin-right: 10px;">
+                                                            <button mat-raised-button color="primary"
+                                                                matStepperPrevious class="next_button_1">Back</button>
+                                                        </div>
+                                                        <div style="margin-left: 10px;">
+                                                            <button mat-raised-button color="primary" matStepperNext
+                                                                class="next_button">Next</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </mat-step>
+                                        <!-- Sixth Step End Here -->
+
+                                        <!-- Seventh Step Start Here -->
+
+                                        <mat-step errorMessage="Is required!" [completed]="false">
+                                            <form autocomplete="off">
+                                                <ng-template matStepLabel>Other</ng-template>
+                                                <div class="form_layout">
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <button class="btn btn-default" id="upload_button_step1"
+                                                                    (click)="uploadProfilePhoto()">
+                                                                    <i class="fa fa-upload"
+                                                                        aria-hidden="true"></i>&nbsp;&nbsp;Profile
+                                                                    Photo
+                                                                </button>
+                                                                <img [src]="objSCreateProfileService.pCreateProfile.profilePhotoURL || defaultPhoto"
+                                                                    id="image_upload" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <button class="btn btn-default" id="upload_button_step1"
+                                                                    (click)="uploadLogo()">
+                                                                    <i class="fa fa-upload"
+                                                                        aria-hidden="true"></i>&nbsp;&nbsp;College
+                                                                    Logo
+                                                                </button>
+                                                                <img [src]="objSCreateProfileService.pCreateProfile.collegeLogoURL || defaultLogo"
+                                                                    id="image_upload" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <div class="form-group arrange_div">
+                                                                <div>
+                                                                    <input style="display: none" type="file"
+                                                                        #hiddenfileinput
+                                                                        (change)="uploadResume($event)">
+                                                                    <button class="btn btn-default btn_resume"
+                                                                        id="upload_button_step1"
+                                                                        (click)="hiddenfileinput.click()">
+                                                                        <i class="fa fa-upload"
+                                                                            aria-hidden="true"></i>&nbsp;&nbsp;My
+                                                                        Resume
+                                                                    </button>
+                                                                </div>
+                                                                <div> <a [href]="objSCreateProfileService.pCreateProfile.resumeURL"
+                                                                        target="_blank">
+                                                                        <img src="assets/img/pdf.png"
+                                                                            id="image_upload" />
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form_layout" style="border: none;">
+                                                    <div class="row">
+                                                        <div class="col-md-6 ">
+                                                            <div class="form_layout_gallery">
+                                                                <div class="form-group " id="row_top_mobile">
+                                                                    <button class="btn btn-default" id="upload_button"
+                                                                        (click)="uploadCertificate()">
+                                                                        <i class="fa fa-upload"
+                                                                            aria-hidden="true"></i>&nbsp;Upload
+                                                                        Certificates
+                                                                    </button>
+                                                                </div>
+                                                                <div class="gallery_table">
+                                                                    <table class="table table-bordered" style="width: 100%;">
+                                                                        <tbody>
+                                                                            <tr *ngFor="let c of objSCreateProfileService.arrCertificate">
+                                                                                <td
+                                                                                    style="width: 90%;text-align: center;">
+                                                                                    <img [src]="c.certificateURL"
+                                                                                        height="80px" width="80px">
+                                                                                </td>
+                                                                                <td
+                                                                                    style="width: 10%;text-align: center;">
+                                                                                    <a style="cursor: pointer;"
+                                                                                        (click)="removeCertImage(c.certificateId)">
+                                                                                        <i class="fa fa-times"
+                                                                                            style="color: red; cursor: pointer;"></i>
+                                                                                    </a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 ">
+                                                            <div class="form_layout_gallery_2">
+                                                                <div class="form-group " id="row_top_mobile">
+                                                                    <button class="btn btn-default" id="upload_button"
+                                                                        (click)="uploadGalleryPhoto()">
+                                                                        <i class="fa fa-upload"
+                                                                            aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Upload
+                                                                        Photos
+                                                                    </button>
+                                                                </div>
+                                                                <div class="gallery_table">
+                                                                    <table class="table table-bordered" style="width: 100%;">
+                                                                        <tbody>
+                                                                            <tr *ngFor="let g of objSCreateProfileService.arrGallery">
+                                                                                <td
+                                                                                    style="width: 90%;text-align: center;">
+                                                                                    <img [src]="g.photoURL"
+                                                                                        height="80px" width="80px">
+                                                                                </td>
+                                                                                <td
+                                                                                    style="width: 10%;text-align: center;">
+                                                                                    <a style="cursor: pointer;"
+                                                                                        (click)="removeGalleryImage(g.galleryId)">
+                                                                                        <i class="fa fa-times"
+                                                                                            style="color: red; cursor: pointer;"></i>
+                                                                                    </a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12" id="btn_div">
+                                                        <div></div>
+                                                        <div style="margin-right: 10px;"> 
+                                                            <button mat-raised-button color="primary"
+                                                                matStepperPrevious class="next_button_1">Back</button>
+                                                        </div>
+                                                        <div style="margin-left: 10px;">
+                                                            <button mat-raised-button color="primary" matStepperNext
+                                                                class="next_button"
+                                                                (click)="onClickPreview()">Preview</button>
+                                                        </div>  
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </mat-step>
+                                        <!-- Seventh Step End Here -->
+                                    </mat-horizontal-stepper>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,58 @@
+<div class="student_expertise_main_block">
+    <div class="sp_experience">
+        <div class="sp_experience_heading">
+        <p class="head"> My Internship & Projects</p>
+        </div>
+        <marquee direction="up" onmouseover="this.stop();" style="height: 80%;" onmouseout="this.start();">
+            <div *ngFor="let intern of objStudentProfileService.arrTblInternship">
+                <div class="stud_pro_expertise_detail">
+                    <p class="sp_expertise">
+                        <i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;
+                        {{intern.internship}}
+                    </p>
+                    <p class="sp_details">{{intern.description}}</p>
+                    <hr class="sp_hr_bottom">
+                </div>
+          </div>
+        </marquee>
+    </div>
+
+
+    <div class="sp_experience">
+        <div class="sp_experience_heading">
+            <p class="head">Extra Curriculam Activities</p>
+        </div>
+        <marquee direction="up" onmouseover="this.stop();" style="height: 80%;" onmouseout="this.start();">
+            <div *ngFor="let extra of objStudentProfileService.arrExtraCurriculam">
+            <div class="stud_pro_expertise_detail">
+                <p class="sp_expertise">
+                    <i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;
+                    {{extra.activity}}
+                </p>
+                <p class="sp_details">{{extra.description}}</p>
+                <hr class="sp_hr_bottom">
+            </div>
+            </div>
+        </marquee>
+    </div>
+
+
+    <div class="sp_experience">
+        <div class="sp_experience_heading">
+            <p class="head"> Awards & Achievements</p>
+        </div>
+        <marquee direction="up" onmouseover="this.stop();" style="height: 80%;" onmouseout="this.start();">
+            <div *ngFor="let ach of objStudentProfileService.arrAchievement">
+            <div class="stud_pro_expertise_detail">
+                <p class="sp_expertise">
+                    <i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;
+                    {{ach.award}}
+                </p>
+                <p class="sp_details">{{ach.description}}</p>
+                <hr class="sp_hr_bottom">
+            </div>
+            </div>
+        </marquee>
+    </div>
+
+</div>

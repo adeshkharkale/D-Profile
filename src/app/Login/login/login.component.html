@@ -1,0 +1,34 @@
+<div class="logindiv">
+    <mat-card class="loginlayout" style="border: 1px solid rgba(77, 75, 75, 0.082);
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.1);">
+        <p class="loginhead">Sign In</p>
+        <form #form="ngForm" autocomplete="off" (submit)="login(form)">
+            <div class="formfield">
+                <mat-form-field appearance="outline" class="loginInput">
+                    <mat-label>Email</mat-label>
+                    <input name="email" #email="ngModel" [(ngModel)]="objSUserDataService.pUserData.emailId" matInput
+                        placeholder="Email">
+                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-hint>Enter valid email</mat-hint>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="outline" class="loginInput">
+                    <mat-label>Password</mat-label>
+                    <input type="password" name="password" #password="ngModel"
+                        [(ngModel)]="objSUserDataService.pUserData.password" matInput placeholder="Password">
+                    <mat-icon matSuffix>lock</mat-icon>
+                    <mat-hint>Min 8 characters</mat-hint>
+
+                </mat-form-field>
+            </div>
+            <div class="formfield" class="buttonLayout">
+                <button mat-raised-button class="loginbutton" type="submit" color="primary">Continue</button>
+            </div>
+        </form>
+        <div class="formfield" class="forgotPassword">
+            <i class="fa fa-caret-right" aria-hidden="true"></i>&nbsp;<a class="LD" style="font-weight: bold;" routerLink="register">New User?</a>
+        </div>
+    </mat-card>
+    <div>
+    </div>
+</div>

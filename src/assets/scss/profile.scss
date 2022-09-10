@@ -1,0 +1,1898 @@
+@import "p_mixin";
+@import url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  // font-family: "Comfortaa", cursive;
+  font-family: 'Roboto', sans-serif;
+  // font-family: 'Noto Sans JP', sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+a,button,img{
+  cursor: pointer;
+}
+/* Profile Start*/
+.profile_main_block {
+  @include profile_main_block;
+}
+// Profile Block One Start //
+.profile_block1 {
+  @include profile_block1;
+}
+.profile_block1_header{
+  @include profile_block1_header;
+}
+.profile_block1_header_img{
+  @include profile_block1_header_img;
+}
+.profile_block1_header_login{
+  @include profile_block1_header_login;
+}
+
+
+
+
+
+.profile_block1_details{
+  @include profile_block1_details;
+}
+.profile_block1_user_img{
+  @include profile_block1_user_img;
+}
+.profile_block1_user_detail{
+  @include profile_block1_user_detail;
+}
+.profile_block1_share_buttons{
+  @include profile_block1_share_buttons;
+}
+.profile_block1_ds_button{
+  @include profile_block1_ds_button;
+}
+.profile_block1_address{
+  @include profile_block1_address;
+}
+
+
+// Profile Block One End //
+//profile block two start //
+
+
+.profile_block2 {
+  @include profile_block2;
+}
+.profile_block2_section1,.profile_block2_section2{
+  @include profile_block2_section1_profile_block2_section2;
+}
+.profile_block2_section1_box, .profile_block2_section2_box {
+  @include profile_block2_section1_box_profile_block2_section2_box;
+}
+.profile_block2_section1_box {
+  @include profile_block2_section1_box;
+}
+.profile_block2_section1_box2 {
+  @include profile_block2_section1_box2;
+}
+.profile_block2_section2_box {
+  @include profile_block2_section2_box;
+}
+.profile_block2_section1_box3 {
+  @include profile_block2_section1_box3;
+}
+.profile_block2_section1_box3_links1 {
+  @include profile_block2_section1_box3_links1;
+}
+.profile_block2_section1_box3_links1,.profile_block2_section1_box3_links2{
+  @include profile_block2_section1_box3_links1_profile_block2_section1_box3_links2;
+}
+.profile_block2_section1_box4 {
+  @include profile_block2_section1_box4;
+}
+.profile_block2_section1_box4_btn {
+  @include profile_block2_section1_box4_btn;
+}
+.profile_block2_section2_box2 {
+  @include profile_block2_section2_box2;
+}
+.profile_block2_section2_box3 {
+  @include profile_block2_section2_box3;
+}
+.profile_block2_section2_box3_img {
+  @include profile_block2_section2_box3_img;
+}
+.profile_block2_section2_box3_info {
+  @include profile_block2_section2_box3_info;
+}
+
+
+//profile block two end //
+
+//profile block three start
+
+.profile_block3_section1 {
+  @include profile_block3_section1;
+}
+.profile_block3_section1_img {
+  @include profile_block3_section1_img;
+}
+.profile_block3_section1_detail {
+  @include profile_block3_section1_detail;
+}
+.profile_block3_section1_marquee {
+  @include profile_block3_section1_marquee;
+}
+
+
+
+//profile block three end
+
+
+
+
+
+
+
+
+/* Profile  End*/
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+  /* Profile Component One Start*/
+.profile_main_block {
+  height: 96rem ;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-image: $profile_bg_img_mobile;
+  background-size: 100vh 100vh;
+  background-repeat: repeat-y;
+}
+// Profile Block One Start //
+.profile_block1 {
+  display: grid;
+  grid-template-rows: 10% 69% 20%;
+  height: 35rem;
+  grid-gap: 10px;
+}
+.profile_block1_header{
+  font-size: 18px;
+  border-radius: 10px;
+}
+.profile_block1_header_img{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 30px;
+  top: 33px;
+}
+
+
+  .profile_block1_header_login {
+    position: absolute;
+    right: 30px;
+    top: 40px;
+    font-size: 12px;
+    a {
+      text-decoration: none;
+      color: white;
+      i {
+        color: rgb(255, 255, 255) !important;
+        font-size: 12px;
+      }
+      button {
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 187, 0);
+        height: 20px;
+        width: 40px;
+        font-size: 12px;
+      }
+    }
+  }
+
+
+
+
+
+
+.profile_block1_details {
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0;
+}
+.profile_block1_user_img {
+  img {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+  }
+}
+.profile_block1_user_detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 20px;
+  padding-top: 10px;
+
+  .name {
+    font-size: 19px;
+  }
+  .designation,
+  .number,
+  .email {
+    font-size: 13px;
+  }
+}
+.profile_block1_share_buttons{
+  margin-top: 10px;
+ }
+ .profile_block1_ds_button {
+  button {
+    height: 40px;
+    font-size: 12px;
+  }
+  .btn_share {
+    width: 130px;
+    margin: 0;
+  }
+}
+.profile_block1_address{
+  padding: 10px;
+  font-size: 14px;
+  line-height: 16px;
+  background-color: $profile_dim_blue;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  height: max-content;
+}
+
+// Profile Block One End //
+
+//Profile block two start 
+
+.profile_block2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0;
+  // margin-top: 1rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0);
+}
+.profile_block2_section1,.profile_block2_section2 {
+  height: 17rem;
+}
+.profile_block2_section1_box {
+  margin: 0;
+  grid-template-rows: 10% 10% 55% 10%;
+}
+.profile_block2_section2_box {
+  margin: 20px 0 0 0;
+}
+.f{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.profile_block2_section1_box4_btn {
+  button {
+    height: 40px;
+    font-size: 12px;
+  }
+  .btn_share {
+    width: 130px;
+    margin: 0;
+  }
+}
+.profile_block2_section2_box3_info {
+  line-height: 25px;
+  p {
+    margin: 0 10px 0 10px;
+  }
+}
+
+
+// profile block two end
+
+// profile block three start
+
+.profile_block3_section1 {
+  margin-top: 1rem;
+  height: 24rem !important;
+  display: grid;
+  border-radius: 20px;
+  grid-template-rows: 65% 35%;
+  padding: 0;
+  background-color: $profile_dim_blue;
+}
+.profile_block3_section1_img {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 0;
+  font-size: 16px;
+  color: white;
+  p {
+    text-align: center;
+  }
+  .about_detail {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+}
+
+.profile_block3_section1_detailchild_three {
+  margin-top: 0;
+  font-size: 16px;
+  color: white;
+
+  p {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+}
+.profile_block3_section1_marquee{
+  display: inline-block;
+  height: 4.5rem;
+  width: 15rem;
+  margin-right: 2rem;
+  .marquee {
+    display: grid;
+    grid-template-columns: 22% 78%;
+
+    .marquee_one {
+      display: grid;
+      grid-template-rows: 70% 30%;
+      justify-content: center;
+      align-items: center;
+      // background-color: rgba(71, 177, 145, 0.699);
+      .date {
+        font-size: 26px;
+        // color: rgb(10, 46, 46);
+        font-weight: bold;
+      }
+      .month {
+        font-size: 15px;
+        text-align: center;
+      }
+    }
+    .marquee_two {
+      display: grid;
+      // background-color: rgba(57, 83, 117, 0.315);
+      color: white;
+      grid-template-rows: 75% 25%;
+      div {
+        text-align: justify;
+      }
+      .subject {
+        font-size: 11px;
+        padding: 0;
+        line-height: 20px;
+        word-wrap: break-word;
+      }
+      .time {
+        font-size: 12px;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+// profile block three end
+
+
+
+
+
+
+
+
+/* Profile Component One End*/
+
+}
+
+/*************************************************************************************************************
+
+**************************************************************************************************************/
+//Expertise Start
+
+
+.experience_main_block {
+  @include experience_main_block;
+}
+.experience_about {
+  @include experience_about;
+}
+.expertise_block_detail {
+  @include expertise_block_detail;
+}
+
+
+
+
+
+
+//Expertise Media
+
+
+@media only screen and (max-width: 600px) {
+  .experience_main_block {
+    display: flex !important;
+    flex-direction: column;
+    height: 61rem !important;
+    background-image:profile_ !important;
+    padding: 1rem !important;
+    // grid-gap: 30px;
+
+    .experience {
+      height: 28rem !important;
+      padding: 0.5rem 1rem;
+    }
+
+    .experience_heading {
+      margin: 10px 20px 10px 20px;
+      padding-bottom: 0 !important;
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .experience_detail {
+      margin: 10px 10px 0 10px !important;
+      height: 12rem !important;
+      grid-gap: 10px;
+    }
+  }
+
+  .experience_about {
+    grid-template-rows: 10% 20% 8% 60%;
+    padding: 0;
+
+    .designation {
+      font-size: 12px;
+    }
+    .college {
+      margin-top: 10px;
+      font-size: 11px;
+    }
+    .peroid {
+      margin-top: 20px !important;
+      font-size: 10px;
+    }
+    .details {
+      margin-top: 10px;
+      font-size: 11px;
+      padding-top: 10px;
+    }
+  }
+  .expertise_block_detail {
+    padding: 10px;
+    .expertise {
+      font-size: 11px;
+    }
+    .details {
+      font-size: 11px;
+      margin-top: 10px;
+    }
+  }
+}
+//Expertise End
+
+//Expertise End
+/*************************************************************************************************************
+
+**************************************************************************************************************/
+
+/*************************************************************************************************************
+
+**************************************************************************************************************/
+//Achievement Start
+.achievement_main_block {
+  @include achievement_main_block;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+.achievement_main_block {
+  display: flex !important;
+  flex-direction: column;
+  height: 50rem !important;
+  background-image:profile_ !important;
+
+  padding: 1rem !important;
+  // grid-gap: 30px;
+
+  .experience {
+    height: 22rem !important;
+    padding: 0.5rem 1rem;
+  }
+
+  .experience_heading {
+    margin: 10px 20px 10px 20px;
+    padding-bottom: 0 !important;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+}
+
+//Achievement End 
+/*************************************************************************************************************
+
+**************************************************************************************************************/
+//Research Start 
+.research_main_block {
+  @include research_main_block;
+}
+.research_main_block_box {
+  @include research_main_block_box;
+}
+.research_box1 {
+  @include research_box1;
+}
+.research_box2 {
+  @include research_box2;
+}
+.research_box3 {
+  @include research_box3;
+}
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+  .research_main_block {
+    line-height: 10px;
+    height: 17rem;
+    background-image:profile_;
+    padding: 1.5rem 0 0 0;
+  }
+  .research_box1 {
+    padding-top: 25px;
+    height: 9.5rem;
+    width: 18rem;
+    margin-top: 30px;
+    border-radius: 5px;
+
+    .child_box {
+      padding-top: 5px;
+      .child_box_text {
+        font-size: 10px;
+      }
+      .child_box_number {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .research_box2 {
+    width: 50px;
+    height: 50px;
+    top: 13px;
+    left: 25px;
+    font-size: 22px;
+    border-radius: 5px;
+  }
+  .research_box3 {
+    padding-left: 0px;
+    font-size: 11px;
+    width: 190px;
+    height: 38px;
+    line-height: 13px;
+    top: 21px;
+    left: 73px;
+    border-radius: 3px
+  }
+
+}
+
+
+//Research End 
+/*************************************************************************************************************
+
+**************************************************************************************************************/
+//Gallery Start 
+
+.profile_gallery_main_block {
+  @include profile_gallery_main_block;
+}
+.profile_gallery {
+  @include profile_gallery;
+}
+.profile_gallery_photo_bg{
+  @include profile_gallery_photo_bg;
+}
+.profile_gallery_gallery_img {
+  @include profile_gallery_gallery_img;
+}
+.profile_certificate {
+  @include profile_certificate;
+}
+
+.profile_prestigous_cert {
+  @include profile_prestigous_cert;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .profile_gallery_main_block {
+    display: flex !important;
+    flex-direction: column;
+    height: 61rem !important;
+    background-image:profile_ !important;
+    padding: 1rem !important;
+    // grid-gap: 30px;
+
+    .experience {
+      height: 28rem !important;
+      padding: 0.5rem 1rem;
+    }
+
+    .experience_heading {
+      margin: 10px 20px 10px 20px;
+      padding-bottom: 0 !important;
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .experience_detail {
+      margin: 10px 10px 0 10px !important;
+      height: 12rem !important;
+      grid-gap: 10px;
+    }
+  }
+  .profile_gallery {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-rows: 100px;
+    grid-template-rows: repeat(2, 100px);
+    padding: 0.5rem;
+  }
+  .profile_certificate {
+    padding: 0.5rem;
+  }
+}
+
+//Gallery End 
+
+/*************************************************************************************************************
+
+**************************************************************************************************************/
+//Footer Start 
+
+.profile_footer_block {
+  @include profile_footer_block;
+}
+.profile_footer_block_section1 {
+  @include profile_footer_block_section1;
+}
+.profile_footer_block_section2 {
+  @include profile_footer_block_section2;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+
+  .profile_footer_block{
+    height: 46px;
+  }
+  .profile_footer_block_section1{
+    font-size: 9px;
+  }
+  .profile_footer_block_section2{
+    margin-top: 0;
+    font-size: 9px;
+  }
+
+}
+
+//Footer End 
+
+/*************************************************************************************************************
+
+**************************************************************************************************************/
+/*************************************************************************************************************/
+
+
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/************ STUDENT PROFILE START *******************************/
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+
+.profile_watermark {
+  @include profile_watermark;
+}
+
+@media only screen and (max-width: 600px) {
+  .profile_watermark {
+    height: 1.4rem !important;
+    font-size: 8px !important;
+  }
+}
+
+
+
+/**************************************************************************************************************/
+/*************************************************************************************************************
+
+**************************************************************************************************************/
+
+/* *********************************************************************************************************** */
+//Student Profile Watermark Start
+
+
+.student_profile_watermark {
+  @include student_profile_watermark;
+}
+
+
+
+//Student Profile Watermark End
+
+//Student Profile Block Start
+
+.student_profile_main_block {
+  @include student_profile_main_block;
+}
+
+.student_profile_block1 {
+  @include student_profile_block1;
+}
+.student_profile_block1_header {
+  @include student_profile_block1_header;
+}
+.student_profile_block1_info {
+  @include student_profile_block1_info;
+}
+.student_profile_block1_info_img {
+  @include student_profile_block1_info_img;
+}
+.student_profile_block1_info_detail {
+  @include student_profile_block1_info_detail;
+}
+.student_profile_block1_address {
+  @include student_profile_block1_address;
+}
+.student_profile_block2 {
+  @include student_profile_block2;
+}
+// .child_two_sub1,
+// .child_two_sub2 {
+//   @include child_two_sub1_child_two_sub2;
+// }
+// .child_two_sub1_box,
+// .child_two_sub2_box {
+//   @include child_two_sub1_box_child_two_sub2_box;
+// }
+// .child_two_sub1_box {
+//   @include child_two_sub1_box;
+// }
+.student_profile_block2_section1_box {
+  @include student_profile_block2_section1_box;
+}
+.student_profile_block2_section1 {
+  @include student_profile_block2_section1;
+}
+.student_profile_block2_section3 {
+  @include student_profile_block2_section3;
+}
+.student_profile_block2_section3_ref2 {
+  @include student_profile_block2_section3_ref2;
+}
+.student_profile_block2_section3_ref1,
+.student_profile_block2_section3_ref2 {
+  @include student_profile_block2_section3_ref1_student_profile_block2_section3_ref2;
+}
+.student_profile_block2_section4 {
+  @include student_profile_block2_section4;
+}
+.student_profile_block2_section4_btn {
+  @include student_profile_block2_section4_btn;
+}
+.student_profile_block2_section2 {
+  @include student_profile_block2_section2;
+}
+.student_profile_block3_section1 {
+  @include student_profile_block3_section1;
+}
+.student_profile_block3_section1_img {
+  @include student_profile_block3_section1_img;
+}
+
+.head {
+  // background-color: $btn_bg;
+  text-transform: capitalize;
+  width: max-content;
+  height: max-content;
+  border-radius: 15px;
+  text-align: center;
+  padding: 8px;
+  color: rgb(255, 187, 0);
+}
+.student_profile_block2_skill_detail {
+  @include student_profile_block2_skill_detail;
+}
+
+@media only screen and (max-width: 600px) {
+  .student_profile_main_block {
+    height: 130rem;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-image: $stud_pro_bg_img_mobile;
+    background-size: 100vh 100vh;
+    background-repeat: repeat-y;
+  }
+
+  .student_profile_block1 {
+    display: grid;
+    grid-template-rows: 7% 65% 28%;
+    grid-gap: 10px;
+  }
+  .student_profile_block1_header {
+    font-size: 18px;
+    border-radius: 10px;
+  }
+  .student_profile_block1_info {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 0 0 !important;
+  }
+  .student_profile_block1_info_img {
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 100%;
+    }
+  }
+  .student_profile_block1_info_detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 28px;
+    padding-top: 10px;
+
+    .name {
+      font-size: 19px;
+    }
+    .designation,
+    .number,
+    .email {
+      font-size: 15px;
+    }
+  }
+  .student_profile_block1_address {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    margin: 0 0 70px 0;
+    border-radius: 10px;
+    height: max-content;
+  }
+  .student_profile_block2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    margin-top: 1rem;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0);
+  }
+  .student_profile_block2_sections {
+    height: 20rem;
+    margin-bottom: 20px;
+  }
+  .student_profile_block2_section1 {
+    margin: 0;
+  }
+  .student_profile_block2_section4 {
+    width: 40%;
+    display: flex;
+    // flex-direction: column;
+    margin: 10px;
+  }
+  .student_profile_block2_section4_btn {
+    button {
+      width: 130px;
+      height: 30px;
+      font-size: 12px;
+    }
+    .btn_resume_sp {
+      margin-top: 10px;
+    }
+    .btn_share {
+      margin: 10px 0 0 15px;
+    }
+  }
+
+  .watermark {
+    height: 1rem !important;
+    font-size: 10px !important;
+  }
+  // .child_three{
+  //   margin-top: 1rem;
+  // }
+  .student_profile_block3_section1 {
+    margin: 50px 0 0 0;
+    height: max-content !important;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 0;
+    background-color: $stud_pro_dim_blue;
+  }
+  .student_profile_block3_section1_img {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    font-size: 16px;
+    color: white;
+    p {
+      text-align: center;
+    }
+    .about_detail {
+      font-size: 13px;
+      margin-top: 10px;
+    }
+  }
+  .career_detail_divs {
+    font-size: 14px;
+    padding: 15px;
+    display: grid;
+    grid-template-rows: repeat(5, 20%);
+  }
+  .div_grid {
+    margin: 12px 0 12px 0;
+    display: grid;
+    grid-template-columns: 35% 65%;
+  }
+  .border {
+    border: none;
+    border-bottom: 1px solid gray;
+  }
+  .student_profile_block1_img {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 20px;
+    top: 13px;
+  }
+  .student_profile_block1_login {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 12px;
+    a {
+      text-decoration: none;
+      color: white;
+      i {
+        color: rgb(255, 255, 255) !important;
+        font-size: 12px;
+      }
+      button {
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 187, 0);
+        height: 20px;
+        width: 40px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+//student profile popup start
+
+.student_profile_overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 999;
+}
+.student_profile_overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.student_profile_popup {
+  display: grid;
+  grid-template-rows: 7% 93%;
+  background: $stud_pro_bg_img_body;
+  background-size: 100% 100%;
+  // margin: 1rem 3rem;
+  margin: 70px auto;
+  padding: 0;
+  // padding: 20px;x`
+  // background: #fff;
+  border-radius: 5px;
+  width:30rem;
+  height:30rem;
+  position: relative;
+  // transition: all 5s ease-in-out;
+  z-index: 999;
+}
+.student_profile_popup_section1 {
+  background-color:rgba(60, 71, 105, 0.623);
+  color: rgb(255, 187, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.student_profile_popup_section2{
+  display: grid;
+  grid-template-rows: 25% 15% 15% 40%;
+  padding: 10px;
+
+}
+.student_profile_popup_section2_img{
+  display: flex;
+  justify-content: center;
+  img{
+    width: 100px;height: 100px;border-radius: 100%;
+  }
+}
+.student_profile_popup_section2_detail{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 25px;
+  .m_name{
+    color: rgb(255, 187, 0);
+    font-size: 18px;
+  }
+  .m_desig{
+    font-size: 14px;
+    color: $stud_pro_heading;
+  }
+}
+.student_profile_popup_section2_share{
+  display: grid;
+  justify-content: center;
+  grid-template-columns:repeat(4,50px);
+}
+.student_profile_popup_section2_sharing{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 25px;
+  a {
+    margin-top: 7px;
+    height: 35px;
+    width: 35px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    color: white;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.144);
+    i {
+      font-size: 16px;
+    }
+  }
+}
+.student_profile_popup_s2s_mail {
+  background-color: #ea4335;
+}
+
+.student_profile_popup_s2s_whatsapp {
+  background-color: #42e861;
+}
+.student_profile_popup_s2s_send {
+  background-color: rgb(79, 79, 255);
+}
+
+.student_profile_popup_s2s_yt {
+  background-color: #ff0000;
+}
+.student_profile_popup_section2_inputs{
+  display: grid;
+  grid-template-rows: 33% 33% 34%;
+}
+.student_profile_popup_section2_child_input{
+  // margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.student_profile_popup_section2_child{
+  height:40px;
+  width: 70%;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 2px 2px rgba(180, 180, 180, 0.164);
+}
+
+.student_profile_popup_section2_child_name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a{
+    color:rgb(255, 187, 0);
+    font-size: 18px;
+
+  }
+}
+.student_profile_popup_section2_input_child{
+  input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+  }
+
+}
+.student_profile_popup_section2_child_btn{
+  height:40px;
+  width: 70%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 2px 2px rgba(180, 180, 180, 0.164);
+  border: none;
+  outline: none;
+  background-color: rgb(255, 187, 0);
+  color: rgb(3, 8, 34);
+  font-weight: bold;
+}
+
+.skill_detail_p {
+  color:$stud_pro_white;
+  padding: 10px;
+  .skills {
+    font-size: 14px;
+    text-align: justify;
+    line-height: 20px;
+    font-weight: bold;
+    color: $stud_pro_heading;
+  }
+  .details {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: left;
+    line-height: 20px;
+  }
+  .hr_bottom {
+    margin-top: 20px;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0)
+    );
+  }
+}
+
+.student_profile_popup .student_profile_popup_close {
+  position: absolute;
+  top: 2px;
+  right: 30px;
+  // transition: all 200ms;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(255, 219, 15);
+}
+.student_profile_popup .student_profile_popup_close:hover {
+  color: #06D85F;
+}
+.student_profile_popup .content {
+  max-height: max-content;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .student_profile_popup{
+    width: 90%;
+    margin: 40px 20px;
+    height: 25rem;
+  }
+  .student_profile_popup .student_profile_popup_close {
+    top: 5px;
+    right: 20px;
+    font-size: 18px;
+  }
+  .student_profile_popup_section2_child{
+    height:30px;
+    width: 80%;
+  }
+  .student_profile_popup_section2_child_btn{
+    height:30px;
+    width: 80%;
+  }
+  .student_profile_popup_section2_detail{
+    .m_name{
+      font-size: 14px;
+    }}
+    .student_profile_popup_section2_sharing{
+      a {
+        margin-top: 7px;
+        height: 30px;
+        width: 30px;
+      }
+    }
+    .student_profile_popup_section2{
+      display: grid;
+      grid-template-rows: 30% 15% 15% 40%;
+      padding: 10px;
+    
+    }
+    .student_profile_popup_section1 {
+      font-size: 14px;
+    }
+    .student_profile_block3_career_detail_divs{
+      height: 17rem;
+    }
+}
+
+//student profile popup end
+
+//Student Profile Block End
+/* ************************************************************************************************************/
+
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+//Student Expertise Block Start
+
+.student_expertise_main_block {
+  @include student_expertise_main_block;
+}
+.stud_pro_about_expirience {
+  @include stud_pro_about_expirience;
+}
+.stud_pro_expertise_detail {
+  @include stud_pro_expertise_detail;
+}
+
+@media screen and (max-width: 700px){
+.student_expertise_main_block {
+  display: flex !important;
+  flex-direction: column;
+  height: 75rem !important;
+  background-image: $stud_pro_bg_img_mobile !important;
+  padding: 1rem !important;
+  // grid-gap: 30px;
+
+  .sp_experience {
+    height: 22rem !important;
+    padding: 0.5rem 1rem;
+  }
+
+  .sp_experience_heading {
+    margin: 20px 20px 10px 20px;
+    padding-bottom: 0 !important;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sp_experience_detail {
+    margin: 85px 10px 0 10px !important;
+    height: 10rem !important;
+    grid-gap: 10px;
+  }
+}
+.stud_pro_about_expirience {
+  padding: 0;
+  grid-template-rows: 10% 15% 10% 65%;
+
+  .sp_designation {
+    font-size: 15px;
+  }
+  .sp_college {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .sp_peroid {
+    margin-top: 20px !important;
+    font-size: 10px;
+  }
+  .sp_details {
+
+    font-size: 14px;
+    margin-top: 10px;
+  
+  }
+}
+.stud_pro_expertise_detail {
+  padding: 10px;
+  .sp_expertise {
+    font-size: 14px;
+  }
+  .sp_details {
+    font-size: 14px;
+
+  }
+}
+
+}
+.research_head{
+  background-image: linear-gradient(to right,#88035eb0, #470031b6);
+  padding:5px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+//Student Expertise Block End
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+
+
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+//Gallery Block Start
+.student_profile_gallery_main_block {
+  @include student_profile_gallery_main_block;
+}
+
+.sp_gallery {
+  @include sp_gallery;
+}
+.sp_photo_bg{
+  @include sp_photo_bg;
+}
+.sp_certificate {
+  @include sp_certificate;
+}
+.sp_gallery_img {
+  @include sp_gallery_img;
+}
+
+.sp_prestigous_cert {
+  @include sp_prestigous_cert;
+}
+
+
+@media screen and (max-width: 600px){
+.student_profile_gallery_main_block {
+  display: flex !important;
+  flex-direction: column;
+  height: 50rem !important;
+  background-image: $stud_pro_bg_img_mobile !important;
+  padding: 1rem !important;
+  // grid-gap: 30px;
+
+  .experience {
+    height: 22rem !important;
+    padding: 0.5rem 1rem;
+  }
+
+  .experience_heading {
+    margin: 20px 20px 10px 20px;
+    padding-bottom: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.sp_gallery {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+ grid-auto-rows: 100px;
+ grid-template-rows: repeat(2, 100px);
+ padding: 0.5rem;
+ }
+.sp_certificate {
+padding: 0.5rem;
+}
+
+}
+
+
+
+//Gallery Block End
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+
+
+//Student Footer Block Start
+
+.footer_main_block {
+  @include footer_main_block;
+}
+.footer_main_block_section1 {
+  @include footer_main_block_section1;
+}
+.footer_main_block_section2 {
+  @include footer_main_block_section2;
+}
+
+//STudent Footer Block End
+
+
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+
+
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/************ STUDENT PROFILE END *******************************/
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+//Mat Dialog Css Start
+
+.custom-dialog-container .mat-dialog-container{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: fit-content;
+  height: fit-content;
+}
+@media screen and (max-width: 700px){
+  .custom-dialog-container .mat-dialog-container{
+  padding: 0 !important;
+  margin: 0 !important;
+  }
+  .book_img{
+    position: fixed;bottom: 4rem;right: 1.3rem;width: 65px;height: 65px;
+    border-radius: 100%;z-index: 99;
+  }
+}
+
+//Mat Dialog Css End
+
+/* *********************************************************************************************************** */
+/************ BUSINESS PROFILE START *******************************/
+/* *********************************************************************************************************** */
+//Business Profile Watermark Start
+
+.business_profile_watermark {
+  @include business_profile_watermark;
+}
+
+
+
+
+//Business Profile Watermark End
+
+//Business Profile Start
+
+
+.business_profile_main_block {
+  @include business_profile_main_block;
+}
+
+.business_profile_block1 {
+  @include business_profile_block1;
+}
+.business_profile_block1_header {
+  @include business_profile_block1_header;
+}
+.business_profile_block1_info {
+  @include business_profile_block1_info;
+}
+.business_profile_block1_info_img {
+  @include business_profile_block1_info_img;
+}
+.business_profile_block1_info_detail {
+  @include business_profile_block1_info_detail;
+}
+.business_profile_block1_address {
+  @include business_profile_block1_address;
+}
+.business_profile_block2 {
+  @include business_profile_block2;
+}
+.business_profile_block2_section1_box {
+  @include business_profile_block2_section1_box;
+}
+.business_profile_block2_section1 {
+  @include business_profile_block2_section1;
+}
+.business_profile_block2_section3 {
+  @include business_profile_block2_section3;
+}
+.business_profile_block2_section3_ref2 {
+  @include business_profile_block2_section3_ref2;
+}
+.business_profile_block2_section3_ref1,
+.business_profile_block2_section3_ref2 {
+  @include business_profile_block2_section3_ref1_business_profile_block2_section3_ref2;
+}
+
+.business_profile_block2_section2 {
+  @include business_profile_block2_section2;
+}
+.business_profile_block3_section1 {
+  @include business_profile_block3_section1;
+}
+.business_profile_block3_section1_img {
+  @include business_profile_block3_section1_img;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .business_profile_main_block {
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    // background-image: $stud_pro_bg_img_mobile;
+    // background-size: 100vh 100vh;
+    background-repeat: repeat-y;
+  }
+
+
+  .business_profile_block1 {
+    display: grid;
+    grid-template-rows: 7% 65% 28%;
+    grid-gap: 10px;
+  }
+  .business_profile_block1_header {
+    height: 3rem;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+  .business_profile_block1_info {
+    margin-top: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 0 0 !important;
+  }
+  .business_profile_block1_info_img {
+    border-left: none;
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 100%;
+    }
+  }
+  .business_profile_block1_info_detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 28px;
+    padding-top: 10px;
+
+    .name {
+      font-size: 19px;
+    }
+    .designation,
+    .number,
+    .email {
+      font-size: 15px;
+    }
+  }
+  .business_profile_block1_address {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    margin: 7rem 0 70px 0;
+    border-radius: 10px;
+    height: max-content;
+  }
+  .business_profile_block2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    margin-top: 1rem;
+    border-radius: 10px;
+    // background-color: rgba(255, 255, 255, 0);
+  }
+  .business_profile_block2_sections {
+    height: 20rem;
+    margin-bottom: 20px;
+  }
+  .business_profile_block2_section1 {
+    margin: 0;
+  }
+  .business_profile_block3_section1 {
+    margin: 50px 0 0 0;
+    height: max-content !important;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 0;
+    // background-color: $stud_pro_dim_blue;
+  }
+  .business_profile_block3_section1_img {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    font-size: 16px;
+    color: white;
+    p {
+      text-align: center;
+    }
+    .about_detail {
+      font-size: 13px;
+      margin-top: 10px;
+    }
+  }
+  .career_detail_divs {
+    font-size: 14px;
+    padding: 15px;
+    display: grid;
+    grid-template-rows: repeat(5, 20%);
+  }
+
+  .business_profile_block1_img {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 20px;
+    top: 12px;
+  }
+  .business_profile_block1_login {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 12px;
+    a {
+      text-decoration: none;
+      // color: white;
+      i {
+        // color: rgb(255, 255, 255) !important;
+        font-size: 12px;
+      }
+      button {
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 187, 0);
+        height: 20px;
+        width: 40px;
+        font-size: 12px;
+      }
+    }
+  }
+  .business_profile_block2_section3{
+    z-index: unset;
+    margin-top: 8rem;
+    border-left: none;
+    height: 11rem;
+    padding-bottom: 2rem;
+  }
+}
+
+
+
+
+//Business Profile End
+//Business About Start
+
+.business_about_main_section{
+  @include business_about_main_section;
+}
+.business_about_img_section{
+  @include business_about_img_section;
+}
+.business_about_info{
+  @include business_about_info;
+}
+@media only screen and (max-width: 600px) {
+//Business About Start
+
+.business_about_main_section{
+  min-height: 40rem;
+  max-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+}
+.business_about_img_section{
+  // min-height: 10rem;
+  // max-height: fit-content;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .business_about_img{
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.288);
+    border-radius: 20px;
+    width: 250px;
+    height: 250px;
+  }
+}
+.business_about_hr{
+  box-shadow: 0 0 1px 1px #00000096;
+  margin-top: 2rem;
+  display: flex;
+  height: 1px;
+  border: 0;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+.business_about_info{
+  margin-top: 1rem;
+  min-height: 23rem;
+  max-height: fit-content;
+  display: grid;
+  grid-template-rows: 20% 15% 15% 30% 20%;
+  .business_about_us{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .business_com_name{
+    font-size: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .business_slogan{
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .business_text{
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+  }
+  .business_readme{
+    font-size: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+//Business About End
+}
+//Business About End
+
+//Business Offer Start
+
+.business_offer_main_block {
+ @include business_offer_main_block;
+}
+.business_offer_heading{
+  @include business_offer_heading;
+}
+.business_offer_products{
+  @include business_offer_products;
+}
+.business_offer_products_list_section{
+  @include business_offer_products_list_section;
+}
+.business_offer_product_list{
+  @include business_offer_product_list;
+}
+.business_product_name{
+  @include business_product_name;
+}
+.business_product_quantity{
+  @include business_product_quantity;
+}
+.business_product_pricing{
+  @include business_product_pricing;
+}
+@media only screen and (max-width: 600px) {
+  .business_offer_main_block {
+    min-height: 20rem;
+  }
+  .business_offer_products{
+    // display: inline-block;
+    padding: 1rem;
+  }
+  .business_offer_product_list{
+    width: 18rem;
+    max-height: fit-content;
+    display: grid;
+    grid-template-rows: 40% 25% 35%;
+    margin-right: 1rem;
+    border-radius: 10px;
+    border: 3px solid rgba(128, 128, 128, 0.473);
+    
+  }
+}
+
+
+//Business Offer End
+
+//Business Product Start
+.business_product_main_block{
+  @include business_product_main_block;
+}
+.business_product_heading{
+  @include business_product_heading;
+}
+.business_product_range_section{
+  @include business_product_range_section;
+}
+.business_product_range{
+  @include business_product_range;
+}
+.business_product_range_img{
+  @include business_product_range_img;
+}
+.business_product_range_info{
+  @include business_product_range_info;
+}
+.bpri_name{
+  @include bpri_name;
+}
+.bpri_quantity{
+  @include bpri_quantity;
+}
+.bpri_pricing{
+  @include bpri_pricing;
+}
+
+@media only screen and (max-width: 600px) {
+  .business_product_range_section{
+   padding: 1rem;
+  }
+}
+
+//Business Product End
+
+//Business Footer Start
+
+.business_footer_main_block {
+  @include footer_main_block;
+}
+.business_footer_main_block_section1 {
+  @include footer_main_block_section1;
+}
+.business_footer_main_block_section2 {
+  @include footer_main_block_section2;
+}
+
+
+//Business Footer End
+
+
+
+
+
+
+/* *********************************************************************************************************** */
+/************ BUSINESS PROFILE END *******************************/
+/* *********************************************************************************************************** */
+
+

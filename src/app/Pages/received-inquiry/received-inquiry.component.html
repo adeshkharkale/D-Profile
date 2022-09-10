@@ -1,0 +1,41 @@
+<div class="content-wrapper">
+    <div class="body_header_row">
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <form autocomplete="off">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" id="card_top_border">
+                            <div class="card-header border-transparent">
+                                <h1 style="text-align: left;">Received Enquiry</h1>
+                                <div class="col-md-12" style="margin-top: 23px;overflow-x: scroll;">
+                                    <table class="table " id="exp_table">
+                                        <thead>
+                                            <tr>
+                                                <th class="table_row_head" style="width: 5%;">No</th>
+                                                <th class="table_row_head" style="width: 25%;">Name</th>
+                                                <th class="table_row_head" style="width: 25%;">Email</th>
+                                                <th class="table_row_head" style="width: 15%;">Mobile</th>
+                                                <th class="table_row_head" style="width: 30%;">Message</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let c of objSReceivedInquiryService.arrContactDetail; let i = index">
+                                                <td class="table_row" style="width: 5%;">{{ i + 1 }}</td>
+                                                <td class="table_row" style="width: 25%;">{{ c.contactName }}</td>
+                                                <td class="table_row" style="width: 25%;">{{ c.contactEmail }}</td>
+                                                <td class="table_row" style="width: 15%;">{{ c.contactMobile }}</td>
+                                                <td class="table_row" style="width: 30%;">{{ c.contactMessage }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

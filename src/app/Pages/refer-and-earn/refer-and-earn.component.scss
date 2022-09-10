@@ -1,0 +1,179 @@
+
+
+.card {
+    border: none;
+    width: 100%;
+}
+
+.dots {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: #213e81;
+    border-radius: 50%;
+    bottom: 14px;
+    right: 360px;
+    font-size: 10px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.earn-text {
+    font-size: 13px;
+}
+
+.form-control {
+    height: 35px;
+    font-size: 14px;
+    width: 350px;
+}
+
+.btn {
+    font-size: 15px;
+    color: white;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border: 1px solid #213e81;
+}
+
+.email-text {
+    font-size: 12px;
+}
+
+a {
+    color: #213e81;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #213e81;
+}
+.main_share{
+    display: grid;
+    justify-content: center;
+    grid-template-columns:repeat(3,60px);
+  }
+
+.mr-5{
+    margin-right: 120px !important;
+  }
+
+  .t2{
+    margin: 1rem 5rem;
+    height: 15rem;
+    overflow: auto;
+  }
+  .t2::-webkit-scrollbar{
+      width: 5px;
+      background-color: rgb(231, 231, 230);
+  }
+  .t2::-webkit-scrollbar-thumb{
+        background-color: rgba(29, 25, 25, 0.253);
+        border-radius: 20px;
+        
+  }
+  mat-slider {
+    width: 300px;
+  }
+  .table,th,td{
+    font-size: 12px;
+    a{
+        font-size: 12px;
+    }
+}
+
+i{
+    color: whitesmoke;
+}
+
+  @media only screen and (max-width: 600px) {
+  
+    mat-slider {
+        width: 230px;
+      }
+    .t2{
+        margin: 1rem 0 0 0;
+        padding: 0 ;
+        height: 10rem;
+        overflow: auto;
+      }
+    .card {
+        border: none;
+        // width: 63rem;
+    }
+    
+    .dots {
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        background-color: #213e81;
+        border-radius: 50%;
+        bottom: 14px;
+        right: 360px;
+        // left: 560px;
+        font-size: 10px;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+    
+    .earn-text {
+        font-size: 13px;
+    }
+    
+    .form-control {
+        height: 35px;
+        font-size: 14px;
+        width: 350px;
+    }
+    
+    .btn {
+        font-size: 15px;
+        color: white;
+    }
+    
+    .form-control:focus {
+        box-shadow: none;
+        border: 1px solid #213e81;
+    }
+    
+    .email-text {
+        font-size: 12px;
+    }
+    
+    a {
+        color: #213e81;
+        font-size: 14px;
+    }
+    
+    a:hover {
+        color: #213e81;
+    }
+    
+    .mr-5{
+        margin-right: 120px !important;
+      }
+      .table,th,td{
+        font-size: 9px;
+        a{
+            font-size: 9px;
+        }
+    }
+
+    .t2::-webkit-scrollbar{
+        width: 2px;
+        background-color: rgb(241, 241, 241);
+    }
+    .t2::-webkit-scrollbar-thumb{
+          background-color: rgba(46, 33, 33, 0.315);
+          border-radius: 20px;
+          
+    }
+
+  }

@@ -1,0 +1,51 @@
+<div class="popup_share_pop">
+                                
+    <button mat-dialog-close class="popup_share_pop_close">&times;</button>                            
+    <div class="child_two_sub3_box2_p">
+        <div class="main_img">
+            <img [src]="profilePhoto" alt="">
+        </div>
+        <div class="main_detail">
+            <p class="m_name">{{ regName }}</p>
+            <p class="m_desig">D' Profile</p>
+        </div>
+        <div class="main_share">
+            <div class="sharing">
+                <input type="radio" name="share" value="1" disabled #whatsapp1 [checked]="whatsapp">
+                <a (click)="onSelect(whatsapp1.value)" class="whatsapp"><i class="fab fa-whatsapp"
+                        aria-hidden="true"></i></a>
+            </div>
+            <div class="sharing">
+                <input type="radio" name="share" value="2" disabled #sms1 [checked]="sms">
+                <a (click)="onSelect(sms1.value)" class="yt"><i class="fa fa-commenting"
+                        aria-hidden="true"></i></a>
+            </div>
+            <div class="sharing">
+                <input type="radio" name="share" value="3" disabled #mail1 [checked]="mail">
+                <a class="mail" (click)="onSelect(mail1.value)"><i class="fa fa-envelope"
+                        aria-hidden="true"></i></a>
+            </div>
+           
+        </div>
+        <div class="main_inputs">
+            <div class="child_input">
+                <div class="child">
+                    <div class="child_name">
+                        <a href="#"><i [class]="icon"
+                                aria-hidden="true"></i></a>
+                    </div>
+                    <div class="input_child">
+                        <input type="text" placeholder="Enter here..." #data
+                            maxlength="35" [value]="input">
+                    </div>
+                </div>
+            </div>
+            <div class="child_input">
+                <button class="child_btn" target="_blank"
+                (click)="share_profile(data.value)">Share</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>

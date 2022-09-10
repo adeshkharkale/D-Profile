@@ -1,0 +1,27 @@
+<div style="display: flex;justify-content: center;">
+    <h2>
+       Subscription Packages
+
+    </h2>
+</div>
+<div class="row">
+    <!-- <select class="form-input" name="package" #subscriptionId >
+        <option *ngFor="let p of objSRegisterService.arrSubscriptionPackage" [value]="p.subscriptionId">
+            {{ p.package }}
+        </option>
+    </select> -->
+      <mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group" [(ngModel)]="selected">
+  <mat-radio-button class="example-radio-button"  *ngFor="let p of objSRegisterService.arrSubscriptionPackage" 
+  [value]="p.subscriptionId">
+    {{ p.package }}
+  </mat-radio-button>
+</mat-radio-group>    
+</div>
+<div class="row">
+    <button mat-raised-button mat-dialog-close class="registerbutton" type="submit" color="primary" id="rzp-button1"
+     (click)="makePayment()"  >
+        Continue To Pay
+    </button>
+</div>

@@ -1,0 +1,36 @@
+<div class="achievement_main_block">
+    <div class="experience">
+        <div class="experience_heading">
+           <p class="head"> My Prestigious Membership</p>
+        </div>
+        <marquee direction="up" onmouseover="this.stop();" style="height: 75%;" onmouseout="this.start();">
+        <div *ngFor="let membership of objSProfileService.arrmMembership">
+            <div class="expertise_detail">
+            <p class="expertise">
+                <i class="fa fa-check-square" aria-hidden="true"></i>&nbsp;
+                {{ membership.membership }}</p>
+            <p class="details">{{ membership.description }}</p>
+            <hr class="hr_bottom">    
+        </div>
+    </div>
+        </marquee>
+    </div>
+
+    <div class="experience">
+        <div class="experience_heading">
+          <p class="head"> My Achievements</p>
+        </div>
+        <marquee direction="up" onmouseover="this.stop();" style="height: 75%;" onmouseout="this.start();">
+        <div *ngFor="let award of objSProfileService.arrAwards">
+            <div class="expertise_detail">
+                <p class="expertise">
+                    <i class="fa fa-check-square" aria-hidden="true"></i>&nbsp;
+                    {{ award.award }}</p>
+                <p class="details">{{ award.description }}</p>
+                <hr class="hr_bottom">    
+            </div>
+        </div>
+        </marquee>
+    </div>
+
+</div>

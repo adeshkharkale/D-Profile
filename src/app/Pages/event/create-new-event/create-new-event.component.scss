@@ -1,0 +1,57 @@
+.button_help{
+    display: grid; 
+    justify-content: right; 
+    align-items: right; 
+}
+.textarea_help{
+    height: 100px; 
+    width: 100%;
+    padding: 5px;
+    outline: none;
+}
+.h_label{
+    color: rgba(1, 14, 37, 0.671);
+    margin-left: 10px; 
+    font-size: 18px;
+    text-align: center;
+}
+
+.form_layout_help {
+    border: 1px solid rgba(206, 202, 202, 0.466);
+    box-shadow: 1px 2px 4px -2px;
+    border-radius: 4px;
+    /* margin: 1rem 15rem 1rem 15rem; */
+    padding: 15px 45px 15px 45px;
+     width: 70%; 
+}
+
+.row_margin{
+    margin-top: -10px;
+}
+
+@media (max-width: 768px) {
+    .form_layout_help {
+        padding: 0;
+        width: 100%; 
+    }
+    .textarea_help{
+        height: 80px; 
+        width: 100%;
+    }
+    .h_label{
+        color: rgba(28, 25, 216, 0.61);
+        margin-top: 10px; 
+        font-size: 13px;
+        margin-left: 0; 
+    }
+
+    :host ::ng-deep .mat-raised-button{
+        height: 26px;
+        width: 70px !important;
+        margin-right: 8px;
+    }
+
+    .row_margin{
+        margin-top: -22px;
+    }
+}

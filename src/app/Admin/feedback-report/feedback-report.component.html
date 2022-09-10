@@ -1,0 +1,44 @@
+<div class="content-wrapper">
+    <div class="body_header_row">
+        <label class="body_header" style="color: #30476d85;">Feedback Report
+        </label>
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <form autocomplete="off">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" id="card_top_border">
+                            <div class="card-header border-transparent">
+                                <div class="row" style="overflow-y: auto;">
+                                    <table class="table" id="exp_table">
+                                        <thead>
+                                            <tr>
+                                                <th class="table_row_head" style="width: 7%;text-align: center;">Sr. No.</th>
+                                                <th class="table_row_head" style="width: 18%;">Name</th>
+                                                <th class="table_row_head" style="width: 18%;">Email</th>
+                                                <th class="table_row_head" style="width: 13%;">Mobile</th>
+                                                <th class="table_row_head" style="width: 8%;">Feedback</th>
+                                                <th class="table_row_head" style="width: 36%;">Remark</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let f of objSFeedbackReportService.arrFeedbackReport; let i = index">
+                                                <td class="table_row" style="width: 7%;text-align: center;">{{ i+1 }}</td>
+                                                <td class="table_row" style="width: 18%;">{{ f.regName }}</td>
+                                                <td class="table_row" style="width: 18%;">{{ f.emailId }}</td>
+                                                <td class="table_row" style="width: 13%;">{{ f.mobileNo }}</td>
+                                                <td class="table_row" style="width: 8%;">{{ f.productFeedback }}</td>
+                                                <td class="table_row" style="width: 36%;">{{ f.remark }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

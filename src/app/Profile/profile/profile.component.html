@@ -1,0 +1,146 @@
+<div class="profile_main_block">
+    <div class="profile_block1">
+        <div class="profile_block1_header">
+            D' Profile
+            <div> <img class="profile_block1_header_img" src="assets/img/d_profile_logo.PNG" alt=""> </div>
+            <div class="profile_block1_header_login">
+                <a href="https://dprofile.in" target="_blank"> <i class="fa fa-user" aria-hidden="true"></i><button>
+                        Login</button></a>
+            </div>
+        </div>
+        <div class="profile_block1_details" data-aos="fade-up">
+            <div class="profile_block1_user_img">
+                <img [src]="objSProfileService.pCreateProfile.profilePhotoURL" alt="">
+            </div>
+            <div class="profile_block1_user_detail">
+                <p class="name">{{ objSProfileService.pCreateProfile.name }}</p>
+                <p class="designation">{{ objSProfileService.pCreateProfile.qualification }}</p>
+                <p class="number"><a style="text-decoration: none;color: white;" href="tel:{{ objSProfileService.pCreateProfile.mobileNo }}"> <i class="fa fa-phone-alt" aria-hidden="true"></i> &nbsp; {{
+                    objSProfileService.pCreateProfile.mobileNo }}</a></p>
+                <p class="email"><a style="text-decoration: none;color: white;" href="mailto: {{ objSProfileService.pCreateProfile.emailId }}"><i class="fa fa-envelope" aria-hidden="true"></i> &nbsp; {{
+                    objSProfileService.pCreateProfile.emailId }}</a></p>
+            </div>
+            <div class="profile_block1_share_buttons">
+                <div class="profile_block1_ds_button">
+                    <a href="{{ objSProfileService.pCreateProfile.resumeURL }}" target="_blank"><button
+                            class="btn_share">Download CV</button></a>
+                </div>
+                <div class="profile_block1_ds_button">
+                    <button class="btn_share" (click)="popup1()">Share My D' Profile</button>
+                </div>
+            </div>
+        </div>
+        <div class="profile_block1_address" data-aos="fade-up">
+            <i class="fas fa-map-marker-alt"></i> &nbsp; {{ objSProfileService.pCreateProfile.address }}
+        </div>
+    </div>
+    <div class="profile_block2">
+        <div class="profile_block2_section1">
+            <div class="profile_block2_section1_box" data-aos="fade-up">
+                <div class="profile_block2_section1_box1"></div>
+                <div class="profile_block2_section1_box2">
+                    Visit Me On
+                </div>
+                <div class="profile_block2_section1_box3">
+                    <div class="profile_block2_section1_box3_links1">
+                        <a target="_blank" href="tel:{{ objSProfileService.pCreateProfile.mobileNo }}" class="phone"><i
+                                class="fa fa-phone-alt" aria-hidden="true"></i></a>
+                        <a target="_blank" href="mailto:{{ objSProfileService.pCreateProfile.emailId }}" class="mail"><i
+                                class="fa fa-envelope" aria-hidden="true"></i></a>
+                        <a target="_blank" href="sms://+91%20{{ objSProfileService.pCreateProfile.mobileNo }}?&body=Hi"
+                            class="sms"><i class="fa fa-commenting" aria-hidden="true"></i></a>
+                        <a target="_blank"
+                            href="https://api.whatsapp.com/send?phone=+91{{ objSProfileService.pCreateProfile.whatsapp }}&text=hello&source=&data="
+                            class="whatsapp">
+                            <i class="fab fa-whatsapp"></i></a>
+                        <a href="{{ objSProfileService.pCreateProfile.telegram }}" class="send">
+                            <i class="fa fa-send" target="_blank" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="profile_block2_section1_box3_links2">
+
+                        <a href="{{ objSProfileService.pCreateProfile.facebook }}" target="_blank" class="fb"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="{{ objSProfileService.pCreateProfile.youtube }}" target="_blank" class="yt"><i
+                                class="fa fa-play" aria-hidden="true"></i></a>
+                        <a href="{{ objSProfileService.pCreateProfile.twitter }}" target="_blank" class="twitter">
+                            <i class="fab fa-twitter"></i></a>
+                        <a href="{{ objSProfileService.pCreateProfile.linkedin }}" target="_blank" class="linkedin">
+                            <i class="fab fa-linkedin-in"></i></a>
+                        <a href="{{ objSProfileService.pCreateProfile.instagram }}" target="_blank" class="insta"><i
+                                class="fab fa-instagram"></i></a>
+
+                    </div>
+                </div>
+                <div class="profile_block2_section1_box4">
+                    <div class="child_two_sub1_box4_btn profile_block2_section1_box4_btn">
+                        <button class="btn_contact" (click)="profile_contact()">Contact Me</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profile_block2_section2">
+            <div class="profile_block2_section2_box" data-aos="fade-up">
+                <div class="profile_block2_section2_box1"></div>
+                <div class="profile_block2_section2_box2">
+                    Current Profile
+                </div>
+                <div class="profile_block2_section2_box3">
+                    <div class="profile_block2_section2_box3_img">
+                        <img [src]="objSProfileService.pCreateProfile.collegeLogoURL " alt="">
+                    </div>
+                    <div class="profile_block2_section2_box3_info">
+                        <p style="color: rgb(219, 188, 188)">{{ objSProfileService.pCreateProfile.designation }}</p>
+                        <p>{{ objSProfileService.pCreateProfile.college }}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="profile_block3">
+        <div class="profile_block3_section1" data-aos="fade-up">
+            <div class="profile_block3_section1_img">
+                <p class="p_head"> Career Profile </p>
+
+                <p class="about_detail">{{ objSProfileService.pCreateProfile.careerProfile }}
+                </p>
+            </div>
+            <div class="profile_block3_section1_detail">
+                <div class="marque_head">
+                    <p class="p_head"> Upcoming Events </p>
+                </div>
+                <div>
+                    <marquee onmouseover="this.stop();" onmouseout="this.start();">
+                        <div class="profile_block3_section1_marquee" *ngFor="let e of objSProfileService.arrEvent">
+                            <div class="marquee">
+                                <div class="marquee_one">
+                                    <div class="date">
+                                        {{ e.date | date:'dd' }}
+                                    </div>
+                                    <div class="month">
+                                        {{ e.date | date:'MMM' }}
+                                    </div>
+                                </div>
+                                <div class="marquee_two">
+                                    <div class="subject">
+                                        {{ e.event }}
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: 95% 5%;">
+                                        <div class="time">
+                                            Time : {{ e.date | date:'shortTime' }}
+                                        </div>
+                                        <div style="font-size: 14px;">
+                                            <a [href]="e.eventLink" target="_blank"><i class="fas fa-external-link-alt"
+                                                    style="color: white;font-weight: 600;"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </marquee>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

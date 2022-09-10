@@ -1,0 +1,55 @@
+<div class="content-wrapper">
+    <div class="body_header_row">
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <form autocomplete="off">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" id="card_top_border" style="height: 100%;display: grid; align-items: center;">
+                            <div class="card-header border-transparent" style="display: flex;justify-content: center;">
+                                <div class="row form_layout_help">
+                                    <form autocomplete="off" #form="ngForm">
+                                        <label class="h_label">Your Suggestions Make Us Improve !</label>
+                                        <div class="row" style="margin-top: 10px;">
+                                            <div class="col-md-7">
+                                                <div class="form-group">
+                                                    <input matInput type="text" readonly class="form-input"
+                                                        placeholder="Your Name" [value]="regName">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <input matInput type="text" readonly class="form-input"
+                                                        placeholder="Contact" [value]="mobile">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row row_margin">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <div style="padding-bottom: 10px;">
+                                                    </div>
+                                                    <label class="introduction" style="font-weight: normal;">(only 400 characters allowed)</label>
+                                                    <textarea name="suggestion" placeholder="Enter suggestions here..."
+                                                        class="form-input textarea_help" required maxlength="400"
+                                                        [(ngModel)]="objSSuggestionService.pSuggestion.suggestion"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row button_help row_margin">
+                                            <button mat-raised-button color="primary" style="width: 100px;"
+                                            [disabled]="form.form.invalid" (click)="saveSuggestion()">
+                                                Submit
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

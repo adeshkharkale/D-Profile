@@ -1,0 +1,219 @@
+<div class="content-wrapper">
+    <div class="body_header_row">
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <form autocomplete="off">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" id="card_top_border">
+                            <div class="card-header border-transparent" style="padding-top: 1.5rem;">
+                                <p class="welcome_heading">Welcome, Admin</p>
+                                <form id="Form1" runat="server">
+                                    <div class="main_parent">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="block1">
+                                                    <div class="block_child_one">
+                                                        <div class="block_sub_child_one">
+                                                            {{ objSAdminHomeService.pAdminHome.total }}
+                                                        </div>
+                                                        <div class="block_sub_child_two">
+                                                            Registered Users
+                                                        </div>
+                                                        <div class="block_sub_child_three">
+                                                            Total no of Users Registered
+                                                        </div>
+                                                    </div>
+                                                    <div class="block_child_two">
+                                                        <div class="block_child_two_img">
+                                                            <img src="assets/img/share_logo.png"
+                                                                style="width: 70%; height: 60%" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="block2">
+                                                    <div class="block_child_one">
+                                                        <div class="block_sub_child_one">
+                                                            {{ objSAdminHomeService.pAdminHome.active }}
+                                                        </div>
+                                                        <div class="block_sub_child_two">
+                                                            Active Users
+                                                        </div>
+                                                        <div class="block_sub_child_three">
+                                                            Total no of Subscription Buyers
+                                                        </div>
+                                                    </div>
+                                                    <div class="block_child_two">
+                                                        <div class="block_child_two_img">
+                                                            <img src="assets/img/active_user_logo.png"
+                                                                style="width: 100%; height: 55%" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="block3">
+                                                    <div class="block_child_one">
+                                                        <div class="block_sub_child_one">
+                                                            {{ objSAdminHomeService.pAdminHome.earning }}
+                                                        </div>
+                                                        <div class="block_sub_child_two">
+                                                            Earning
+                                                        </div>
+                                                        <div class="block_sub_child_three">
+                                                            Total Earning from Subscriptions
+                                                        </div>
+                                                    </div>
+                                                    <div class="block_child_two">
+                                                        <div class="block_child_two_img">
+                                                            <img src="assets/img/rupees_logo.png"
+                                                                style="width: 70%; height: 60%" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row"
+                                            style="margin-top:1rem;display: flex;justify-content: center;text-align: center;">
+                                            <div class="row row_height">
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_left_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a routerLink="/active_users">
+                                                                Active Users
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_right_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fas fa-user-tie"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a routerLink="/reg-users">
+                                                                Registered Users
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row row_height">
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_left_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fas fa-calendar-alt"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a routerLink="">
+                                                                Expiry Status
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_right_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fa fa-users" aria-hidden="true"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a routerLink="">
+                                                                Subscriber Payments
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row row_height">
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_left_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fa fa-money" aria-hidden="true"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a routerLink="">
+                                                                Sell Report
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_right_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a routerLink="/feedback_report">
+                                                                Feedback Report
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row row_height">
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_left_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fa fa-comments" aria-hidden="true"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a routerLink="/suggestion_report">
+                                                                Suggestion Report
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 dash_card_design " style=" cursor:pointer;">
+                                                    <div class="dashboard_menu dash_left_menu">
+                                                        <div
+                                                            style="display:flex;justify-content:center;align-items:center;">
+                                                            <div class="dash_menu_one">
+                                                                <i class="fa fa-question" aria-hidden="true"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dash_menu_two">
+                                                            <a routerLink="/ticket-help">
+                                                                Received Tickets
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

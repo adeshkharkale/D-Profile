@@ -1,0 +1,39 @@
+.h_label{
+    color: rgba(1, 14, 37, 0.671);
+    margin-left: 10px; 
+    font-size: 18px;
+}
+
+.button_help{
+    display: grid; 
+    justify-content: right; 
+    align-items: right; 
+}
+
+
+
+.row_margin{
+    margin-top: -10px;
+}
+
+@media (max-width: 768px) {
+    ::ng-deep .mat-raised-button {
+        line-height: 10px;
+        }
+
+        
+    .h_label{
+        color: rgba(28, 25, 216, 0.61);
+        margin-top: 10px; 
+        font-size: 13px;
+        margin-left: 0; 
+    }
+
+    .row_margin{
+        margin-top: -22px;
+    }
+
+    #event_table{
+        font-size: 10px;
+    }
+}

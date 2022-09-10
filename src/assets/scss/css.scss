@@ -1,0 +1,748 @@
+/* Importeed SCSS Files */
+
+@import "variables";
+@import "mixin";
+
+/* Importeed SCSS Files --END */
+
+/* 1. login form */
+/* 2. Header bar css */
+
+/* common css */
+#body_font {
+  @include body_font;
+}
+.body_icon {
+  @include body_icon;
+}
+.table_full_width {
+  @include table_full_width;
+}
+.body_header_row {
+  @include body_header_row;
+}
+#main_page_class {
+  @include main_page_class;
+}
+.body_header {
+  @include body_header;
+}
+.table_delete_btn {
+  @include table_delete_btn;
+}
+.table_edit_btn {
+  @include table_edit_btn;
+}
+#card_top_border {
+  @include card_top_border;
+}
+#popup_form_btn {
+  @include popup_form_btn;
+  &:focus {
+    outline: none;
+    border: 1px solid $icon_color;
+    color: $icon_color;
+  }
+}
+.body_amount{
+  @include body_amount;
+}
+.body_heading {
+  @include body_heading;
+}
+.body_font_size {
+  @include body_font_size;
+}
+.row {
+  margin: 0%;
+  padding: 7px;
+}
+#edit_form_size {
+ @include edit_form_size;
+}
+#search_textbox{
+  @include search_textbox;
+}
+#paggination_select{
+  @include paggination_select;
+}
+.mat_table_first_row{
+  @include mat_table_first_row;
+}
+.mat_table_last_row{
+  @include mat_table_last_row;
+}
+.mat-input-full-width {
+  width: 100%;
+}
+
+.introduction{
+  color: maroon;
+  text-align: justify;
+  font-size: 12px;
+}
+.how_to_use{
+  font-size: 12px;
+  color: maroon;
+  font-style: italic;
+}
+
+@media (max-width: 764px) {
+  .clg_name_textbox{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .introduction{
+    font-size: 9px;
+    color: maroon;
+    line-height: 14px;
+  }
+  .how_to_use{
+    font-size: 8px;
+  }
+
+  #edit_form_size {
+      min-width: 100%;
+      max-width: 100%;
+  }
+  #search_textbox{
+    width: 8rem;
+    padding-left: 12px;
+    font-size: $Responsivefont_size;
+  }
+  #paggination_select{
+    width: 2.4rem;
+    font-size: $Responsivefont_size;
+  }
+  #search_pagination_row{
+    padding-top: 10px;
+  }
+  #body_font{
+    font-size: $Responsivefont_size;
+  }
+  .body_icon {
+    font-size: $Responsivefont_size;
+  }
+  .body_header{
+    font-size: 14px;
+    padding-left: 5px;
+  }
+  .form_mat-table-row {
+    height: 40px;
+  }
+}
+
+/* common css end */
+
+
+/* mainheader CSS start  */
+
+#main_header {
+  @include main_header;
+}
+.header_body_icon {
+  @include header_body_icon;
+}
+#header_body_font {
+  @include header_body_font;
+}
+#header_search_box {
+  @include header_search_box;
+}
+#search_box_icon {
+  @include search_box_icon;
+}
+.Full_End {
+  padding-top: 1rem;
+  color: grey;
+  #Full_End {
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.Full_End:active i.less {
+  display: none;
+}
+.Full_End:active i.more {
+  display: block;
+}
+.Full_End i.more {
+  display: none;
+}
+.header_toggle_btn {
+  padding-top: 6px;
+}
+#msg_count {
+  @include msg_count;
+}
+#notification_count {
+  @include notification_count;
+}
+#FullScreenBtn:focus
+{
+  outline: none;
+}
+/* mainheader CSS end  */
+
+/* sidemenu css start */
+
+#side_header {
+  @include side_header;
+}
+#side_header_logo_prof {
+  @include side_header_logo_prof;
+}
+#side_header_logo {
+  @include side_header_logo;
+}
+#a_menu_icon:hover {
+  background: $menu_hover;
+  box-shadow: 0px 4px 6px $menu_icon_shadow;
+  // p {
+  //   color: $Main_Body_Color;
+  // }
+  i {
+    // color: $Main_Body_Color;
+    background: $menu_hover;
+    // box-shadow: 0px 2px 4px $menu_icon_shadow;
+  }
+}
+#menu_icon {
+  @include menu_icon;
+}
+#sub_menu_icon {
+  @include sub_menu_icon;
+}
+.menu_arrow {
+  @include menu_arrow;
+}
+#menu_font {
+  @include menu_font;
+}
+.sidemenu_header_user_detail {
+  @include sidemenu_header_user_detail;
+}
+.sidemenu_header_logo_padding {
+  @include sidemenu_header_logo_padding;
+}
+#sidemenu_header_profile_logo_padding {
+  @include sidemenu_header_profile_logo_padding;
+}
+.span_font {
+  @include span_font;
+}
+#sidemenu_height
+{
+  @include sidemenu_height;
+}
+
+/* sidemenu css start */
+
+/* mainfooter css start */
+
+.footer_brand {
+  @include footer_brand;
+}
+
+
+/* mainfooter css end */
+
+
+/* start login form */
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+.LoginPageLogo {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+/* login details */
+
+.logindiv {
+  display: flex;
+  justify-content: center;
+}
+.loginlayout {
+  width: fit-content;
+  border-bottom: none;
+}
+.loginhead {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 35px;
+  font-family: "Poppins", sans-serif;
+}
+.loginInput {
+  width: 21rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+
+.loginbutton {
+  width: 20rem;
+  background: linear-gradient(to bottom right, #2c498d, #1d3a7c);
+}
+.buttonLayout {
+  margin-top: 0.5rem;
+  margin-left: 0.6rem;
+}
+.forgotPassword {
+  margin-left: 0.6rem;
+  margin-top: 0.8rem;
+  width: 20rem;
+  font-size: 12px;
+  text-align: center;
+  color: #1d3a7c;
+}
+.LD {
+  text-decoration: none;
+}
+.loginfooter {
+  text-decoration: none;
+  font-size: 11px;
+  color: #1d3a7c;
+  font-family: "Poppins", sans-serif;
+}
+.loginPowBy {
+  display: flex;
+  font-size: 13px;
+  justify-content: center;
+}
+.loginFooterSection {
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+.login_hr{
+  margin: 1rem auto ;
+  width: 700px;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.418), rgba(0, 0, 0, 0));
+}
+.loginFooterPipe {
+  font-weight: bold;
+  font-size: 11px;
+  color: #1d3a7c;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-family: "Poppins", sans-serif;
+}
+.poweredbrand {
+  color: #1d3a7c;
+  font-weight: bold;
+  // font-family: "Metamorphous", cursive;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .login_hr {
+   width: fit-content;
+  }
+  .footer_despa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* end login form */
+
+
+/* Start Registration Form */
+
+.registerlayout {
+  width: 100%;
+  border-bottom: none;
+  margin: 0 10rem 0 10rem;
+  display: flex;
+  justify-content: center;
+}
+
+.registerbutton{
+  width: 10rem;
+  background: linear-gradient(to bottom right, #2c498d, #1d3a7c);
+  font-size: 14px;
+}
+
+.registerbuttonLayout{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 0;
+  margin-right: 20px;
+}
+
+.registerInput {
+  width: 18rem;
+  margin-left: 0.6rem;
+  margin-right: 0.6rem;
+}
+
+.registerhead {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 35px;
+  font-family: "Poppins", sans-serif;
+}
+
+.reg_hr{
+  margin: 1rem auto ;
+  width: 700px;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.418), rgba(0, 0, 0, 0));
+}
+
+@media (max-width: 764px) {
+
+  .registerInput {
+    width: 18rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
+
+  .registerhead {
+    padding: 1rem;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .registerbuttonLayout{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    // padding-left: 0;
+    // margin-right: 28px;
+  }
+  .registerbutton{
+    width: 90%;
+    background: linear-gradient(to bottom right, #2c498d, #1d3a7c);
+    font-size: 14px;
+  }
+
+  .reg_hr {
+    width: fit-content;
+   }
+}
+  
+/* End Registration Form */
+
+/* Start Pages */
+
+.section_heading{
+  font-size: 20px;
+}
+
+.form_input_header_text {
+  @include form_input_header_text;
+
+  @media (max-width: 764px) {
+    font-size: 10px;
+    margin-bottom: 0;
+    font-weight: 400;
+  }
+}
+
+.form-input {
+  @include form-input;
+  &:focus {
+    outline: none;
+    border: 1px solid #007bff !important;
+  }
+}
+
+.file_upload{
+  width: 65%;
+  border: 1px solid #cfd9e7;
+  border-radius: 5px;
+}
+
+.file_upload::-webkit-file-upload-button{
+  background-color: #213e81;
+  color: white;
+  outline: none;
+}
+
+#upload_button_step1{
+  margin-top: 11px;
+  text-align: center;
+  height: 35px;
+  width: 60%;
+  line-height: 0;
+  font-size:12px;
+  background-color: #213e81;
+  color: white;
+  border-radius: 40px;
+}
+
+#upload_button{
+  text-align: center;
+  height: 36px;
+  width: 60%;
+  line-height: 0;
+  font-size:12px;
+  background-color: #213e81;
+  color: white;
+  margin-left: 12px;
+  border-radius: 20px;
+}
+.btn_resume{
+  width: 100% !important;
+}
+#image_upload{
+  margin-top: 5px;
+   height:40px;
+  width: 50px;
+  padding-left: 10px
+}
+
+#row_mobile{
+  margin-bottom: -18px;
+}
+
+#form_layout_mobile{
+  margin-left: 4rem;
+  border: none;
+  margin-bottom: -20px;
+}
+
+#form_layout_mobile_2{
+  margin-left: 4rem;
+  border: none;
+  margin-bottom: -20px;
+  margin-top: -10px;
+}
+
+.career_profile_textarea{
+  height: 100px;
+  width: 106%;
+  margin-left:-22px;
+  margin-top: -10px;
+  padding:15px;
+  font-size: 12px;
+  color: $Font_color;
+}
+
+.form_payment_input {
+  @include form_payment_input;
+}
+
+.gallery_table{
+  padding-top: 15px;
+}
+
+#btn_div{
+  display: grid;
+  grid-template-columns: 86% 7% 7%;
+  justify-content: right;
+}
+.table_row{
+  font-size: 12px;
+  padding: 5px;
+  word-wrap: break-word;
+}
+.table_row_head{
+  font-size: 12px;
+  padding: 5px;
+  color: rgb(47, 51, 54);
+}
+#exp_table{
+  width: 100%;
+}
+
+#research_table{
+  width: 100%;
+  
+}
+
+.research_input{
+  border: none;
+ 
+  &:focus{
+    outline: none;
+    border-bottom: 1px solid rgb(0, 102, 255);
+  }
+}
+
+#expertise_table{
+  width: 100%;
+}
+
+#member_table{
+  width: 100%;
+}
+#textarea_mobile{
+  width: 100%;
+  height:60px;
+}
+.welcome_heading{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@media (max-width: 764px) {
+  .welcome_heading{
+    font-size: 14px;
+  }
+  #upload_button{
+    margin-top: 12px;
+    text-align: center;
+    height: 25px;
+    width: 70%;
+    line-height: 0;
+    font-size:9px;
+    background-color: #213e81;
+    color: white;
+    margin-left: -1px;
+    border-radius: 40px;
+  }
+
+  .btn_resume{
+    width: 86% !important;
+  }
+
+  #upload_button_step1{
+    margin-top: 11px;
+    text-align: center;
+    height: 25px;
+    width: 60%;
+    line-height: 0;
+    font-size:9px;
+    background-color: #213e81;
+    color: white;
+    margin-left: 15px;
+    border-radius: 40px;
+  }
+
+  #image_upload{
+    height:24px;
+    width: 40px;
+    margin-top: 16px;
+  }
+
+  .file_upload{
+    width: 50%;
+    border: 1px solid #cfd9e7;
+    border-radius: 5px;
+    height:24px;
+    font-size:10px;
+  }
+
+  .section_heading{
+    font-size: 14px;
+  }
+
+  .form-input {
+    @include form-input;
+    height: 24px;
+    font-size: 10px;
+    &:focus {
+      outline: none;
+      border: 1px solid #007bff !important;
+    }
+  }
+  #row_mobile{
+    margin-bottom: -27px;
+  }
+
+  #row_top_mobile{
+    margin-top: -13px
+  }
+  #row_top_dob{
+    margin-top:0;
+  }
+
+  #form_layout_mobile{
+    margin-left: -8px;
+    border: none;
+    margin-bottom: -43px;
+  }
+
+  #form_layout_mobile_2{
+    margin-left: -8px;
+    border: none;
+    margin-bottom: -43px;
+    margin-top: -30px;
+  }
+
+  .career_profile_textarea{
+    height: 100px;
+    width: 108%;
+    margin-left:-8px;
+    margin-top: -10px;
+    padding:12px;
+    font-size: 10px;   
+  }
+
+  #exp_table{
+    width: 30rem;
+    font-size:9px;
+    margin-right: 20px;
+  }
+
+  #research_table{
+    font-size:9px;
+    margin-right: 20px;
+    tbody tr td{
+      line-height: 14px;
+      }
+  }
+
+  #expertise_table{
+    width: 22rem;
+    font-size:9px;
+    margin-right: 20px;
+  }
+
+  #member_table{
+    width: 18rem;
+    font-size:9px;
+    margin-right: 20px;
+  }
+
+  .table th, .table td{
+    padding: 0  !important;
+  }
+
+  .gallery_table{
+    padding-top: 0px;
+  }
+
+  .next_button{
+    font-size: 9px;
+    height: 30px;
+    padding: 0;
+    line-height: 0;
+  }
+
+  .next_button_1{
+    font-size: 9px;
+    height: 30px;
+    padding: 0;
+    line-height: 0;
+  }
+
+  #btn_div{
+    display: grid;
+    grid-template-columns: 44% 28% 28%;
+    justify-content: right;
+  }
+  
+  .table_row{
+    font-size: 8px;
+    padding: 10px;
+  }
+  .table_row_head{
+    font-size: 8px;
+    padding: 10px;
+  }
+}
+
+/* Start Pages */

@@ -1,0 +1,64 @@
+<div class="content-wrapper">
+    <div class="body_header_row">
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <form autocomplete="off">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" id="card_top_border">
+                            <div class="card-header border-transparent">
+                                <h1 style="text-align: center;">Share My D' Profile</h1>
+                                <div class="popup_share">
+                                    <div class="child_two_sub3_box2_p">
+                                        <div class="main_img">
+                                            <img [src]="profilePhoto" alt="">
+                                        </div>
+                                        <div class="main_detail">
+                                            <p class="m_name">{{ regName }}</p>
+                                        </div>
+                                        <div class="main_share">
+                                            <div class="sharing">
+                                                <input type="radio" name="share" disabled value="1" #whatsapp1 [checked]="whatsapp">
+                                                <a (click)="onSelect(whatsapp1.value)" class="whatsapp"><i class="fab fa-whatsapp"
+                                                        aria-hidden="true"></i></a>
+                                            </div>
+                                            <div class="sharing">
+                                                <input type="radio" name="share" disabled value="2" #sms1 [checked]="sms">
+                                                <a (click)="onSelect(sms1.value)" class="yt"><i class="fa fa-commenting"
+                                                        aria-hidden="true"></i></a>
+                                            </div>
+                                            <div class="sharing">
+                                                <input type="radio" name="share" disabled value="3" #mail1 [checked]="mail">
+                                                <a class="mail" (click)="onSelect(mail1.value)"><i class="fa fa-envelope"
+                                                        aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="main_inputs">
+                                            <div class="child_input">
+                                                <div class="child">
+                                                    <div class="child_name">
+                                                        <a><i [class]="icon"
+                                                                aria-hidden="true"></i></a>
+                                                    </div>
+                                                    <div class="input_child">
+                                                        <input type="text" placeholder="Enter here.." [value]="input"
+                                                            maxlength="35" #referalDetails>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="child_input">
+                                                <button class="child_btn" target="_blank"
+                                                (click)="share(referalDetails.value)">Share </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

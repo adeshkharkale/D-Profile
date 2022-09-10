@@ -1,0 +1,167 @@
+<div class="student_profile_main_block">
+    <div class="student_profile_block1">
+        <div class="student_profile_block1_header">
+            D' Profile
+            <div> <img class="student_profile_block1_img" src="assets/img/d_profile_logo.PNG"
+                 alt=""> </div>
+                 <div class="student_profile_block1_login">
+                     <a> <i class="fa fa-user" aria-hidden="true"></i><button> Login</button></a>
+                 </div>
+        </div>
+        <div class="student_profile_block1_info" data-aos="fade-up">
+            <div class="student_profile_block1_info_img">
+                <img [src]="objStudentProfileService.pCreateProfile.profilePhotoURL">
+            </div>
+            <div class="student_profile_block1_info_detail">
+                <p class="name">{{objStudentProfileService.pCreateProfile.name}}</p>
+                <p class="designation">{{objStudentProfileService.pCreateProfile.designation}}</p>
+                <p class="number"><i class="fa fa-phone-alt" aria-hidden="true"></i> &nbsp;{{objStudentProfileService.pCreateProfile.mobileNo}}</p>
+                <p class="email"><i class="fa fa-envelope" aria-hidden="true"></i> &nbsp;{{objStudentProfileService.pCreateProfile.emailId}}</p>
+            </div>
+            <div class="student_profile_block2_section3">
+                <div class="student_profile_block2_section1_box">
+                    Visit Me On
+                </div>
+                <div class="student_profile_block2_section3_ref1">
+                    <a href="tel:8999621677" class="phone"><i class="fa fa-phone-alt" aria-hidden="true"></i></a>
+                    <a href="mailto:jaivedshriwas777@gmail.com" class="mail"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                    <a href="sms://+91%208999621677?&body=Hi" class="sms"><i class="fa fa-commenting" aria-hidden="true"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=+918999621677&text=hello&source=&data=" class="whatsapp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                    <a href="https://telegram.me/jaived" class="send"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
+                </div>
+                <div class="student_profile_block2_section3_ref2">
+
+                    <a href="https://www.facebook.com/jaived.shriwas.5" class="fb"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://www.youtube.com/channel/UCJ-rVuJcyJd9A6Nwqzg0Xmw" class="yt"><i class="fa fa-play" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/intent/tweet?url=link_to_be_shared" class="twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://linkedin.com/your/profile/url" class="linkedin"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/jakarotmusic/" class="insta"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="student_profile_block1_address" data-aos="fade-up">
+            <i class="fa fa-map-marker-alt" aria-hidden="true"></i> &nbsp;
+            {{objStudentProfileService.pCreateProfile.address}}
+            <div class="student_profile_block2_section4">
+                <div class="student_profile_block2_section4_btn">
+                    <a href=""><button class="btn_resume_sp">Download CV</button></a>
+                </div>
+                <div class="student_profile_block2_section4_btn">
+                    <button class="btn_share" (click)="popup1()">Share My D' Resume</button>
+                </div>
+             </div>
+        </div>
+    </div>
+    <div class="student_profile_block3">
+        <div class="student_profile_block3_section1" data-aos="fade-up">
+            <div class="student_profile_block3_section1_img">
+                <div class="student_profile_block3_career_head">
+                    <p> Career Profile</p>
+                </div>
+                <div class="student_profile_block3_career_detail">
+                    <p class="about_detail">
+                        {{objStudentProfileService.pCreateProfile.careerProfile}} 
+                    </p>
+                </div>
+            </div>
+            <div class="student_profile_block3_section1_img">
+                <div class="student_profile_block3_career_head">
+                    <p> Personal Details </p>
+                </div>
+                <div class="student_profile_block3_career_detail_divs">
+                    <div class="student_profile_block3_career_detail_div_grid">
+
+                        <div>DOB : </div>
+                        <div>{{objStudentProfileService.pCreateProfile.dob | date:'dd-MM-yyyy'}}</div>
+                    </div>
+                    <div class="student_profile_block3_career_detail_div_grid">
+
+                        <div>Nationality : </div>
+                        <div>{{objStudentProfileService.pCreateProfile.country}}</div>
+
+                    </div>
+                    <div class="student_profile_block3_career_detail_div_grid">
+
+                        <div>Language : </div>
+                        <div>{{objStudentProfileService.pCreateProfile.languagesKnown}}</div>
+                    </div>
+                    <div class="student_profile_block3_career_detail_div_grid">
+                        <div>Marital Status : </div>
+                        <div>{{objStudentProfileService.pCreateProfile.maritalStatus}}</div>
+                    </div>
+                    <div class="student_profile_block3_career_detail_div_grid">
+                        <div> Hobbies :</div>
+                        <div>{{objStudentProfileService.pCreateProfile.hobbies}}</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="student_profile_block2">
+        <div class="student_profile_block2_sections">
+            <div class="student_profile_block2_section1" data-aos="fade-up">
+                <div class="child_two_sub2_box1"></div>
+                <div class="student_profile_block2_section2">
+                    Key Skills
+                </div>
+                <marquee direction="up" onmouseover="this.stop();" style="height: 85%;" onmouseout="this.start();">
+                    <div class="student_profile_block2_skill_detail" *ngFor="let sk of objStudentProfileService.arrSkillExperties;">
+                        <p class="skills">
+                            <i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;
+                            {{sk.expertise}}
+                        </p>
+                        <p class="details">{{sk.description}}</p>
+                        <hr class="hr_bottom">
+                    </div>
+                </marquee>
+            </div>
+        </div>
+        <div class="student_profile_block2_sections">
+            <div class="student_profile_block2_section1" data-aos="fade-up">
+                <div class="child_two_sub2_box1"></div>
+                <div class="student_profile_block2_section2" >
+                    Educational Background
+                </div>
+                <marquee direction="up" onmouseover="this.stop();" style="height: 85%;" onmouseout="this.start();">
+                    <div class="student_profile_block2_skill_detail" *ngFor="let aqt of objStudentProfileService.arrTblQualification">
+                        <p class="skills">
+                            <i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;
+                            College
+                        </p>
+                        <p class="details">{{aqt.college}}</p>
+                        <p class="skills">
+                            <i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;
+                            Qualification
+                        </p>
+                        <p class="details">{{aqt.qualification}}</p>
+                        <p class="skills">
+                            <i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;
+                            Course/Stream
+                        </p>
+                        <p class="details">{{aqt.course}}</p>
+                        <p class="skills">
+                            <i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;
+                            Marks/Percentage
+                        </p>
+                        <p class="details">{{aqt.score}}</p>
+                        <p class="skills">
+                            <i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;
+                            Year Of Passing
+                        </p>
+                        <p class="details">{{aqt.yearofPassing}}</p>
+                        <p class="skills">
+                            <i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;
+                            Status
+                        </p>
+                        <p class="details">{{aqt.status}}</p>
+                        <hr class="hr_bottom">
+                    </div>
+                </marquee>
+            </div>
+        </div>
+
+    </div>
+
+</div>

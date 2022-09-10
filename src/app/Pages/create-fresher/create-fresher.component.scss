@@ -1,0 +1,130 @@
+::ng-deep .mat-step-text-label {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 12px;
+  }
+
+  ::ng-deep .mat-step-icon-content,
+  .mat-step-icon .mat-icon {
+    font-size: 12px;
+  }
+
+  ::ng-deep .mat-step-icon {
+    height: 24px;
+    width: 24px;
+  }
+
+  ::ng-deep .mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-label {
+    padding: 9px 0 0 0 !important;
+  }
+
+  .form_layout {
+    border: 1px solid gray;
+    border-radius: 4px;
+    margin: 1rem 5rem 1rem 5rem;
+    padding: 17px;
+  }
+
+  .form_layout_gallery {
+    border: 1px solid rgba(128, 128, 128, 0.575);
+    border-radius: 4px;
+    // margin: 0px 100px 0px 100px;
+    // margin: 1rem 5rem 1rem 5rem;
+    padding: 17px;
+    align-content:center;
+  }
+
+  .mobile_layout{
+    margin: 12px 0px 10px 0px;
+    padding-bottom:  15px;
+    padding-left: 7px;
+  }
+
+  @media (max-width: 768px) {
+    ::ng-deep .mat-step-text-label {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-size: 7px;
+      white-space: normal;
+      line-height: 12px;
+    }
+
+
+    ::ng-deep .mat-step-icon-content,
+    .mat-step-icon .mat-icon {
+      font-size: 7px;
+    }
+
+    ::ng-deep .mat-step-icon {
+      height: 17px !important;
+      width: 17px !important;
+    }
+
+    ::ng-deep .mat-stepper-label-position-bottom .mat-horizontal-stepper-header,
+    .mat-vertical-stepper-header {
+      padding: 8px 0px 0;
+    }
+
+    ::ng-deep .mat-horizontal-content-container {
+      overflow: hidden;
+      padding: 0 15px 24px 15px !important;
+    }
+    .col-md-12{
+        position: relative;
+        width: 100%;
+        padding-right: 2px;
+        padding-left: 2px;
+    }
+    .form_layout {
+      border-radius: 2px;
+      margin: 12px 0px 10px 0px;
+      padding-bottom: 27px;
+      padding-left: 7px;
+      padding-right: 7px;
+    }
+  }
+  .mobile_layout{
+    margin: 12px 0px 10px 0px;
+    padding-bottom:  35px;
+    padding-left: 80px;
+  }
+
+  /*---Mat-Radio-Button-Css-starts---*/
+  :host ::ng-deep .mat-radio-container {
+    height: 17px;
+    width: 17px;
+  }
+
+  :host ::ng-deep .mat-radio-outer-circle {
+    height: 17px;
+    width: 17px;
+  }
+
+  :host ::ng-deep .mat-radio-inner-circle {
+    height: 17px;
+    width: 17px;
+  }
+
+  :host .mat-radio-button-label-content {
+    font-style: normal;
+  }
+
+  :host ::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #3f51b5;
+  }
+
+  :host ::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-inner-circle {
+    background-color: #3f51b5;
+  }
+
+  .mat_label {
+    font-weight: 400;
+    padding-right: 8px;
+    font-size: 12px;
+  }
+
+  .add_box_button{
+    color: #3f51b5;
+  }
+
+  /*---Mat-Radio-Button-Css-ends--*/

@@ -1,0 +1,73 @@
+<div class="student_expertise_main_block">
+    <div class="sp_experience">
+        <div class="sp_experience_heading">
+        <p class="head"> My Experience </p>
+        </div>
+        <marquee direction="up" onmouseover="this.stop();" style="height: 80%;" onmouseout="this.start();">
+            <div *ngFor="let exp of objSEmployeeProfileService.arrTblExperience">
+            <div class="sp_experience_detail">
+                <div class="sp_side_border">
+                    <div class="sp_experience_layout">
+                        <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="sp_line">
+                    </div>
+                </div>
+                <div class="stud_pro_about_expirience">
+                    <div class="sp_designation">
+                        {{exp.designation }}
+                    </div>
+                    <div class="sp_college">
+                        {{ exp.college}}
+                    </div>
+                    <div class="sp_peroid">
+                        {{ exp.from | date }} - {{exp.to | date}}
+                    </div>
+                    <div class="sp_details">
+                        {{ exp.description }}
+                    </div>
+                </div>
+             </div>
+          </div>
+        </marquee>
+    </div>
+
+
+    <div class="sp_experience">
+        <div class="sp_experience_heading">
+            <p class="head">Additional Education & Certification</p>
+        </div>
+        <marquee direction="up" onmouseover="this.stop();" style="height: 80%;" onmouseout="this.start();">
+            <div *ngFor="let extra of objSEmployeeProfileService.arrExtraCurriculam">
+            <div class="stud_pro_expertise_detail">
+                <p class="sp_expertise">
+                    <i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;
+                    {{extra.activity}}
+                </p>
+                <p class="sp_details">{{extra.description}}</p>
+                <hr class="sp_hr_bottom">
+            </div>
+            </div>
+        </marquee>
+    </div>
+
+
+    <div class="sp_experience">
+        <div class="sp_experience_heading">
+            <p class="head"> Awards & Achievements</p>
+        </div>
+        <marquee direction="up" onmouseover="this.stop();" style="height: 80%;" onmouseout="this.start();">
+            <div *ngFor="let ach of objSEmployeeProfileService.arrAchievement">
+            <div class="stud_pro_expertise_detail">
+                <p class="sp_expertise">
+                    <i class="fa fa-hand-o-right" aria-hidden="true"></i>&nbsp;
+                    {{ach.award}}
+                </p>
+                <p class="sp_details">{{ach.description}}</p>
+                <hr class="sp_hr_bottom">
+            </div>
+            </div>
+        </marquee>
+    </div>
+
+</div>

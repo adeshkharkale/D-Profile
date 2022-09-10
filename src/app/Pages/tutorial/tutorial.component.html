@@ -1,0 +1,60 @@
+<div class="content-wrapper">
+    <div class="body_header_row">
+        <label class="body_header" style="color: #30476d85;">Tutorial Video Links
+        </label>
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <form autocomplete="off">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" id="card_top_border">
+                            <div class="card-header border-transparent">
+                                <div class="row">
+                                    <div class="row button_help">
+                                        <button mat-raised-button color="primary" style="width: 100%;"
+                                        (click)="openAddTutorialPopup()" class="next_button">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp; Add Tutorials
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12" style="overflow-y: auto;">
+                                        <table class="table" id="event_table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="table_row_head" style="text-align:center;width: 5%;">No</th>
+                                                    <th class="table_row_head" style="width: 30%;">Tutorial Name</th>
+                                                    <th class="table_row_head" style="width: 35%;">Video Title</th>
+                                                    <th class="table_row_head" style="width: 25%;">Youtube Video Code</th>
+                                                    <th class="table_row_head" style="width: 5%;">
+                                                        <a style="cursor: pointer;">
+                                                            <i class="fa fa-trash" style="color: red; cursor: pointer;"></i>
+                                                         </a>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let tut of objSTutorialService.arrTutorialTable;let i=index">
+                                                    <td class="table_row" style="text-align:center;width: 5%;">{{i+1}}</td>
+                                                    <td class="table_row" style="width: 30%;">{{tut.tutorialType}}</td>
+                                                    <td class="table_row" style="width: 35%;">{{tut.videoTitle}}</td>
+                                                    <td class="table_row" style="width: 25%;">{{tut.youtubeVideoCode}}</td>
+                                                    <td class="table_row" style="width: 5%;"><a style="cursor: pointer;"
+                                                        (click)="removeTutorials(tut.tutorialId)">
+                                                        <i class="fa fa-times" style="color: red; cursor: pointer;"></i>
+                                                     </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

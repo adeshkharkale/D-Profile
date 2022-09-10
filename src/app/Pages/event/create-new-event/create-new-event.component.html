@@ -1,0 +1,32 @@
+<form autocomplete="off" #form="ngForm">
+    <label class="h_label">My Upcoming Event</label>
+    <div class="row" style="margin-top: 10px;">
+        <div class="col-md-12">
+            <div class="form-group">
+                <input matInput type="text" class="form-input" placeholder="Event Name" name="event"
+                [(ngModel)]="objSEventService.pEvent.event" required maxlength="40">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <mat-label class="e_label">Event Date</mat-label>
+                <input matInput type="datetime-local" class="form-input" placeholder="Ex: 5/21/2021, 4:53:16 PM" name="date"
+                required [(ngModel)]="objSEventService.pEvent.date">
+            </div>
+        </div>
+    </div>
+    <div class="row row_margin">
+        <div class="col-md-12">
+            <div class="form-group">
+                <input matInput type="text" class="form-input" placeholder="Event Link" name="eventLink"
+                required [(ngModel)]="objSEventService.pEvent.eventLink">
+            </div>
+        </div>
+    </div>
+    <div class="row button_help row_margin">
+        <button mat-raised-button mat-dialog-close color="primary" style="width: 100px;"
+        [disabled]="form.form.invalid" (click)="clickSaveEventDetails()">
+            Submit
+        </button>
+    </div>
+</form>

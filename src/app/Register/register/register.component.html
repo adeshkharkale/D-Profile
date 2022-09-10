@@ -1,0 +1,111 @@
+<app-header></app-header>
+<div class="logindiv">
+    <mat-card class="registerlayout" style="border: 1px solid rgba(77, 75, 75, 0.082);
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.1);">
+        <p class="registerhead">Register With D'Profile</p>
+        <form #form="ngForm" autocomplete="off">
+            <div class="row" style="display: flex;justify-content: center;">
+                <div class="col-md-4">
+                    <div class="formfield">
+                        <mat-form-field appearance="outline" class="registerInput">
+                            <mat-label>Name</mat-label>
+                            <input name="Name" matInput placeholder="Name"
+                            [(ngModel)]="objSRegisterService.pUserData.regName"
+                            maxlength="40" required>
+                            <mat-icon matSuffix>account_circle</mat-icon>
+                            <mat-hint>Enter Full Name</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="formfield">
+                        <mat-form-field appearance="outline" class="registerInput">
+                            <mat-label>Email</mat-label>
+                            <input name="emailId" type="email" matInput placeholder="Email"
+                            [(ngModel)]="objSRegisterService.pUserData.emailId"
+                            maxlength="30" required>
+                            <mat-icon matSuffix>email</mat-icon>
+                            <mat-hint>Enter valid Email</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="formfield">
+                        <mat-form-field appearance="outline" class="registerInput">
+                            <mat-label>Mobile No</mat-label>
+                            <input name="mobileNo" matInput placeholder="Mobile No"
+                            [(ngModel)]="objSRegisterService.pUserData.mobileNo"
+                            maxlength="10" required>
+                            <mat-icon matSuffix>call</mat-icon>
+                            <mat-hint>Enter valid Mobile Number</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="display: flex;justify-content: center;">
+                <div class="col-md-4">
+                    <div class="formfield">
+                        <mat-form-field appearance="outline" class="registerInput">
+                            <mat-label>Create Password</mat-label>
+                            <input name="password" type="password" matInput placeholder="Create Password"
+                            maxlength="15" required #pass1>
+                            <mat-icon matSuffix>lock</mat-icon>
+                            <mat-hint>Alphanumeric, Minimum 8 Characters</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="formfield">
+                        <mat-form-field appearance="outline" class="registerInput">
+                            <mat-label>Confirm Password</mat-label>
+                            <input name="password" type="password" matInput placeholder="Confirm Password"
+                            [(ngModel)]="objSRegisterService.pUserData.password"
+                            maxlength="15" required>
+                            <mat-icon matSuffix>lock</mat-icon>
+                            <mat-hint>Re-Enter Password</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="formfield">
+                        <mat-form-field appearance="outline" class="registerInput">
+                            <mat-label>Referal Code (If Any)</mat-label>
+                            <input name="referal" matInput placeholder="Ex. 94********@dtpl" maxlength="15"
+                            [(ngModel)]="objSRegisterService.pUserData.referalCode">
+                            <mat-icon matSuffix>people</mat-icon>
+                            <mat-hint>Enter Referal Code</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="row privacy">
+                <div>
+                    <input type="checkbox" class="check_privacy" #check required> 
+                </div>
+                <div>
+                    I Read & Accept Privacy Policy of D'Profile 
+                </div>
+                <div>
+                    <a target="_blank" style="text-decoration: none;" href="assets/DProfile_Privacy_Policy.pdf">
+                        Privacy Policy
+                    </a>    
+                </div>
+                <!-- <span>I accept D'Profile's Privacy Policy</span>
+                <a target="_blank" href="assets/D' Profile Privacy Policy">
+                    Privacy Policy
+                </a> -->
+            </div>
+            <div class="formfield" class="registerbuttonLayout">
+                <button mat-raised-button class="registerbutton" type="submit" style="color: white;"
+                color="primary" (click)="save(check.checked,pass1.value)" id="rzp-button1" [disabled]="form.form.invalid">
+                    Proceed To Pay
+                </button>
+            </div>
+        </form>
+    </mat-card>
+    <div>
+    </div>
+</div>
+<br/>
+<hr class="reg_hr" />
+<app-footer></app-footer>

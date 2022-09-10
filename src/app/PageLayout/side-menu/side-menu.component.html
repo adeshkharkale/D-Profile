@@ -1,0 +1,48 @@
+<style>
+    .sidemenu_header_logo {
+        height: 50px;
+        width: 50px;
+    }
+</style>
+<div class="main-sidebar sidebar-dark-primary " id="side_header">
+    <div class="user-panel  d-flex" id="side_header_logo">
+        <div class="image sidemenu_header_logo_padding">
+            <img src="assets/img/d_profile_logo.PNG" class="sidemenu_header_logo" style="border-radius: 50%;"/>
+        </div>
+    </div>
+    <div class="user-panel  d-flex" id="side_header_logo_prof">
+        <div class="image" id="sidemenu_header_profile_logo_padding">
+            <img [src]="userImg" class="img-circle elevation-2"/>
+        </div>
+        <div class="sidemenu_header_user_detail">
+            <p id="header_body_font">
+                <b> &nbsp;&nbsp;{{ regName }}</b><br> 
+                &nbsp;&nbsp;<span class="span_font">{{mobile}}@dtpl</span>
+            </p>
+        </div>
+    </div>
+    <nav class="mt-2 sidebar" id="sidemenu_height">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item has-treeview menu-open"></li>
+            <li class="nav-item has-treeview" *ngFor="let menu of objSSideMenuService.arrSideMenu">
+                <a id="a_menu_icon" href="#" routerLink="{{ menu.routingUrl }}" class="nav-link"
+                    *ngIf="menu.hasSubMenu == true || (menu.parentId == 0 && menu.hasSubMenu == false)">
+                    <i class="{{ menu.menuIcon }}" aria-hidden="true" id="menu_icon"></i>
+                    <p id="menu_font">
+                        {{ menu.menu }}
+                        <i class="fas fa-angle-left right menu_arrow"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview " *ngFor="let submenu of objSSideMenuService.arrSideMenu">
+                    <li class="nav-item" *ngIf="submenu.parentId == menu.menuId">
+                        <a id="a_menu_icon" href="#" [routerLink]="[submenu.routingUrl,submenu.menuId]"
+                            class="nav-link">
+                            <i id="sub_menu_icon" class="{{ submenu.menuIcon }}" aria-hidden="true"></i>
+                            <p id="menu_font">{{ submenu.menu}}</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>

@@ -1,0 +1,27 @@
+<div class="profile_gallery_main_block">
+    <div class="experience">
+        <div class="experience_heading">
+            <p class="head"> My Photo Gallery </p>
+        </div>
+        <marquee direction="up" onmouseover="this.stop();" style="height: 80%;" onmouseout="this.start();">
+            <div class="profile_gallery">
+                <div class="profile_gallery_photo_bg" *ngFor="let gallery of objSProfileService.arrGallery">
+                    <img class="profile_gallery_gallery_img" [src]="gallery.photoURL" alt="">
+                </div>
+            </div>
+        </marquee>
+    </div>
+    <div class="experience">
+        <div class="experience_heading">
+            <p class="head"> My Prestigous Certificates</p>
+        </div>
+        <marquee direction="up" onmouseover="this.stop();" style="height: 80%;" onmouseout="this.start();">
+            <div class="profile_certificate">
+                <div *ngFor="let cert of objSProfileService.arrCertificate">
+                    <img class="profile_prestigous_cert" [src]="cert.certificateURL" alt="">
+                </div>
+            </div>
+        </marquee>
+    </div>
+
+</div>

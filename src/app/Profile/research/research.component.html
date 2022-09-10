@@ -1,0 +1,37 @@
+<div class="research_main_block">
+    <p class="p_head research_heading"> &nbsp; 
+        <label class="research_head">
+            My Research Profile</label>
+        </p>
+    <marquee direction="left" onmouseover="this.stop();" style="height: 85%;" onmouseout="this.start();">
+        <div style="display: inline-block;">
+
+            <div class="research_main_block_box" *ngFor="let res of objSProfileService.arrTableResearchForProfile">
+                <div *ngIf="res.regId == 0">
+                    <div class="research_box1">
+                        <div class="sub_box" *ngFor="let subResearch of objSProfileService.arrTableResearchForProfile">
+                            <div class="child_box"
+                                *ngIf="subResearch.researchProfileId == res.researchProfileId && subResearch.regId != 0 ">
+                                <div class="child_box_text">
+                                    {{subResearch.heading}}
+                                </div>
+                                <div class="child_box_number">
+                                    {{subResearch.totalCount}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="research_box2">
+                        {{res.totalCount}}
+                    </div>
+                    <div class="research_box3">
+                        {{res.heading}}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </marquee>
+
+
+</div>

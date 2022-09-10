@@ -1,0 +1,928 @@
+<div class="content-wrapper">
+    <div class="body_header_row">
+        <label class="body_header" style="color: #30476d85;">Create / Fresher Resume
+        </label>
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <form autocomplete="off">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" id="card_top_border">
+                            <div class="card-header border-transparent">
+                                <div class="row">
+                                    <mat-horizontal-stepper class="col-md-12 " labelPosition="bottom" #stepper>
+                                        <mat-step errorMessage="Is required!" [completed]="false">
+                                            <form autocomplete="off" #form="ngForm">
+                                                <ng-template matStepLabel>About You</ng-template>
+
+                                                <!-- First Step Start Here -->
+                                                <div class="form_layout" id="form_layout_mobile">
+                                                    <p class="section_heading">Personal Details</p>
+                                                    <p class="introduction">( Please provide personal information here )</p>
+                                                </div>
+                                                <div class="form_layout">
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Your Name
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="40"
+                                                                    name="name" required
+                                                                    [(ngModel)]="objSCreateFresherService.pCreateProfile.name"
+                                                                    [value]="objSCreateFresherService.pCreateProfile.name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4" id="row_top_mobile">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">
+                                                                    Mobile No
+                                                                </mat-label>
+                                                                <input matInput type="text" maxlength="12" class="form-input" name="mobileNo" required
+                                                                [(ngModel)]="objSCreateFresherService.pCreateProfile.mobileNo">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">WhatsApp
+                                                                </mat-label>
+                                                                <input matInput type="text" maxlength="12"
+                                                                class="form-input" name="whatsapp" required
+                                                                [(ngModel)]="objSCreateFresherService.pCreateProfile.whatsapp">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Email Id
+                                                                </mat-label>
+                                                                <input matInput type="text" maxlength="30" class="form-input" name="emailId" required
+                                                                [(ngModel)]="objSCreateFresherService.pCreateProfile.emailId">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Date Of Birth
+                                                                </mat-label>
+                                                                <input matInput type="date" class="form-input" name="dob" required
+                                                                [(ngModel)]="objSCreateFresherService.pCreateProfile.dob">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group clg_name_textbox" >
+                                                                <mat-label class="form_input_header_text" onfocus="this.select();"
+                                                                    style="margin-left: 7px;">Address
+                                                                </mat-label>
+                                                                <input type="text" 
+                                                                    maxlength="80" class="form-input"  name="address" required
+                                                                    [(ngModel)]="objSCreateFresherService.pCreateProfile.address"
+                                                                    [value]="objSCreateFresherService.pCreateProfile.address">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">District</mat-label>
+                                                                <mat-select matInput name="districtId" class="form-input" required
+                                                                [(ngModel)]="objSCreateFresherService.pCreateProfile.districtId">
+                                                                  <mat-option [value]="0">None</mat-option>
+                                                                  <mat-option *ngFor="let d of objSCreateFresherService.arrDistrict" 
+                                                                  [value]="d.districtId">{{d.district}}</mat-option>
+                                                                </mat-select>
+                                                              </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">
+                                                                    State
+                                                                </mat-label>
+                                                                <mat-select matNativeControl name="stateId" class="form-input" required
+                                                                [(ngModel)]="objSCreateFresherService.pCreateProfile.stateId">
+                                                                    <mat-option>None</mat-option>
+                                                                    <mat-option *ngFor="let s of objSCreateFresherService.arrState"
+                                                                    [value]="s.stateId">{{s.state}}</mat-option>
+                                                                </mat-select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Country</mat-label>
+                                                                <mat-select matInput type="text" class="form-input" name="countryId" required
+                                                                [(ngModel)]="objSCreateFresherService.pCreateProfile.countryId">
+                                                                  <mat-option [value]="0">None</mat-option>
+                                                                  <mat-option *ngFor="let c of objSCreateFresherService.arrCountry"
+                                                                  [value]="c.countryId">
+                                                                   {{c.country}}
+                                                                  </mat-option>
+                                                                </mat-select>
+                                                              </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Pincode
+                                                                </mat-label>
+                                                                <input matInput type="number" class="form-input" maxlength="6" name="pincode" required
+                                                                [(ngModel)]="objSCreateFresherService.pCreateProfile.pincode">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3" >
+                                                            <div class="form-group" id="row_top_mobile">
+                                                                <mat-label class="form_input_header_text">
+                                                                    Marital Status
+                                                                </mat-label>
+                                                                <mat-select matInput type="text" name="maritalId" class="form-input"
+                                                                [(ngModel)]="objSCreateFresherService.pCreateProfile.maritalId">
+                                                                    <mat-option [value]="0">None</mat-option>
+                                                                    <mat-option *ngFor="let ms of objSCreateFresherService.arrMaritalStatus"
+                                                                    [value]="ms.maritalId">
+                                                                        {{ms.maritalStatus}}
+                                                                    </mat-option>
+                                                                </mat-select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text"
+                                                                    style="margin-left: 7px;">
+                                                                    Languages Known
+                                                                </mat-label>
+                                                                <input matInput type="text" maxlength="25" required
+                                                                    class="form-input" name="languagesKnown" 
+                                                                    [(ngModel)]="objSCreateFresherService.pCreateProfile.languagesKnown">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text"
+                                                                    style="margin-left: 7px;">Hobbies
+                                                                </mat-label>
+                                                                <input matInput type="text" maxlength="40"
+                                                                    class="form-input" name="hobbies"
+                                                                    [(ngModel)]="objSCreateFresherService.pCreateProfile.hobbies">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br />
+                                                <div class="form_layout" id="form_layout_mobile_2">
+                                                    <p class="section_heading">
+                                                        Social Connectivity 
+                                                        <label class="how_to_use">(How to upload social media account url watch video-&nbsp; 
+                                                        <a target="_blank" href="https://www.youtube.com/playlist?list=PLbw_srbqLG3aLD-OFH-UaGTiRKqzixqGK">हिंदी</a> &nbsp;/&nbsp;<span>
+                                                            <a target="_blank" href="https://youtube.com/playlist?list=PLbw_srbqLG3YWHoQWoSp8us9bZvOr-Ue6">मराठी </a>
+                                                        </span> )
+                                                    </label>
+                                                    </p>
+                                                </div>
+                                                <div class="form_layout">
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Facebook
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="60"
+                                                                    name="facebook" placeholder="Paste URL Here..."
+                                                                    [(ngModel)]="objSCreateFresherService.pCreateProfile.facebook"
+                                                                    [value]="objSCreateFresherService.pCreateProfile.facebook">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4" id="row_top_mobile">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Twitter
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="60"
+                                                                    name="twitter" placeholder="Paste URL Here..."
+                                                                    [(ngModel)]="objSCreateFresherService.pCreateProfile.twitter"
+                                                                    [value]="objSCreateFresherService.pCreateProfile.twitter">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4" id="row_top_mobile">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Instagram
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="60"
+                                                                    name="instagram" placeholder="Paste URL Here..."
+                                                                    [(ngModel)]="objSCreateFresherService.pCreateProfile.instagram"
+                                                                    [value]="objSCreateFresherService.pCreateProfile.instagram">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">LinkedIn
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="60"
+                                                                    name="linkedin" placeholder="Paste URL Here..."
+                                                                    [(ngModel)]="objSCreateFresherService.pCreateProfile.linkedin"
+                                                                    [value]="objSCreateFresherService.pCreateProfile.linkedin">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4" id="row_top_mobile">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">YouTube
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="60"
+                                                                    name="youtube" placeholder="Paste URL Here..."
+                                                                    [(ngModel)]="objSCreateFresherService.pCreateProfile.youtube"
+                                                                    [value]="objSCreateFresherService.pCreateProfile.youtube">
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4" id="row_top_mobile">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Telegram
+                                                                </mat-label>
+                                                                <input type="text" class="form-input" maxlength="60"
+                                                                    name="telegram" placeholder="Paste URL Here..."
+                                                                    [(ngModel)]="objSCreateFresherService.pCreateProfile.telegram"
+                                                                    [value]="objSCreateFresherService.pCreateProfile.telegram">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br />
+                                                <div class="form_layout" id="form_layout_mobile_2">
+                                                    <p class="section_heading">Career Profile
+                                                        <span class="introduction">(only 300 characters allowed)</span>
+                                                    </p>
+                                                </div>
+                                                <div class="form_layout" style="border: none;">
+                                                    <div class="row" style="margin-bottom: -18px;">
+                                                        <div class="col-md-12" style="margin-top: -15px;">
+                                                            <div class="form-group">
+                                                                <textarea class="career_profile_textarea" onfocus="this.select();"
+                                                                    maxlength="300" name="careerProfile"
+                                                                    [(ngModel)]="objSCreateFresherService.pCreateProfile.careerProfile"
+                                                                    [value]="objSCreateFresherService.pCreateProfile.careerProfile">
+                                                                </textarea>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12"
+                                                        style="display: grid; justify-content: right;">
+                                                        <button mat-raised-button color="primary" matStepperNext
+                                                            [disabled]="form.form.invalid" class="next_button"
+                                                            (click)="NextInFresherProfile()">
+                                                            Save & Next
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </mat-step>
+                                        <!-- First Step End Here -->
+
+                                        <!-- Second Step Start Here -->
+
+                                        <mat-step errorMessage="Is required!" [completed]="false">
+                                            <form autocomplete="off">
+                                                <ng-template matStepLabel>Educational Background</ng-template>
+                                                <div class="form_layout" id="form_layout_mobile">
+                                                    <p class="section_heading">Educational Background</p>
+                                                    <p class="introduction">( Please provide information about your
+                                                        Educational Background in the given fields. )</p>
+                                                </div>
+                                                <div class="form_layout">
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">College / Institute
+                                                                </mat-label>
+                                                                <input matInput type="text" maxlength="50"
+                                                                    class="form-input"
+                                                                    #college>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4" id="row_top_mobile">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Qualification</mat-label>
+                                                                <mat-select matNativeControl class="form-input" name="qualificationId" #qualification>
+                                                                  <mat-option [value]="0">None</mat-option>
+                                                                  <mat-option *ngFor="let q of objSCreateFresherService.arrQualification"
+                                                                  [value]="q.qualificationId">
+                                                                    {{q.qualification}}
+                                                                  </mat-option>
+                                                                </mat-select>
+                                                              </div>
+                                                        </div>
+                                                        <div class="col-md-4" id="row_top_mobile">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Course /
+                                                                    Stream
+                                                                </mat-label>
+                                                                <input matInput type="text" class="form-input"
+                                                                    maxlength="20" #course>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile" style="margin-top: 10px;">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group" id="row_top_mobile">
+                                                                <mat-label class="form_input_header_text">
+                                                                    Score / Percentage
+                                                                </mat-label>
+                                                                <input matInput type="text" class="form-input" #score>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4" id="row_top_mobile">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">Status</mat-label>
+                                                                <mat-select matNativeControl class="form-input" name="statusId" #status>
+                                                                  <mat-option [value]="0">None</mat-option>
+                                                                  <mat-option *ngFor="let st of objSCreateFresherService.arrStatus"
+                                                                  [value]="st.statusId">{{st.status}}</mat-option>
+                                                                </mat-select>
+                                                              </div>
+                                                        </div>
+                                                        <div class="col-md-4" id="row_top_mobile">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text">
+                                                                    Year Of Passing
+                                                                </mat-label>
+                                                                <input matInput type="text" class="form-input" #yearofpassing>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile"
+                                                        style="display: grid;justify-content: right;margin-right: 1px;">
+                                                      <button mat-raised-button color="primary" class="next_button"
+                                                      (click)="addEducationTbl(college.value,qualification.value,course.value,score.value,yearofpassing.value,status.value)">
+                                                            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add
+                                                        </button>
+                                                    </div>
+                                                    <div class="row" id="row_mobile"
+                                                        style="display: grid; margin-right: 1px;">
+                                                    <div class="col-md-12" style="margin-top: 25px;overflow-x: scroll;">
+                                                        <table class="table table-bordered" id="exp_table">
+                                                            <thead>
+                                                              <tr>
+                                                                <th style="background-color:white;color:rgb(47,51,54)" width="5%" scope="col"
+                                                                  id="table_head_center">Sr.No</th>
+                                                                <th style="background-color:white;color:rgb(47,51,54)" width="35%" scope="col"
+                                                                  id="table_head_center">College</th>
+                                                                <th style="background-color:white;color:rgb(47,51,54)" width="10%" scope="col"
+                                                                  id="table_head_center">Qualification</th>
+                                                                <th style="background-color:white;color:rgb(47,51,54)" width="10%" scope="col"
+                                                                  id="table_head_center">Course/Stream</th>
+                                                                <th style="background-color:white;color:rgb(47,51,54)" width="10%" scope="col"
+                                                                  id="table_head_center">Marks/Percentage</th>
+                                                                <th style="background-color:white;color:rgb(47,51,54)" width="15%" scope="col"
+                                                                  id="table_head_center">Year Of Passing</th>
+                                                                <th style="background-color:white;color:rgb(47,51,54)" width="10%" scope="col"
+                                                                  id="table_head_center">Status</th>
+                                                                <th style="background-color:white;color:red" width="5%" id="table_head_center">
+                                                                  <i class="far fa-trash-alt" aria-hidden="true"></i>
+                                                                </th>
+                                                              </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                              <tr *ngFor="let aqt of objSCreateFresherService.arrTblQualification;let i=index">
+                                                                <td style="padding: 5px;width: 5%;">{{i+1}}</td>
+                                                                <td style="padding: 5px;width: 35%;">{{aqt.college}}</td>
+                                                                <td style="padding: 5px;width: 10%;">{{aqt.qualification}}</td>
+                                                                <td style="padding: 5px;width: 10%;">{{aqt.course}}</td>
+                                                                <td style="padding: 5px;width: 10%;">{{aqt.score}}</td>
+                                                                <td style="padding: 5px;width: 15%;">{{aqt.yearofPassing}}</td>
+                                                                <td style="padding: 5px;width: 10%;">{{aqt.status}}</td>
+                                                                <td style="padding: 5px;width: 5%;text-align: center;">
+                                                                  <a style="cursor: pointer;" 
+                                                                  (click)="deleteFromQualificationTbl(i)">
+                                                                    <i class="fa fa-times" style="color: red; cursor: pointer;"></i>
+                                                                  </a>
+                                                                </td>
+                                                              </tr>
+                                                            </tbody>
+                                                          </table>
+                                                        <p class="how_to_use" style="font-weight: bold;">Scroll Right >></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" id="btn_div">
+                                                        <div></div>
+                                                        <div style="margin-right: 10px;">
+                                                            <button mat-raised-button color="primary"
+                                                                matStepperPrevious class="next_button_1">
+                                                                Back
+                                                            </button>
+                                                        </div>
+                                                        <div style="margin-left: 10px;">
+                                                            <button mat-raised-button color="primary" matStepperNext
+                                                                class="next_button" (click)="NextInEducation()">
+                                                                Next
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </mat-step>
+
+                                        <!-- Second Step End Here -->
+
+                                        <!-- Third Step Start Here -->
+                                        <mat-step errorMessage="Is required!" [completed]="false">
+                                            <form autocomplete="off">
+                                                <ng-template matStepLabel>Key Skills</ng-template>
+                                                <div class="form_layout" id="form_layout_mobile">
+                                                    <p class="section_heading">Key Skills</p>
+                                                    <p class="introduction">( Please provide information about your area
+                                                        of expertise / mastery / potential in the given fields. )</p>
+                                                </div>
+                                                <div class="form_layout">
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text"
+                                                                    style="margin-left: 7px;">Skill
+                                                                </mat-label>
+                                                                <input matInput type="text" maxlength="30" class="form-input" #skill>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text"
+                                                                    style="margin-left: 7px;">Description
+                                                                </mat-label>
+                                                                <textarea matInput type="text" maxlength="50"
+                                                                    style="height: 40px;" class="form-input"
+                                                                    id="textarea_mobile"
+                                                                    #description>
+                                                            </textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile"
+                                                        style="display: grid;justify-content: right;margin-right: 1px;">
+                                                        <button mat-raised-button color="primary" class="next_button"
+                                                        (click)="addSkill(skill.value, description.value)">
+                                                            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-md-12" style="margin-top: 25px;overflow-x: scroll;">
+                                                        <table class="table" id="expertise_table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th  width="5%" scope="col" class="table_row_head">Sr.</th>
+                                                                    <th  width="40%" scope="col" class="table_row_head">Key Skills</th>
+                                                                    <th width="50%" scope="col" class="table_row_head">Details</th>
+                                                                    <th  width="5%" scope="col" class="table_row_head"></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr *ngFor="let skl of  objSCreateFresherService.arrKeySkill;let i=index">
+                                                                    <td class="table_row"
+                                                                    style="width: 5%;text-align: center;">{{ i+1 }}</td>
+                                                                    <td class="table_row" style="width: 40%;">{{skl.expertise}}</td>
+                                                                    <td class="table_row" style="width: 50%;">{{skl.description}}</td>
+                                                                    <td class="table_row"
+                                                                    style="width: 10%;text-align: center;">
+                                                                        <a style="cursor: pointer;"
+                                                                        (click)="deleteFromSkillTbl(i)">
+                                                                            <i class="fa fa-times"
+                                                                                style="color: red; cursor: pointer;"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <p class="how_to_use" style="font-weight: bold;">Scroll Right >></p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" id="btn_div">
+                                                        <div></div>
+                                                        <div style="margin-right: 10px;">
+                                                            <button mat-raised-button color="primary"
+                                                                matStepperPrevious class="next_button_1">Back</button>
+                                                        </div>
+                                                        <div style="margin-left: 10px;"> 
+                                                            <button mat-raised-button color="primary" matStepperNext
+                                                                class="next_button" (click)="NextInSkill()">
+                                                                Next
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </mat-step>
+
+                                        <!-- Third Step End Here -->
+
+                                        <!-- Fourth Step Start Here -->
+
+                                        <mat-step errorMessage="Is required!" [completed]="false">
+                                            <form autocomplete="off">
+                                                <ng-template matStepLabel>Internship & Projects</ng-template>
+                                                <div class="form_layout" id="form_layout_mobile">
+                                                    <p class="section_heading">Internship and Projects</p>
+                                                    <p class="introduction">( Please provide information about your
+                                                        Internship in the given fields. )</p>
+                                                </div>
+                                                <div class="form_layout">
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group" id="row_top_mobile">
+                                                                <mat-label class="form_input_header_text">
+                                                                    Internship or Projects
+                                                                </mat-label>
+                                                                <input matInput type="text" maxlength="50"
+                                                                    class="form-input"
+                                                                    #internship>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text"
+                                                                    style="margin-left: 7px;">Description
+                                                                </mat-label>
+                                                                <textarea matInput type="text" maxlength="100"
+                                                                    style="height: 40px;" class="form-input"
+                                                                    id="textarea_mobile"
+                                                                    #InternshipDescription>
+                                                            </textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile"
+                                                        style="display: grid;justify-content: right;margin-right: 1px;">
+                                                        <button mat-raised-button color="primary" class="next_button"
+                                                        (click)="addInternshipTable(internship.value,InternshipDescription.value)">
+                                                            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-md-12" style="margin-top: 25px;overflow-x: scroll;">
+                                                        <table class="table " id="member_table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th width="5%" scope="col" class="table_row_head"
+                                                                        >Sr.</th>
+                                                                    <th width="35%" scope="col" class="table_row_head"
+                                                                        >Internship or Projects</th>
+                                                                    <th width="55%" scope="col" class="table_row_head"
+                                                                        >Details</th>
+                                                                    <th width="5%" class="table_row_head"
+                                                                        ></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr *ngFor="let ait of objSCreateFresherService.arrTblInternship;let i=index">
+                                                                    <td class="table_row" 
+                                                                        style="text-align: center;">
+                                                                        {{ i+1 }}
+                                                                    </td>
+                                                                    <td class="table_row"  style="width: 35%;">{{ait.internship}}</td>
+                                                                    <td class="table_row" style="width: 45%;">{{ait.description}}</td>
+                                                                    <td class="table_row"
+                                                                        style="text-align: center;">
+                                                                        <a style="cursor: pointer;"
+                                                                            (click)="deleteFromInternshipTbl(i)">
+                                                                            <i class="fa fa-times"
+                                                                                style="color: red; cursor: pointer;"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <p class="how_to_use" style="font-weight: bold;">Scroll Right >></p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" id="btn_div">
+                                                        <div></div>
+                                                        <div style="margin-right: 10px;">
+                                                            <button mat-raised-button color="primary"
+                                                                matStepperPrevious class="next_button_1">Back</button>
+                                                        </div>
+                                                        <div style="margin-left: 10px;">
+                                                            <button mat-raised-button color="primary" matStepperNext
+                                                                class="next_button" (click)="InternProjectNext()">
+                                                                Next
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </mat-step>
+
+                                        <!-- Fourth Step End Here -->
+
+                                        <!-- Fifth Step Start Here -->
+
+                                        <mat-step errorMessage="Is required!" [completed]="false">
+                                            <form autocomplete="off">
+                                                <ng-template matStepLabel>Extra Curricullam Activities</ng-template>
+                                                <div class="form_layout" id="form_layout_mobile">
+                                                    <p class="section_heading">My Activities</p>
+                                                    <p class="introduction">( Please provide information about your
+                                                        Extra Curricullam Activities in
+                                                        the given fields. )</p>
+                                                </div>
+                                                <div class="form_layout">
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group" id="row_top_mobile">
+                                                                <mat-label class="form_input_header_text">
+                                                                    Activity Name
+                                                                </mat-label>
+                                                                <input matInput type="text" maxlength="50"
+                                                                    class="form-input" #activity>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text"
+                                                                    style="margin-left: 7px;">Description
+                                                                </mat-label>
+                                                                <textarea matInput type="text" maxlength="100"
+                                                                    style="height: 40px;" class="form-input"
+                                                                    id="textarea_mobile"
+                                                                    #CurriculamDescription>
+                                                            </textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile"
+                                                        style="display: grid;justify-content: right;margin-right: 1px;">
+                                                        <button mat-raised-button color="primary" class="next_button"
+                                                        (click)="addExtraCurriculam(activity.value,CurriculamDescription.value)">
+                                                            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-md-12" style="margin-top: 25px;overflow-x: scroll;">
+                                                        <table class="table " id="exp_table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th width="5%" scope="col" class="table_row_head"
+                                                                        >Sr.</th>
+                                                                    <th width="35%" scope="col" class="table_row_head"
+                                                                        >Activity Name</th>
+                                                                    <th width="55%" scope="col" class="table_row_head"
+                                                                        >Details</th>
+                                                                    <th width="5%" class="table_row_head"
+                                                                        ></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr *ngFor="let extra of objSCreateFresherService.arrExtraCurriculam;let i = index">
+                                                                    <td class="table_row"
+                                                                        style="text-align: center;">
+                                                                        {{ i+1 }}
+                                                                    </td>
+                                                                    <td class="table_row" style="width: 35%;">{{extra.activity}}</td>
+                                                                    <td class="table_row" style="width: 45%;">{{extra.description}}</td>
+                                                                    <td class="table_row"
+                                                                        style="text-align: center;">
+                                                                        <a style="cursor: pointer;"
+                                                                            (click)="deleteFromExtraCurricuTbl(i)">
+                                                                            <i class="fa fa-times"
+                                                                                style="color: red; cursor: pointer;"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <p class="how_to_use" style="font-weight: bold;">Scroll Right >></p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" id="btn_div">
+                                                        <div></div>
+                                                        <div style="margin-right: 10px;">
+                                                            <button mat-raised-button color="primary"
+                                                                matStepperPrevious class="next_button_1">
+                                                                Back
+                                                            </button>
+                                                        </div>
+                                                        <div style="margin-left: 10px;">
+                                                            <button mat-raised-button color="primary" matStepperNext
+                                                                class="next_button" (click)="NextInExtraCurriculam()">
+                                                                Next
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </mat-step>
+                                        <!-- Fifth Step End Here -->
+
+                                        <!-- Sixth Step Start Here -->
+
+                                        <mat-step errorMessage="Is required!" [completed]="false">
+                                            <form autocomplete="off">
+                                                <ng-template matStepLabel>Achievements & Awards</ng-template>
+                                                <div class="form_layout" id="form_layout_mobile">
+                                                    <p class="section_heading">Achievements & Awards</p>
+                                                    <p class="introduction">( Please provide information about your individual achievements / awards / rewards / appreciations in the given fields. )</p>
+                                                </div>
+                                                <div class="form_layout">
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group" id="row_top_mobile">
+                                                                <mat-label class="form_input_header_text">
+                                                                    Achievements or Awards
+                                                                </mat-label>
+                                                                <input matInput type="text" maxlength="50"
+                                                                    class="form-input"
+                                                                    #achievement>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <mat-label class="form_input_header_text"
+                                                                    style="margin-left: 7px;">Description
+                                                                </mat-label>
+                                                                <textarea matInput type="text" maxlength="100"
+                                                                    style="height: 40px;" class="form-input"
+                                                                    id="textarea_mobile"
+                                                                    #achievDescription>
+                                                            </textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="row_mobile"
+                                                        style="display: grid;justify-content: right;margin-right: 1px;">
+                                                        <button mat-raised-button color="primary" class="next_button"
+                                                        (click)="addachievements(achievement.value, achievDescription.value)">
+                                                            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-md-12" style="margin-top: 25px;overflow-x: scroll;">
+                                                        <table class="table " id="exp_table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th width="5%" scope="col" class="table_row_head"
+                                                                        >Sr.</th>
+                                                                    <th width="35%" scope="col" class="table_row_head"
+                                                                        >Achievements or Awards</th>
+                                                                    <th width="55%" scope="col" class="table_row_head"
+                                                                        >Details</th>
+                                                                    <th width="5%" class="table_row_head"
+                                                                        ></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr *ngFor="let ach of objSCreateFresherService.arrAchievement;let i = index">
+                                                                    <td class="table_row"
+                                                                        style="text-align: center;">
+                                                                        {{ i+1 }}
+                                                                    </td>
+                                                                    <td class="table_row" style="width: 35%;">{{ach.award}}</td>
+                                                                    <td class="table_row" style="width: 45%;">{{ach.description}}</td>
+                                                                    <td class="table_row"
+                                                                        style="text-align: center;">
+                                                                        <a style="cursor: pointer;"
+                                                                            (click)="deleteFromAchievementTbl(i)">
+                                                                            <i class="fa fa-times"
+                                                                                style="color: red; cursor: pointer;"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <p class="how_to_use" style="font-weight: bold;">Scroll Right >></p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" id="btn_div">
+                                                        <div></div>
+                                                        <div style="margin-right: 10px;">
+                                                            <button mat-raised-button color="primary"
+                                                                matStepperPrevious class="next_button_1">Back</button>
+                                                        </div>
+                                                        <div style="margin-left: 10px;">
+                                                            <button mat-raised-button color="primary" matStepperNext (click)="NextInAchievement()"
+                                                                class="next_button">Next</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </mat-step>
+                                        <!-- Sixth Step End Here -->
+
+                                        <!-- Seventh Step Start Here -->
+
+                                        <mat-step errorMessage="Is required!" [completed]="false">
+                                            <form autocomplete="off">
+                                                <ng-template matStepLabel>Other</ng-template>
+                                                <div class="form_layout">
+                                                    <div class="row" id="row_mobile">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <button class="btn btn-default" id="upload_button_step1"
+                                                                    (click)="uploadProfilePhoto()">
+                                                                    <i class="fa fa-upload"
+                                                                        aria-hidden="true"></i>&nbsp;&nbsp;Profile
+                                                                    Photo
+                                                                </button>
+                                                                <img [src]="objSCreateFresherService.pCreateProfile.profilePhotoURL || defaultPhoto"
+                                                                    id="image_upload" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <div class="form-group arrange_div">
+                                                                <div>
+                                                                    <input style="display: none" type="file"
+                                                                        #hiddenfileinput
+                                                                        (change)="uploadResume($event)">
+                                                                    <button class="btn btn-default btn_resume"
+                                                                        id="upload_button_step1"
+                                                                        (click)="hiddenfileinput.click()">
+                                                                        <i class="fa fa-upload"
+                                                                            aria-hidden="true"></i>&nbsp;&nbsp;My
+                                                                        Resume
+                                                                    </button>
+                                                                </div>
+                                                                <div> <a [href]="objSCreateFresherService.pCreateProfile.resumeURL"
+                                                                        target="_blank">
+                                                                        <img src="assets/img/pdf.png"
+                                                                            id="image_upload" />
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form_layout" style="border: none;">
+                                                    <div class="row">
+                                                        <div class="col-md-6 ">
+                                                            <div class="form_layout_gallery">
+                                                                <div class="form-group " id="row_top_mobile">
+                                                                    <button class="btn btn-default" id="upload_button"
+                                                                        (click)="uploadCertificate()">
+                                                                        <i class="fa fa-upload"
+                                                                            aria-hidden="true"></i>&nbsp;Upload
+                                                                        Certificates
+                                                                    </button>
+                                                                </div>
+                                                                <div class="gallery_table">
+                                                                    <table class="table table-bordered" style="width: 100%;">
+                                                                        <tbody>
+                                                                            <tr *ngFor="let c of objSCreateFresherService.arrCertificate">
+                                                                                <td
+                                                                                    style="width: 90%;text-align: center;">
+                                                                                    <img [src]="c.certificateURL"
+                                                                                        height="80px" width="80px">
+                                                                                </td>
+                                                                                <td
+                                                                                    style="width: 10%;text-align: center;">
+                                                                                    <a style="cursor: pointer;"
+                                                                                        (click)="removeCertImage(c.certificateId)">
+                                                                                        <i class="fa fa-times"
+                                                                                            style="color: red; cursor: pointer;"></i>
+                                                                                    </a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12" id="btn_div">
+                                                        <div></div>
+                                                        <div style="margin-right: 10px;"> 
+                                                            <button mat-raised-button color="primary"
+                                                                matStepperPrevious class="next_button_1">Back</button>
+                                                        </div>
+                                                        <div style="margin-left: 10px;">
+                                                            <button mat-raised-button color="primary" matStepperNext
+                                                                class="next_button"
+                                                                (click)="onClickPreview()">Preview</button>
+                                                        </div>  
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </mat-step>
+                                        <!-- Seventh Step End Here -->
+                                    </mat-horizontal-stepper>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

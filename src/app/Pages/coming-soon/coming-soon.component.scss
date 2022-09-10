@@ -1,0 +1,70 @@
+
+  .card{
+    display: grid;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0;
+    line-height: 1;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+  }
+  
+  .dot {
+    color: #4FEBFE;
+  }
+  
+  p {
+    text-align: center;
+    margin: 18px;
+    font-family: 'Muli', sans-serif;
+    font-weight: normal;
+    color: rgb(226, 169, 46);
+    
+  }
+  
+  .icons {
+    text-align: center;
+  }
+  
+  .icons i {
+    color: #00091B;
+    background: #fff;
+    font-size: 20px;
+    padding: 7px;
+    margin: 0 10px;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    transition: all 200ms ease;
+    text-decoration: none;
+    position: relative;
+  }
+  
+  .icons i:hover, .icons i:active {
+    color: #fff;
+    background: none;
+    cursor: pointer !important;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    text-decoration: none;
+  }
+
+  
+@media (max-width: 764px) {
+    h1 {
+        font-size: 25px;
+    }
+    p {
+        margin: 15px;
+        font-size: 12px;
+    }
+    .icons i {
+        font-size: 15px;
+        padding: 4px;
+        margin: 0 10px;
+    }
+}
